@@ -18,6 +18,9 @@ Nuestro objetivo básicamente es reducir y simplificar la contratacion de servic
 Soy estudiante, me gusta mucho el cine, entrenar y salir con amigos. Me interesa saber programar para tener la posibilkidad de encarar proyectos personales que talvez antes ni siquiera hubiese sabido por donde comenzar.
 
 ### Gian Guazzone:
+Actualmente trabajando freelance como Consultor de RRSS.
+Me inclino mucho por las artes, particularmente la música. Soy productor musical en mi tiempo libre y 1 vez por semana soy host de un stream con 6 temporadas en Twitch.
+No soy muy bueno para resolver problemas matemáticos pero en temas de diseño me va bastante bien.
 
 ### Denise Ludowsky:
 Soy medica ginecologa, mama x2, buscando nuevas herramientas para mi desarrollo profesional.
