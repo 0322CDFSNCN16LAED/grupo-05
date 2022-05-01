@@ -25,7 +25,8 @@ No soy muy bueno para resolver problemas matemáticos pero en temas de diseño m
 ### Denise Ludowsky:
 Soy medica ginecologa, mama x2, buscando nuevas herramientas para mi desarrollo profesional.
 
-### Javier Alonso:
+### Javier Alonso: 
+Soy Licenciado en Higiene y Seguridad Laboral, aprender programacion es una de mi deudas pendientes que tengo.
 
 ### Sofia Castro Murphy: 
 Estudio ingenieria electronica y busco tener mas conocimientos y adentrarme mas en el mundo de la programacion. 
