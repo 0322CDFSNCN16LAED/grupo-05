@@ -34,10 +34,10 @@ Estudio ingenieria electronica y busco tener mas conocimientos y adentrarme mas 
 
 ### Mercado Libre
 #### Colores
-- ![#f7ed59](https://via.placeholder.com/15/f7ed59/000000?text=+)  $\rightarrow$ header 
-- ![#100152](https://via.placeholder.com/15/100152/000000?text=+)  $\rightarrow$ logo
-- ![#429CF6](https://via.placeholder.com/15/429CF6/000000?text=+)  $\rightarrow$ botones
-- ![#D7D8DA](https://via.placeholder.com/15/D7D8DA/000000?text=+)  $\rightarrow$ fondo de la pagina
+- ![#f7ed59](https://via.placeholder.com/15/f7ed59/000000?text=+) -> header 
+- ![#100152](https://via.placeholder.com/15/100152/000000?text=+) -> logo
+- ![#429CF6](https://via.placeholder.com/15/429CF6/000000?text=+) -> botones
+- ![#D7D8DA](https://via.placeholder.com/15/D7D8DA/000000?text=+) -> fondo de la pagina
 
 #### Pagina principal
 - Al abrir la pagina aparecen ofertas, y productos en categorias.
