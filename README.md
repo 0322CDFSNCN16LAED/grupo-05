@@ -27,13 +27,35 @@ Soy medica ginecologa, mama x2, buscando nuevas herramientas para mi desarrollo 
 
 ### Javier Alonso:
 
-### Sofia Castro Murphy:
-
+### Sofia Castro Murphy: 
+Estudio ingenieria electronica y busco tener mas conocimientos y adentrarme mas en el mundo de la programacion. 
 
 ## Paginas referencia:
 
-### Mercado Libre:
-Lo tomamos como primer ejemplo para ver la estetica de un sitio en el cual se ofrecen productos de diferentes categorias y tammbien para ver el formato que tenian a la hora de separar los productos en categorias con la diferencia de que en nuestro e-commerce serán servicios.
+### Mercado Libre
+#### Colores
+- ![#f7ed59](https://via.placeholder.com/15/f7ed59/000000?text=+)  $\rightarrow$ header 
+- ![#100152](https://via.placeholder.com/15/100152/000000?text=+)  $\rightarrow$ logo
+- ![#429CF6](https://via.placeholder.com/15/429CF6/000000?text=+)  $\rightarrow$ botones
+- ![#D7D8DA](https://via.placeholder.com/15/D7D8DA/000000?text=+)  $\rightarrow$ fondo de la pagina
+
+#### Pagina principal
+- Al abrir la pagina aparecen ofertas, y productos en categorias.
+- Hay una opcion de Ayuda
+- Hay una opcion de Vender --> ahi preguntan que voy a vender
+- Buscar: categorias en cuadraditos, ordenar por: mas relevantes, menor precio, mayor precio
+- Producto: lo tocas y te aparece comprar ahora, productos relacionados
+
+#### Usuarios
+- Datos del usuario: direccion, tarjeta de credito (varias direcciones), nombre/empresa
+- Puntos de usario: niveles con beneficios, avanza tu progreso segun desafios(bienvenida, hacer compras, primeras dos compras, vender algo, comprar algo con descuento)
+- ##### Vendedor: 
+    - Se cobra por venta una comision
+    - Area de envio
+    - Estrellas(reputacion), cantidad de ventas, caracteristicas (muy amable, buena atencion), mas publicaciones del vendedor
+    - Opiniones de sus compradores: buena(5-4)-regular(3)-mala(2-1) + comentarios
+
+---
 
 ### Domestika:
 Esta pagina es un e-commerce de cursos, pero lo que nos interesaba era ver como separaban los mismo en las categorías, nosotros buscamos una forma en la que contratar un servicio sea lo mas sencillo posible, que sea una de las primeras cosas que se visdualizan, su ejemplo nos sirvio de mucho.
