@@ -3,12 +3,12 @@
 ## Temática del sitio 
 Nuestro sitio consiste en un e-commerce en el que se podrá ofrecer y acceder a diferentes servicios domésticos, que serán brindados por profesionales de cada rubro, como por ejemplo, electricista, plomero, gasista, pintor, niñera, fumigador, entre otros.
 La idea es que mediante esta aplicación se solucione el problema que creemos hay en nuestro país, acerca de la seguridad a la hora de contratar alguno de estos servicios. 
-Mediante un sistema de valoraciones de los clientes que hayan contratado el servicio, se irá formando un puntaje sobre cada profesional y de esa forma a la hora contratar un servicio, el cliente podrá filtrar por el puntaje que sea requisito.
-Por otro lado, el usuario que ofrezca un servicio, al cargar esté en la pagina, también pondrá agregar una breve descripción de su persona en el que también se incluiría un espacio para cargar la matriculación correspondiente en el caso de que la haya. De esa forma el cliente dispondrá de más información a la hora de contratar algo.
+Mediante un sistema de valoraciones de los clientes que hayan contratado el servicio, se irá formando un puntaje sobre cada profesional y de esa forma, a la hora contratarlo, el cliente podrá filtrar por el puntaje que sea requisito.
+Por otro lado, el usuario que desee ofrezcer un servicio, al cargar esté en la pagina, también pondrá agregar una breve descripción de su persona en la que también se incluirá un espacio para cargar la matriculación correspondiente. Así el cliente dispondrá de más información a la hora de contratar un servicio.
 
 ## Publico objetivo
 
-Nuestro objetivo básicamente es reducir a un solo sitio de busqueda para siplificar la contratacion de servicios. De ello, que nuestro público objetivo es muy amplio, dado que realmente todos contratan, en algún momento de su vida, alguno de estos servicios. Hay algunos casos en particular en los que sería especialmente útil este e-commerce, por ejemplo un joven que recién se muda solo y no tiene idea de cómo reparar cosas básicas de la casa, o un consorcio de un edificio, el cual tiene que estar todo el tiempo pendiente de los arreglos que necesite el mismo. Pero, más allá de algunas situaciones puntuales, creemos que va dirigida hacia todo tipo de persona que tenga una propiedad.
+Nuestro objetivo básicamente es reducir y simplificar la contratacion de servicios de reparacion y cuidado a un solo sitio de busqueda. De ello, que nuestro público objetivo sea tan amplio, dado que realmente todos contratan, en algún momento de su vida, alguno de estos servicios. Hay algunos casos en particular en los que sería especialmente útil este e-commerce, por ejemplo un joven que recién se muda solo y no tiene idea de cómo reparar cosas básicas de la casa, o un consorcio de un edificio, el cual tiene que estar todo el tiempo pendiente de los arreglos que necesite el mismo. Pero, más allá de algunas situaciones puntuales, creemos que va dirigida hacia todo tipo de persona que tenga una propiedad.
 
  
 
