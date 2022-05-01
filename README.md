@@ -38,13 +38,33 @@ Lo tomamos como primer ejemplo para ver la estetica de un sitio en el cual se of
 ### Domestika:
 Esta pagina es un e-commerce de cursos, pero lo que nos interesaba era ver como separaban los mismo en las categorías, nosotros buscamos una forma en la que contratar un servicio sea lo mas sencillo posible, que sea una de las primeras cosas que se visdualizan, su ejemplo nos sirvio de mucho.
 
-### zolvers.com:
+### Zolvers:
 Compartimos mismo público objetivo. Tomaremos como referencia la estructura del sitio, la accesibilidad a los diferentes servicios que ofrece dado que es de fácil lectura y manejo.
 
-### cuidamemucho.com.ar
+### Cuidamemucho
 Página sencilla dirigida a la contratación de niñeras, de facil lectura y navegación, que conecta usuarios con proveedores de servicios, ofreciendo una "garantia" de satisfacción a la hora de solicitar un servicio.
 
-### agregar pagina
+### Colores
+
+(Ideas Gian):
+Inspo: <a href="http://brandcolors.net/" > Brand Colors</a>
+
+Idea 1:
+#DC4E76
+#CC4B93
+#A946BE
+#5C4AE4
+#35375A
+
+Idea 2:
+#00334E
+#004D73
+#007FDB
+#DBEBFA
+#848A8C
+#832561
+#11862F
+#BFCA02
 
 
 
