@@ -1,16 +1,13 @@
 # grupo-05
 
 ## Temática del sitio 
-Nuestro sitio consiste en un e-commerce en el que se podrá ofrecer y acceder a diferentes servicios domésticos, que serán brindados por profesionales de cada rubro, como por ejemplo, electricista, plomero, gasista, pintor, niñera, fumigador, entre otros.
-La idea es que mediante esta aplicación se solucione el problema que creemos hay en nuestro país, acerca de la seguridad a la hora de contratar alguno de estos servicios. 
-Mediante un sistema de valoraciones de los clientes que hayan contratado el servicio, se irá formando un puntaje sobre cada profesional y de esa forma, a la hora contratarlo, el cliente podrá filtrar por el puntaje que sea requisito.
-Por otro lado, el usuario que desee ofrezcer un servicio, al cargar esté en la pagina, también pondrá agregar una breve descripción de su persona en la que también se incluirá un espacio para cargar la matriculación correspondiente. Así el cliente dispondrá de más información a la hora de contratar un servicio.
+Este sitio es un e-commerce que funciona como una plataforma de conexion entre servicios domesticos(electricista, plomero, gasista, pintor, niñera, fumigador, etc) y clientes. Brinda seguridad y confianza a la hora de contratar un servicio, por medio de reseñas e informacion profesional de la persona. Un usuario puede tanto consumir un servicio como ofrecerlo.
 
 ## Publico objetivo
 
 Nuestro objetivo básicamente es reducir y simplificar la contratacion de servicios de reparacion y cuidado a un solo sitio de busqueda. De ello, que nuestro público objetivo sea tan amplio, dado que realmente todos contratan, en algún momento de su vida, alguno de estos servicios. Hay algunos casos en particular en los que sería especialmente útil este e-commerce, por ejemplo un joven que recién se muda solo y no tiene idea de cómo reparar cosas básicas de la casa, o un consorcio de un edificio, el cual tiene que estar todo el tiempo pendiente de los arreglos que necesite el mismo. Pero, más allá de algunas situaciones puntuales, creemos que va dirigida hacia todo tipo de persona que tenga una propiedad.
 
- 
+El publico objetivo esta dirigido a toda persona que se haga cargo de un hogar, ya que siempre se necesitan realizar arreglos. Se considera que un segmento grande del publico van a ser jovenes que se mudan solos y no tienen contactos de los servicios domesticos basicos. De esta forma la plataforma los conectara con los profesionales y los jovenes se ahorraran buscar una recomendacion externa.
 
 ## Integrantes del equipo
 
