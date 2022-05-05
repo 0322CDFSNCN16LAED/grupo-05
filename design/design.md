@@ -14,7 +14,7 @@
 
   - ![#ff9900](https://via.placeholder.com/15/ff9900/000000?text=+) 
   
-  - ![#848A8C](https://via.placeholder.com/15/848A8C/000000?text=+) 
+  - ![#f7931e](https://via.placeholder.com/15/f7931e/000000?text=+) 
 
 ##### Referencia: <a href="http://brandcolors.net/" > Brand Colors</a>
 - - -
