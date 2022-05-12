@@ -78,7 +78,7 @@ Idea 1:
 Idea 2:
   ![#00334E](https://via.placeholder.com/15/00334E/000000?text=+)  ![#004D73](https://via.placeholder.com/15/004D73/000000?text=+)  ![#007FDB](https://via.placeholder.com/15/007FDB/000000?text=+)  ![#DBEBFA](https://via.placeholder.com/15/DBEBFA/000000?text=+)  ![#848A8C](https://via.placeholder.com/15/848A8C/000000?text=+)  ![#832561](https://via.placeholder.com/15/832561/000000?text=+)  ![#11862F](https://via.placeholder.com/15/11862F/000000?text=+)  ![#BFCA02](https://via.placeholder.com/15/BFCA02/000000?text=+)
 
-
+## Trello <a href="https://trello.com/b/W2Eqhxc8/lista-de-tareas-digital-house" > Lista de tareas</a>
 
 
 
