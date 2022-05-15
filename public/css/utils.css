@@ -1,0 +1,174 @@
+/* Background */
+
+.bg-white {
+    background-color: #ece5dd;
+}
+.bg-other-white {
+    background-color: #f0f0f0;
+}
+.bg-gray {
+    background-color: #ebebeb;
+}
+.bg-darkblue {
+    background-color: #004d73;
+}
+.bg-truewhite {
+    background-color: white;
+}
+
+/* Font color */
+
+.blue {
+    color: #004d73
+}
+.orange {
+    color: #ff9900
+}
+.other-orange {
+    color: #f7931e
+}
+.black {
+    color : black
+}
+
+/* display */
+
+.flex {
+    display: flex
+}
+.block {
+    display: block
+}
+.none {
+    display: none;
+}
+
+/* wrap */
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+/* width */
+
+.w-100 {
+    width: 100%
+}
+.w-95 {
+    width: 95%
+}
+.w-70 {
+    width: 70%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-30 {
+    width: 30%;
+}
+
+/* padding */
+
+.p2-8 {
+    padding: 0px 8px;
+}
+.p2-10 {
+    padding: 10px 0px;
+}
+.p-10 {
+    padding: 10px
+}
+.p-15 {
+    padding : 15px
+}
+.p-b-10 {
+    padding-bottom: 10px;
+}
+
+/* margin */
+.m-8 {
+    margin: 8px;
+}
+.m-t-8 {
+    margin-top: 8px;
+}
+.m-15 {
+    margin: 15px;
+}
+
+/* text align */
+
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
+/* Justify Content */
+
+.space-between {
+    justify-content: space-between;
+}
+.space-around {
+    justify-content: space-around;
+}
+.space-evenly {
+    justify-content: space-evenly;
+}
+.start {
+    justify-content: flex-start;
+}
+.center {
+    justify-content: center;
+}
+.end {
+    justify-content: flex-end;
+}
+
+/* Align items */
+
+.align-center {
+    align-items: center;
+}
+
+/* Align Self */
+
+.align-self-end {
+    align-self: flex-end;
+}
+
+/* Text Decoration */
+
+.t-d-none {
+    text-decoration: none;
+}
+
+/* List Style */
+
+.l-s-none {
+    list-style: none;
+}
+
+/* Border */
+
+.b-1-hidden {
+    border: hidden 1px 
+}
+.b-r-2 {
+    border-right: solid 2px;
+}
+
+/* Opacity */
+
+.opacity {
+    opacity: 80%;
+}
+
+/* Shadow */
+.shadow {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  }

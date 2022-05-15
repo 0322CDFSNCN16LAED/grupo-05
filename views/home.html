@@ -4,39 +4,85 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mercado Liebre</title>
+    <title>Easy Fix</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700&display=swap" rel="stylesheet"/>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/71684982aa.js" crossorigin="anonymous"></script>
 
+    
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/utils.css" />
 
     <link rel="stylesheet" href="/css/theme.css" />
   </head>
   <body>
-      <header>
-          <div>
-              <h1>
-                  <img src="/images/LOGO EASY FIX.png" alt="Easy Fix">
+      <header class="header">
+          <div class="nav-bar-top  flex flex-nowrap bg-white align-center p2-8">
+              <h1 class="w-50">
+                  <img class="w-100 m-8" src="/images/LOGO EASY FIX.png" alt="Easy Fix">
               </h1>
-              <input type="search" name="Buscar">
-              <i class="fa-solid fa-user-tie"></i>
+              <input class= "w-50 m-8" type="search" name="Buscar">
           </div>
-          <nav>
-              <ul>
-                <li><a href="#">Registrate</a></li>
-                <li><a href="#"></a>Inicia Sesion</li>
+          <nav class="nav-bar-bottom bg-white p-b-10">
+              <ul class="flex flex-nowrap space-around align-center">
+                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="#">Registrate</a><i class="fa-solid fa-address-card"></i></li>
+                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="#"> Inicia Sesion</a><i class="fa-solid fa-right-to-bracket"></i></li>
+                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="#"><i class="fas fa-bars"></i></a></li>
               </ul>
           </nav>
       </header>
+      <main class=" bg-truewhite p-15">
+        <div class="categorias b-1-hidden">
+          <h2 class="heading p-15 text-center b-1-hidden">¿Que servicio estas bubscando?</h2>
+        <section class="section p-10">
+          <article class="article w-95 m-8 p2-10  b-1-hidden text-center">
+            <h2>Carpinteria <i class="fa-solid fa-hammer"></i></h2>
+          </article>
+          <article class="article w-95 m-8 p2-10 b-1-hidden text-center">
+            <h2>Plomeria <i class="fa-solid fa-toilet"></i></h2>
+          </article>
+          <article class="article w-95 m-8 p2-10  b-1-hidden text-center">
+            <h2>Electricista <i class="fa-solid fa-bolt"></i></h2>
+          </article> 
+          <article class="article w-95 m-8 p2-10  b-1-hidden text-center">
+            <h2>Pintura <i class="fa-solid fa-paintbrush"></i></h2>
+          </article>
+          <article class="article w-95 m-8 p2-10  b-1-hidden text-center">
+            <h2>Guarderia <i class="fa-solid fa-baby"></i></h2>
+          </article>
+          <article class="article w-95 m-8 p2-10  b-1-hidden text-center">
+            <h2>Ver todos los servicios <i class="fa-solid fa-arrow-right"></i> </h2>
+          </article>
+        </section>
+        </div>
+      </main>
+      <footer class="footer flex flex-nowrap bg-white">
+        <div class="footer-left w-30 p-10 b-r-2">
+          <img class="w-100" src="/images/LOGO EASY FIX.png">
+          <div class="redes-sociales felx wrap text-center">
+          <i class="fa-brands fa-twitter w-100 m-8"></i>
+          <i class="fa-brands fa-instagram w-100 m-8"></i>
+          <i class="fa-brands fa-facebook w-100 m-8"></i>
+          </div>
+        </div>
+        <section class="footer-right w-70 p-10 flex flex-wrap ">
+          <article class="footer-artice m-10 w-100 flex flex-wrap center">
+            <i class="fa-solid fa-shield-halved  m-8 w-100 text-center" ></i>
+            <h2>Compras protegidas</h2>
+          </article>
+          <article class="footer-artice m-10 w-100 flex flex-wrap center">
+            <i class="fa-solid fa-certificate  m-8 w-100 text-center"></i>
+            <h2>Profesionales verificados</h2>
+          </article>
+          <article class="footer-artice m-10 w-100 end flex flex-nowrap end">
+            <p class="copyright opacity">Copyright © 2022 EasyFix S.R.L.</p>
+          </article>
+          </section>
+      </footer>
   </body>

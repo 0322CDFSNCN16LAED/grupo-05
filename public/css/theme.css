@@ -1,0 +1,35 @@
+
+/* Header*/
+.nav-bar-bottom ul li {
+    border-radius: 14px;
+    padding: 8px;
+    background-color: #ece5dd;
+}
+.nav-bar-bottom ul li a {
+    color: #575757b7;
+    font-weight: 600;
+}
+
+/* Main */
+.categorias {
+    background-color: #ece5dd;
+    border-radius: 14px;
+}
+.heading {
+    background-color: #ffc786;
+    border-radius: 8px;
+}
+.article {
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Footer */
+
+.footer-left {
+    border-color: white;
+}
+.copyright {
+    font-size: 8px
+}
+
