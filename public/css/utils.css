@@ -158,8 +158,8 @@
 .b-1-hidden {
     border: hidden 1px 
 }
-.b-r-2 {
-    border-right: solid 2px;
+.b-r-4 {
+    border-right: solid 4px;
 }
 
 /* Opacity */
