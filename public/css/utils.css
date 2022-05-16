@@ -15,6 +15,15 @@
 .bg-truewhite {
     background-color: white;
 }
+.b-orange {
+    background-color: #ffc786;
+}
+.b-gradient {
+    background: linear-gradient(to bottom, #ece5dd, white);
+}
+.b-gradient-reverse {
+    background: linear-gradient(to top, #ece5dd, white);
+}
 
 /* Font color */
 
@@ -50,6 +59,18 @@
 }
 .flex-nowrap {
     flex-wrap: nowrap;
+}
+
+/* Font-size */
+
+.f-11 {
+    font-size: 11px;
+}
+
+/* Font weight */
+
+.f-w-700 {
+    font-weight: 700;
 }
 
 /* width */
@@ -94,6 +115,7 @@
 }
 
 /* margin */
+
 .m-8 {
     margin: 8px;
 }
@@ -141,6 +163,9 @@
 
 .align-center {
     align-items: center;
+}
+.align-end {
+    align-items: flex-end;
 }
 
 /* Align Self */

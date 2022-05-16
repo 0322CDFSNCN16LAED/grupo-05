@@ -1,7 +1,7 @@
 
 /* Header*/
 .nav-bar-bottom ul li {
-    border-radius: 14px;
+    border-radius: 10px;
     padding: 8px;
     background-color: #ece5dd;
 }
@@ -29,6 +29,10 @@ body {
 
 /* Footer */
 
+.footer {
+    border-top: hidden;
+    border-radius: 4px;
+}
 .footer-left {
     border-color: white;
 }
