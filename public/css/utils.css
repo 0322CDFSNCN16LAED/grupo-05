@@ -66,6 +66,9 @@
 .f-11 {
     font-size: 11px;
 }
+.f-xxl {
+    font-size: xx-large;
+}
 
 /* Font weight */
 
@@ -95,6 +98,9 @@
 }
 /* padding */
 
+.p-8 {
+    padding: 8px;
+}
 .p2-8 {
     padding: 0px 8px;
 }
@@ -107,12 +113,16 @@
 .p-15 {
     padding : 15px
 }
+.p-20 {
+    padding: 20px;
+}
 .p-b-10 {
     padding-bottom: 10px;
 }
 .p-t-10 {
     padding-top: 10px;
 }
+
 
 /* margin */
 
@@ -125,9 +135,16 @@
 .m-15 {
     margin: 15px;
 }
-.m-auto {
-    margin: 0 auto;
+.m-20 {
+    margin: 20px;
 }
+.m-r-5 {
+    margin-right: 5px;
+}
+.m-auto {
+    margin: auto;
+}
+
 
 /* text align */
 
@@ -191,8 +208,14 @@
 .b-1-hidden {
     border: hidden 1px 
 }
+.b-2 {
+    border: solid 2px
+}
 .b-r-4 {
     border-right: solid 4px;
+}
+.b-radius-4 {
+    border-radius: 4px;
 }
 
 /* Opacity */
