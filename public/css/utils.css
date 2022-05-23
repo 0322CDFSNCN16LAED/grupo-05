@@ -39,6 +39,10 @@
 .black {
     color : black
 }
+.grey{
+    color:rgb(116, 114, 114);
+}
+
 
 /* display */
 
@@ -61,6 +65,16 @@
     flex-wrap: nowrap;
 }
 
+/*flex grow*/
+.fg-1{
+    flex-grow: 1;
+}
+
+.align-right{
+    align-self: flex-end;
+}
+
+
 /* Font-size */
 
 .f-11 {
@@ -69,6 +83,15 @@
 .f-xxl {
     font-size: xx-large;
 }
+
+.f-15{
+    font-size:15px;
+}
+
+.f-20{
+    font-size:20px;
+}
+
 
 /* Font weight */
 
@@ -84,11 +107,18 @@
 .w-95 {
     width: 95%
 }
+.w-85{
+    width: 85%;
+}
+
 .w-70 {
     width: 70%;
 }
 .w-50 {
     width: 50%;
+}
+.w-40 {
+    width: 40%;
 }
 .w-30 {
     width: 30%;
@@ -102,6 +132,11 @@
 
 .w-12 {
     width: 12.5%;
+}
+
+/* heigth */
+.h-85{
+    height: 85%;
 }
 
 /* padding */
@@ -134,8 +169,19 @@
     padding-top: 10px;
 }
 
+.p-2 {
+    padding: 2px;
+}
+
+.p-5-10{
+    padding: 5px 10px;
+}
 
 /* margin */
+
+.m-2{
+    margin: 2px;
+}
 
 .m-8 {
     margin: 8px;
@@ -156,6 +202,21 @@
     margin: auto;
 }
 
+.m-10-auto{
+    margin: 10px auto;
+}
+
+.mb-10{
+    margin-bottom: 10px;
+}
+
+.mb-5{
+    margin-bottom: 5px;
+}
+
+.m-t-30{
+    margin-top:30px;
+}
 
 /* text align */
 
@@ -228,6 +289,9 @@
 .b-radius-4 {
     border-radius: 4px;
 }
+.b-radius-100{
+    border-radius: 100%;
+}
 
 /* Opacity */
 
@@ -239,3 +303,5 @@
 .shadow {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
   }
+
+
