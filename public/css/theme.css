@@ -148,3 +148,31 @@ body {
 
 }
 
+/* formulario */
+.creat-form{
+    padding:20px 15px;
+}
+.control-form{
+    margin-bottom: 15px;
+
+}
+.control-form label{
+    margin-bottom: 5px;
+    margin-top:5px;
+    font-style:monserrat regular 400;
+    display:block;
+    font-weight:700;
+}
+.control{
+    width:100%;
+    padding: 8px 8px;
+}
+.botton-form{
+background-color: #ff9900;
+border:none;
+font-size:16px;
+color:black;
+padding: 5px 10px;
+border-radius:10%;
+margin-top:10px;
+}
