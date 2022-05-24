@@ -176,3 +176,28 @@ padding: 5px 10px;
 border-radius:10%;
 margin-top:10px;
 }
+
+/*Boton para escribir algo de input*/
+.form-input {
+    border-color: #ebebeb;
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+/* Boton agregar un archivo */
+.file-input{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+/* Texto subida de archivos */
+.desc{
+    text-decoration: underline;
+    font-weight: lighter;
+    color:gray;
+}
