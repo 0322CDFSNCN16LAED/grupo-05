@@ -75,6 +75,7 @@
 }
 
 
+
 /* Font-size */
 
 .f-11 {
@@ -86,6 +87,10 @@
 
 .f-15{
     font-size:15px;
+}
+
+.f-18{
+    font-size:18px;
 }
 
 .f-20{
@@ -128,6 +133,10 @@
 }
 .w-25 {
     width: 25%;
+}
+
+.w-15{
+    width:15%;
 }
 
 .w-12 {
@@ -218,6 +227,11 @@
     margin-top:30px;
 }
 
+.m-l-30{
+    margin-left: 30px;
+}
+
+
 /* text align */
 
 .text-center {
@@ -263,6 +277,10 @@
     align-self: flex-end;
 }
 
+.align-self-center {
+    align-self: center;
+}
+
 /* Text Decoration */
 
 .t-d-none {
@@ -291,6 +309,13 @@
 }
 .b-radius-100{
     border-radius: 100%;
+}
+.b-radius-10 {
+    border-radius: 10px;
+}
+
+.b-radius-20{
+    border-radius: 20px;
 }
 
 /* Opacity */
