@@ -193,3 +193,217 @@ margin-top:10px;
     font-weight: lighter;
     color:gray;
 }
+
+
+
+.logo {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+.logo img {
+    height: auto;
+    width: 100%;
+}
+
+.container {
+    background: linear-gradient(to bottom, #ffc786, white);
+    justify-items: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); */
+   
+    /* display: flex;
+    flex-wrap: wrap; */
+    
+}
+.card {
+    width: 80%;
+    margin: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: rgb(218, 213, 223);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition:  all 400ms ease;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2%);
+}
+.card img {
+    width: 100%;
+    height: 150px; 
+    object-fit:fill;
+}
+.card .contenido{
+    padding: 15px;
+    text-align: center;
+}
+.card .contenido p{
+    line-height: 1.5;
+    color: #6a6a6a;
+    text-align: start;
+    font-size: 18px;
+}
+.card .contenido h4{
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.card .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 20px;
+    color: #2fb4cc;
+    border: 1px solid; 
+    margin: 20px 0;
+}
+.card .contenido a:hover{
+    background-color: #2fb4cc;
+    color: #fff;
+}
+
+
+
+/* CSS TARJETAS DE COMENTARIOS*/ 
+.comentarios {
+    background: linear-gradient(to bottom, #ffc786, white);
+    justify-items: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card-contenedor{
+    background-color: #d6e4ed;
+    width: 80%;
+    border-radius: 6px;
+    box-shadow:  0px 3px 10px rgba(31, 31, 31, .1);
+    display: flex;
+    margin: 5px auto;
+    padding: 15px;
+}
+@media (min-width: 481px) {
+    .card {
+        width:40%;
+    }
+}
+
+@media (min-width: 769px) {
+    .card {
+        width: 25%;
+    }
+    .card-contenedor{
+        width: 45%;
+    }
+}
+.img-contenedor {
+    width: 40%;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.img-contenedor img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+.text-contenedor {
+    width: 60%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+.text-contenedor h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+.titulo {
+    height: 20%;
+    font-size: 18px;  
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px;
+}
+.descripcion {
+    height: 60%;
+    color: rgb(24, 24, 24);
+    font-size: 16px;
+    text-align: justify;
+    padding: 5px 0;
+}
+.estrellas {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    
+}
+.estrellas i{
+    font-size: 15px;
+    color: black;
+    padding: 10px 5px;
+    transition: all 1 ease-in;
+    color: goldenrod;
+    
+}
+
+/* CSS TARJETAS DE COMO FUNCIONA */
+.tarjetas {
+    background: linear-gradient(to bottom, #ffc786, white);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:space-around;
+}
+.cabecera h1 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px;
+}
+.cabecera {
+    display: block;
+    width: 80%;
+    text-align: justify;
+    padding: 10px;
+}
+.tarjeta {
+    background: linear-gradient(45deg, #394074, rgb(62, 82, 195), #2fb4cc);
+    width: 80%;
+    border-radius: 6px;
+    box-shadow:  0px 3px 10px rgba(31, 31, 31, .1);
+    margin: 5px     ;
+    padding: 15px;
+}
+.imagen {
+    width: 100%;
+    height: 100%;
+}
+.imagen img {
+    width: 100%;
+    height: 200px;
+}
+.titular {
+    height: 20%;
+    font-size: 18px; 
+    justify-content: center;
+    text-align: center;
+    padding: auto    ;
+}
+.titular h3{
+    padding: 10px 20px;
+    line-height:50px;
+}
