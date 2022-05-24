@@ -13,7 +13,7 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/carrito.html"));
+  res.sendFile(path.join(__dirname, "/views/home.html"));
 });
 
 app.get("/product-options", (req, res) => {
