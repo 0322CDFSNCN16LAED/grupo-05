@@ -24,11 +24,30 @@
 .b-gradient-reverse {
     background: linear-gradient(to top, #ece5dd, white);
 }
+.b-gradient-grey-to-orange {
+    background: linear-gradient(to bottom, #ebebeb, #ffc786 );
+}
+.b-gradient-orange-to-white {
+    background: linear-gradient(to bottom, #ffc786, white) ;
+}
+.b-gradient-white-to-orange {
+    background: linear-gradient(to bottom, white, #ffc786) ;
+}
+.b-gradient-blue-to-grey {
+    background: linear-gradient(to bottom, #004d73 , #ebebeb)
+}
+.b-gradient-grey-to-blue {
+    background: linear-gradient(to bottom, #ebebeb, #004d73)
+}
+
 
 /* Font color */
 
 .blue {
     color: #004d73
+}
+.white {
+    color: white;
 }
 .orange {
     color: #ff9900
@@ -191,6 +210,9 @@
 .p-5-10{
     padding: 5px 10px;
 }
+.p-30 {
+    padding: 30px;
+}
 
 /* margin */
 
@@ -224,7 +246,9 @@
 .mb-10{
     margin-bottom: 10px;
 }
-
+.mb-20 {
+    margin-bottom: 20px;
+}
 .mb-5{
     margin-bottom: 5px;
 }
@@ -302,7 +326,10 @@
 /* Border */
 
 .b-1-hidden {
-    border: hidden 1px 
+    border: hidden  
+}
+.b-solid-white {
+    border: solid 2px white
 }
 .b-2 {
     border: solid 2px

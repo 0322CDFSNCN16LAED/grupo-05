@@ -7,7 +7,7 @@
 .nav-bar-bottom ul li {
     border-radius: 50%;
     padding: 8px 13px;
-    background-color: #ece5dd;
+    background-color: #ebebeb;
 }
 .nav-bar-bottom ul li a {
     color: #575757b7;
@@ -54,7 +54,7 @@ body {
 /*Animaciones Header Desktop */
 
 .desktop-header-buttom-h2:hover {
-    background-color: rgb(170, 158, 145);
+    border: solid 2px white;
 }
 .desktop-header-buttom-h2:hover {
     transition: all 500ms
@@ -139,7 +139,6 @@ body {
 .icon-redes-sociales {
     transition: all 500ms
 }
-
 .icon-footer-article:hover {
     color: #fdac4e;
 }
@@ -163,10 +162,10 @@ body {
     padding: 8px 8px;
 }
 .botton-form{
-background-color: #ff9900;
+background-color: #004d73 ;
+color: white;
 border:none;
 font-size:16px;
-color:black;
 padding: 5px 10px;
 border-radius:10%;
 margin-top:10px;
@@ -211,7 +210,6 @@ margin-top:10px;
 }
 
 .container {
-    background: linear-gradient(to bottom, #ffc786, white);
     justify-items: center;
     width: 100%;
     display: flex;
@@ -249,6 +247,7 @@ margin-top:10px;
     text-align: center;
 }
 .card .contenido p{
+    display: none;
     line-height: 1.5;
     color: #6a6a6a;
     text-align: start;
@@ -277,12 +276,12 @@ margin-top:10px;
 
 /* CSS TARJETAS DE COMENTARIOS*/ 
 .comentarios {
-    background: linear-gradient(to bottom, #ffc786, white);
     justify-items: center;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    border-top: solid 3px #004d73;
 }
 .card-contenedor{
     background-color: #d6e4ed;
@@ -308,6 +307,9 @@ margin-top:10px;
     }
     .card-container {
         width: 30%;
+    }
+    .card .contenido p {
+        display: block;
     }
 }
 .img-contenedor {
@@ -366,55 +368,19 @@ margin-top:10px;
     
 }
 
-/* CSS TARJETAS DE COMO FUNCIONA */
-.tarjetas {
-    background: linear-gradient(to bottom, #ffc786, white);
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items:center;
-    justify-content:space-around;
+/* CSS Tarjetas */
+
+.tarjetas-div:hover {
+    background-color: white;
 }
-.cabecera h1 {
-    text-align: center;
-    margin: 0 auto;
-    padding: 5px;
+.tarjetas-div:hover .tarjetas-div-p {
+    color: #004d73;
 }
-.cabecera {
-    display: block;
-    width: 80%;
-    text-align: justify;
-    padding: 10px;
-    margin-bottom: 20px;
+.tarjetas-div {
+    transition: all 500ms;
 }
-.tarjeta {
-    background: linear-gradient(45deg, #394074, rgb(62, 82, 195), #2fb4cc);
-    width: 250PX;
-    height: min-content;
-    border-radius: 6px;
-    box-shadow:  0px 3px 10px rgba(31, 31, 31, .1);
-    margin: 5px     ;
-    padding: 15px;
-    margin-bottom: 20px;
-}
-.imagen {
-    width: 100%;
-    height: 100%;
-}
-.imagen img {
-    width: 100%;
-    height: 200px;
-}
-.titular {
-    height: 20%;
-    font-size: 16px; 
-    justify-content: center;
-    text-align: center;
-    padding: auto    ;
-}
-.titular h3{
-    padding: 10px 20px;
-    line-height:50px;
+.tarjetas-div-p {
+    transition: all 500ms
 }
 
 /* CSS PRODUCT-DETAIL*/
