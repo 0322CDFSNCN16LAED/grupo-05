@@ -32,11 +32,11 @@
               <h2>Promocion</h2>
         </div>
         <div class="desktop-header-buttom flex flex-nowrap space-around bg-white">
-          <h2 class="desktop-header-buttom-h2">Home</h2>
-          <h2 class="desktop-header-buttom-h2">Favoritos</h2>
-          <h2 class="desktop-header-buttom-h2">Carrito</h2>
-          <h2 class="desktop-header-buttom-h2">Notificaciones</h2>
-          <h2 class="mas-buttom desktop-header-buttom-h2">Mas</h2>
+          <a class="t-d-none black" href= "/" ><h2 class="desktop-header-buttom-h2">Home</h2></a>
+          <a class="t-d-none black" href= "/login" ><h2 class="desktop-header-buttom-h2">Ingresar</h2></a>
+          <a class="t-d-none black" href= "/register" ><h2 class="desktop-header-buttom-h2">Registrarse</h2></a>
+          <a class="t-d-none black" href= "/carrito" ><h2 class="desktop-header-buttom-h2">Carrito</h2></a>
+          <a class="t-d-none black" href= "#" ><h2 class="mas-buttom desktop-header-buttom-h2">Mas</h2></a>
         </div>
       </header>
       <header class="mobile-tablet-header">
@@ -50,29 +50,174 @@
               <ul class="flex flex-nowrap space-around align-center">
                 <div class=" flex flex-wrap m-8 align-center center ">
                 <li class="l-s-none b-1-hidden shadow " ><a class="t-d-none black" href= "#funciona" ><i class="fa-solid fa-question"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">¿Como funciona?</p>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">¿Como funciona?</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center ">
                 <li class="l-s-none b-1-hidden shadow " ><a class="t-d-none black" href="#"> <i class="fa-solid fa-magnifying-glass-dollar"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Ofertas</p>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ofertas</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center ">
-                <li class="l-s-none b-1-hidden shadow"><a class="t-d-none black" href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Metodos de pago</p>
+                <li class="l-s-none b-1-hidden shadow"><a class="t-d-none black" href="/login"><i class="fa-solid fa-right-to-bracket"></i></a></li>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ingresa</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center">
-                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="#"><i class="fa-solid fa-plus"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Mas</p>
+                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="/register"><i class="fa-solid fa-address-card"></i></a></li>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">registrate</p>
                 </div>
+                <div class=" flex flex-wrap m-8 align-center center">
+                  <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="/worker-register"><i class="fa-solid fa-upload"></i></a></li>
+                  <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ofrecer servicio</p>
+                  </div>
               </ul>
           </nav>
       </header>
       <main>
-          <section>
-              <div>
-                
+        <section class="container-card">
+          <article class="card-container">
+              <figure class="img-container">
+                  <img src="images//foto1.jpg">
+              </figure>
+              <div class="text-container">
+                  <h3>Pedro Gonzalez</h3>
+                  <p class="title">Electricista</p>
+                  <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, repellendus?
+                  </p>
+               <div class="icon">
+                   <i class="fas fa-shopping-cart"></i>
+                   <i class="far fa-comment"></i>
+                   <i class="far fa-heart"></i>
+               </div>
               </div>
-          </section>
+          </article>
+          <article class="card-container">
+           <figure class="img-container">
+               <img src="images//foto2.jpg">
+           </figure>
+           <div class="text-container">
+               <h3>David Canvas</h3>
+               <p class="title">Electricista</p>
+               <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, possimus!
+               </p>
+               <div class="icon">
+                 <i class="fas fa-shopping-cart"></i>
+                 <i class="far fa-comment"></i>
+                 <i class="far fa-heart"></i>
+             </div>
+           </div>
+          </article>
+       <article class="card-container">
+         <figure class="img-container">
+             <img src="images//foto3.jpg">
+         </figure>
+         <div class="text-container">
+             <h3>Malena Pitrelli</h3>
+             <p class="title">Electricista</p>
+             <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, possimus!
+             </p>
+             <div class="icon">
+               <i class="fas fa-shopping-cart"></i>
+               <i class="far fa-comment"></i>
+               <i class="far fa-heart"></i>
+           </div>
+         </div>
+       </article>
+        </section>
+        <section class="tarjetas">
+          <div class="cabecera">
+            <h1>¿Como funciona EASY FIX?</h1>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas laborum soluta alias culpa fugit facere perferendis ea ipsa labore? Adipisci?</h3>
+          </div>
+          
+          <div class="tarjeta">
+            <figure class="imagen">
+                <img src="images/registrate.jpg" alt="">
+            </figure>
+            <div class="titular">
+              <h3>Registrate</h3>
+            </div>
+          </div>
+          <div class="tarjeta">
+            <figure class="imagen">
+                <img src="images/seleccion.jpg" alt="">
+            </figure>
+            <div class="titular">
+              <h3>Elegi un profesional</h3>
+            </div>
+          </div>
+          <div class="tarjeta">
+            <figure class="imagen">
+                <img src="images/contrata.jpg" alt="">
+            </figure>
+            <div class="titular">
+              <h3>Contratalo</h3>
+            </div>
+          </div>
+        </section>
+  
+        <section class="comentarios">
+          <div class="card-contenedor">
+            <figure class="img-contenedor">
+                <img src="images/fotocomentario1.jpg" alt="">
+            </figure>
+            <div class="text-contenedor">
+              <h3>Carlos Meza</h3>
+                <p class="descripcion">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias ullam voluptate, odit modi quas.</p>
+              <div class="estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            </div>
+          </div>
+          <div class="card-contenedor">
+            <figure class="img-contenedor">
+                <img src="images/fotocomentario2.jpg" alt="">
+            </figure>
+            <div class="text-contenedor">
+              <h3>Gustavo Caceres</h3>
+                <p class="descripcion">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias ullam voluptate, odit modi quas.</p>
+              <div class="estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            </div>
+          </div>
+          <div class="card-contenedor">
+            <figure class="img-contenedor">
+                <img src="images/fotocomentario3.jpg" alt="">
+            </figure>
+            <div class="text-contenedor">
+              <h3>Roberto Prato</h3>
+                <p class="descripcion">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias ullam voluptate, odit modi quas.</p>
+              <div class="estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            </div>
+          </div>
+          <div class="card-contenedor">
+            <figure class="img-contenedor">
+                <img src="images/fotocomentario4.jpg" alt="">
+            </figure>
+            <div class="text-contenedor">
+              <h3>Carmelo frias</h3>
+                <p class="descripcion">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias ullam voluptate, odit modi quas.</p>
+              <div class="estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            </div>
+          </div>
+        </section>
 
           <footer class="footer-mobile-tablet w-100">
             <div class="fixed-footer flex flex-nowrap bg-truewhite space-between">
