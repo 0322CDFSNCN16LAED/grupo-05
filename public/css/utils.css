@@ -55,6 +55,9 @@
 .none {
     display: none;
 }
+.inline-block {
+    display: inline-block;
+}
 
 /* wrap */
 
@@ -78,6 +81,9 @@
 
 /* Font-size */
 
+.f-9 {
+    font-size: 9px
+}
 .f-11 {
     font-size: 11px;
 }

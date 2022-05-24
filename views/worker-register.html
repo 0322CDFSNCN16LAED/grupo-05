@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil del Trabajador</title>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Fix</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -15,15 +15,15 @@
     />
     <script src="https://kit.fontawesome.com/71684982aa.js" crossorigin="anonymous"></script>
 
-
     
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/utils.css" />
-    <link rel="stylesheet" href="/css/theme.css" />
 
-</head>
-<body>
-    <header class="header-desktop">
+    <link rel="stylesheet" href="/css/theme.css" />
+  </head>
+  <body>
+
+      <header class="header-desktop">
         <div class="desktop-header-top flex flex-nowrap align-center p2-8 space-around bg-white">
               <h1 class="w-30">
                   <img class="w-100 m-8" src="/images/LOGO EASY FIX.png" alt="Easy Fix">
@@ -32,11 +32,11 @@
               <h2>Promocion</h2>
         </div>
         <div class="desktop-header-buttom flex flex-nowrap space-around bg-white">
-          <h2 class="desktop-header-buttom-h2">Home</h2>
-          <h2 class="desktop-header-buttom-h2">Favoritos</h2>
-          <h2 class="desktop-header-buttom-h2">Carrito</h2>
-          <h2 class="desktop-header-buttom-h2">Notificaciones</h2>
-          <h2 class="mas-buttom desktop-header-buttom-h2">Mas</h2>
+          <a class="t-d-none black" href= "/" ><h2 class="desktop-header-buttom-h2">Home</h2></a>
+          <a class="t-d-none black" href= "/login" ><h2 class="desktop-header-buttom-h2">Ingresar</h2></a>
+          <a class="t-d-none black" href= "/register" ><h2 class="desktop-header-buttom-h2">Registrarse</h2></a>
+          <a class="t-d-none black" href= "/carrito" ><h2 class="desktop-header-buttom-h2">Carrito</h2></a>
+          <a class="t-d-none black" href= "#" ><h2 class="mas-buttom desktop-header-buttom-h2">Mas</h2></a>
         </div>
       </header>
       <header class="mobile-tablet-header">
@@ -50,20 +50,24 @@
               <ul class="flex flex-nowrap space-around align-center">
                 <div class=" flex flex-wrap m-8 align-center center ">
                 <li class="l-s-none b-1-hidden shadow " ><a class="t-d-none black" href= "#funciona" ><i class="fa-solid fa-question"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">¿Como funciona?</p>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">¿Como funciona?</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center ">
                 <li class="l-s-none b-1-hidden shadow " ><a class="t-d-none black" href="#"> <i class="fa-solid fa-magnifying-glass-dollar"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Ofertas</p>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ofertas</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center ">
-                <li class="l-s-none b-1-hidden shadow"><a class="t-d-none black" href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Metodos de pago</p>
+                <li class="l-s-none b-1-hidden shadow"><a class="t-d-none black" href="/login"><i class="fa-solid fa-right-to-bracket"></i></a></li>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ingresa</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center">
-                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="#"><i class="fa-solid fa-plus"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Mas</p>
+                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="/register"><i class="fa-solid fa-address-card"></i></a></li>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">registrate</p>
                 </div>
+                <div class=" flex flex-wrap m-8 align-center center">
+                  <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="/worker-register"><i class="fa-solid fa-upload"></i></a></li>
+                  <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ofrecer servicio</p>
+                  </div>
               </ul>
           </nav>
       </header>
@@ -166,25 +170,25 @@
       </main>
       <footer class="footer-mobile-tablet w-100">
         <div class="fixed-footer flex flex-nowrap bg-truewhite space-between">
-          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-          <i class="footer-icon fa-solid fa-house w-100"></i>
-          <p class="footer-header w-100">Inicio</p>
+          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+          <a class="t-d-none black" href="/"><i class="footer-icon fa-solid fa-house w-100"></i></a>
+          <p class="footer-header black w-100 text-center">Inicio</p>
           </div>
-          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-            <i class="footer-icon fa-solid fa-heart w-100"></i>
-            <p class="footer-header w-100">Favoritos</p>
+          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+            <a class="t-d-none black" href="#"><i class="footer-icon fa-solid fa-heart w-100"></i></a>
+            <p class="footer-header black w-100 text-center">Favoritos</p>
           </div>
-          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-            <i class="footer-icon fa-solid fa-cart-shopping w-100"></i>
-            <p class="footer-header w-100">Carrito</p>
+          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+            <a class="t-d-none black" href="/carrito"><i class="footer-icon fa-solid fa-cart-shopping w-100"></i></a>
+            <p class="footer-header black w-100 text-center">Carrito</p>
           </div>
-          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-            <i class="footer-icon fa-solid fa-bell w-100"></i>
-            <p class="footer-header w-100">Notificaciones</p>
+          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+            <a class="t-d-none black" href="#"><i class="footer-icon fa-solid fa-bell w-100"></i></a>
+            <p class="footer-header black w-100 text-center">Notificaciones</p>
           </div>
-          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-            <i class="footer-icon fa-solid fa-bars w-100"></i> 
-            <p class="footer-header w-100">Mas</p>
+          <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+            <a class="t-d-none black" href="#"><i class="footer-icon fa-solid fa-bars w-100"></i> </a>
+            <p class="footer-header black w-100 text-center">Mas</p>
           </div>
         </div>
       </footer>

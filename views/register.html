@@ -32,11 +32,11 @@
               <h2>Promocion</h2>
         </div>
         <div class="desktop-header-buttom flex flex-nowrap space-around bg-white">
-          <h2 class="desktop-header-buttom-h2">Home</h2>
-          <h2 class="desktop-header-buttom-h2">Favoritos</h2>
-          <h2 class="desktop-header-buttom-h2">Carrito</h2>
-          <h2 class="desktop-header-buttom-h2">Notificaciones</h2>
-          <h2 class="mas-buttom desktop-header-buttom-h2">Mas</h2>
+          <a class="t-d-none black" href= "/" ><h2 class="desktop-header-buttom-h2">Home</h2></a>
+          <a class="t-d-none black" href= "/login" ><h2 class="desktop-header-buttom-h2">Ingresar</h2></a>
+          <a class="t-d-none black" href= "/register" ><h2 class="desktop-header-buttom-h2">Registrarse</h2></a>
+          <a class="t-d-none black" href= "/carrito" ><h2 class="desktop-header-buttom-h2">Carrito</h2></a>
+          <a class="t-d-none black" href= "#" ><h2 class="mas-buttom desktop-header-buttom-h2">Mas</h2></a>
         </div>
       </header>
       <header class="mobile-tablet-header">
@@ -50,45 +50,49 @@
               <ul class="flex flex-nowrap space-around align-center">
                 <div class=" flex flex-wrap m-8 align-center center ">
                 <li class="l-s-none b-1-hidden shadow " ><a class="t-d-none black" href= "#funciona" ><i class="fa-solid fa-question"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">¿Como funciona?</p>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">¿Como funciona?</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center ">
                 <li class="l-s-none b-1-hidden shadow " ><a class="t-d-none black" href="#"> <i class="fa-solid fa-magnifying-glass-dollar"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Ofertas</p>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ofertas</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center ">
-                <li class="l-s-none b-1-hidden shadow"><a class="t-d-none black" href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Metodos de pago</p>
+                <li class="l-s-none b-1-hidden shadow"><a class="t-d-none black" href="/login"><i class="fa-solid fa-right-to-bracket"></i></a></li>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ingresa</p>
                 </div>
                 <div class=" flex flex-wrap m-8 align-center center">
-                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="#"><i class="fa-solid fa-plus"></i></a></li>
-                <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Mas</p>
+                <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="/register"><i class="fa-solid fa-address-card"></i></a></li>
+                <p class=" f-w-700 f-9  m-t-8 w-100 text-center">registrate</p>
                 </div>
+                <div class=" flex flex-wrap m-8 align-center center">
+                  <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="/worker-register"><i class="fa-solid fa-upload"></i></a></li>
+                  <p class=" f-w-700 f-9  m-t-8 w-100 text-center">Ofrecer servicio</p>
+                  </div>
               </ul>
           </nav>
       </header>
-    <main  class="b-gradient flex space-evenly align-center">
-      <form action="register.html" method="POST" class="creat-form form-field">
+    <main  class="bg-truewhite flex space-evenly align-center">
+      <form action="register.html" method="POST" class="bg-gray b-1-hidden b-radius-4 m-20 p-15 creat-form form-field">
         <div class="control-form"> <label for="fotoperfil"> Foto usuario:</label>
-        <input type="file" name="fotoperfil" placeholder="fotoperfil" class="flex flex-wrap">
+        <input type="file" name="fotoperfil" placeholder="fotoperfil" class=" b-1-hidden b-radius-4 p-10 flex flex-wrap">
         </input></div>
         <div class="control-form"> <label for="NombreCompleto"> Nombre y apellido:</label>
-        <input type="text" name="Nombre" placeholder="Nombre y Apellido" class="control">
+        <input type="text" name="Nombre" placeholder="Nombre y Apellido" class="b-1-hidden b-radius-4 p-10 control">
         </input></div>
         <div class="control-form"><label for="NombreUsuario"> Nombre de usuario:</label>
-        <input type="text" name="NombreUsuario" placeholder="Nombre de Usuario" class="control">
+        <input type="text" name="NombreUsuario" placeholder="Nombre de Usuario" class="b-1-hidden b-radius-4 p-10 control">
       </input></div>
       <div class="control-form"><label for="FechaNacimiento"> Fecha de nacimiento:</label>
-      <input type="date" name="FechaNacimiento" placeholder="mm/dd/yy" class="control">
+      <input type="date" name="FechaNacimiento" placeholder="mm/dd/yy" class="b-1-hidden b-radius-4 p-10 control">
       </input></div>
       <div class="control-form"><label for="Domicilio"> Domicilio:</label>
-      <input type="text" name="Domicilio" placeholder="Domicilio" class="control">
+      <input type="text" name="Domicilio" placeholder="Domicilio" class="b-1-hidden b-radius-4 p-10 control">
       </input></div>
       <div class="control-form"><label for="documento"> Documento:</label>
-      <input type="text" name="documento" placeholder="documento" class="control">
+      <input type="text" name="documento" placeholder="documento" class="b-1-hidden b-radius-4 p-10 control">
       </input></div>
       <div class="control-form"><label for="telefono"> Teléfono:</label>
-      <input type="number" name="telefono" placeholder="Teléfono" class="telefono">
+      <input type="number" name="telefono" placeholder="Teléfono" class="b-1-hidden b-radius-4 p-10 telefono">
       </input></div>
       <div class="control-form"><label for="trabajos"> Qué estas buscando?:</label></div>
          <div><label for="plomeria"> Plomeria:</label>
@@ -110,7 +114,7 @@
               <input type="checkbox" name="limpieza" value="limpieza">
               </input></div>
     <div class="control-form"> <label for="contrasenia"> Contraseña:</label>
-    <input type="password" name="contrasenia" placeholder="contraseña" class="control">
+    <input type="password" name="contrasenia" placeholder="contraseña" class="b-1-hidden b-radius-4 p-10  control">
     </input></div>
       <botton type="submit" class="botton-form">Guardar</botton>
       <botton type="reset" class="botton-form">Borrar</botton>
@@ -119,25 +123,25 @@
   </main>
   <footer class="footer-mobile-tablet w-100">
     <div class="fixed-footer flex flex-nowrap bg-truewhite space-between">
-      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-      <i class="footer-icon fa-solid fa-house w-100"></i>
-      <p class="footer-header w-100">Inicio</p>
+      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+      <a class="t-d-none black" href="/"><i class="footer-icon fa-solid fa-house w-100"></i></a>
+      <p class="footer-header black w-100 text-center">Inicio</p>
       </div>
-      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-        <i class="footer-icon fa-solid fa-heart w-100"></i>
-        <p class="footer-header w-100">Favoritos</p>
+      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+        <a class="t-d-none black" href="#"><i class="footer-icon fa-solid fa-heart w-100"></i></a>
+        <p class="footer-header black w-100 text-center">Favoritos</p>
       </div>
-      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-        <i class="footer-icon fa-solid fa-cart-shopping w-100"></i>
-        <p class="footer-header w-100">Carrito</p>
+      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+        <a class="t-d-none black" href="/carrito"><i class="footer-icon fa-solid fa-cart-shopping w-100"></i></a>
+        <p class="footer-header black w-100 text-center">Carrito</p>
       </div>
-      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-        <i class="footer-icon fa-solid fa-bell w-100"></i>
-        <p class="footer-header w-100">Notificaciones</p>
+      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+        <a class="t-d-none black" href="#"><i class="footer-icon fa-solid fa-bell w-100"></i></a>
+        <p class="footer-header black w-100 text-center">Notificaciones</p>
       </div>
-      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
-        <i class="footer-icon fa-solid fa-bars w-100"></i> 
-        <p class="footer-header w-100">Mas</p>
+      <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 center">
+        <a class="t-d-none black" href="#"><i class="footer-icon fa-solid fa-bars w-100"></i> </a>
+        <p class="footer-header black w-100 text-center">Mas</p>
       </div>
     </div>
   </footer>

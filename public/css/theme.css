@@ -91,9 +91,7 @@ body {
     bottom: 0px;
     border-top : solid 1px rgb(179, 179, 179)
 }
-.footer-div-icon {
-    color: rgb(190, 190, 190);
-}
+
 .footer-icon {
     margin: 5px;
 }
@@ -149,13 +147,7 @@ body {
 }
 
 /* formulario */
-.creat-form{
-    padding:20px 15px;
-}
-.control-form{
-    margin-bottom: 15px;
 
-}
 .control-form label{
     margin-bottom: 5px;
     margin-top:5px;
