@@ -22,15 +22,74 @@
     <link rel="stylesheet" href="/css/theme.css" />
   </head>
   <body>
-      <header class="header">
-          <div class="nav-bar-top  flex flex-nowrap  align-center p2-8 bg-white ">
-              <h1 class="w-50">
-                  <img class="w-100 m-8" src="/images/LOGO EASY FIX.png" alt="Easy Fix">
-              </h1>
-              <input class= "w-50 m-8" type="search" name="Buscar">
-              <div class= "w-12 m-8"><a href="/register">Registrate</a> <i class="far fa-id-card"></i></div>
-              <div class= "w-12 m-8"><a href="/login">Log in</a> <i class="fas fa-sign-in-alt"></i></div>
-          </div></header>
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Easy Fix</title>
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700&display=swap" rel="stylesheet"/>
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          rel="stylesheet"
+        />
+        <script src="https://kit.fontawesome.com/71684982aa.js" crossorigin="anonymous"></script>
+    
+        
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/utils.css" />
+    
+        <link rel="stylesheet" href="/css/theme.css" />
+      </head>
+      <body>
+          <header class="header-desktop">
+            <div class="desktop-header-top flex flex-nowrap align-center p2-8 space-around bg-white">
+                  <h1 class="w-30">
+                      <img class="w-100 m-8" src="/images/LOGO EASY FIX.png" alt="Easy Fix">
+                  </h1>
+                  <input class= "search-bar w-50 m-8" type="search" name="Buscar">
+                  <h2>Promocion</h2>
+            </div>
+            <div class="desktop-header-buttom flex flex-nowrap space-around bg-white">
+              <h2 class="desktop-header-buttom-h2">Home</h2>
+              <h2 class="desktop-header-buttom-h2">Favoritos</h2>
+              <h2 class="desktop-header-buttom-h2">Carrito</h2>
+              <h2 class="desktop-header-buttom-h2">Notificaciones</h2>
+              <h2 class="mas-buttom desktop-header-buttom-h2">Mas</h2>
+            </div>
+          </header>
+          <header class="mobile-tablet-header">
+              <div class="nav-bar-top  flex flex-nowrap  align-center p2-8 bg-white ">
+                  <h1 class="w-50">
+                      <img class="w-100 m-8" src="/images/LOGO EASY FIX.png" alt="Easy Fix">
+                  </h1>
+                  <input class= "search-bar w-50 m-8" type="search" name="Buscar">
+              </div>
+              <nav class="nav-bar-bottom  p-b-10 b-gradient">
+                  <ul class="flex flex-nowrap space-around align-center">
+                    <div class=" flex flex-wrap m-8 align-center center ">
+                    <li class="l-s-none b-1-hidden shadow " ><a class="t-d-none black" href= "#funciona" ><i class="fa-solid fa-question"></i></a></li>
+                    <p class=" f-w-700 f-11 m-t-8 w-100 text-center">¿Como funciona?</p>
+                    </div>
+                    <div class=" flex flex-wrap m-8 align-center center ">
+                    <li class="l-s-none b-1-hidden shadow " ><a class="t-d-none black" href="#"> <i class="fa-solid fa-magnifying-glass-dollar"></i></a></li>
+                    <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Ofertas</p>
+                    </div>
+                    <div class=" flex flex-wrap m-8 align-center center ">
+                    <li class="l-s-none b-1-hidden shadow"><a class="t-d-none black" href="#"><i class="fa-solid fa-hand-holding-dollar"></i></a></li>
+                    <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Metodos de pago</p>
+                    </div>
+                    <div class=" flex flex-wrap m-8 align-center center">
+                    <li class="l-s-none b-1-hidden shadow" ><a class="t-d-none black" href="#"><i class="fa-solid fa-plus"></i></a></li>
+                    <p class=" f-w-700 f-11 m-t-8 w-100 text-center">Mas</p>
+                    </div>
+                  </ul>
+              </nav>
+          </header>
     <main class="b-gradient flex space-evenly align-center" >
            <form action="login.html" method="POST" class="creat-form control-form" >
           <div ><label for="NombreUsuario" class="hidden"> Nombre de usuario:</label>
@@ -42,28 +101,54 @@
   <div><button type="submit"  class="botton-form"> Login </button></div>
       </form>
     </main>
-<footer class="footer flex flex-nowrap bg-white">
-        <div class="footer-left w-30 p-10 b-r-4">
-          <img class="w-100" src="/images/LOGO EASY FIX.png">
-          <div class="redes-sociales felx wrap text-center">
-          <i class="fa-brands fa-twitter w-100 m-8"></i>
-          <i class="fa-brands fa-instagram w-100 m-8"></i>
-          <i class="fa-brands fa-facebook w-100 m-8"></i>
-          </div>
+    <footer class="footer-mobile-tablet w-100">
+      <div class="fixed-footer flex flex-nowrap bg-truewhite space-between">
+        <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
+        <i class="footer-icon fa-solid fa-house w-100"></i>
+        <p class="footer-header w-100">Inicio</p>
         </div>
-        <section class="footer-right w-70 p-10 flex flex-wrap ">
-          <article class="footer-artice m-10 w-100 flex flex-wrap center">
-            <i class="fa-solid fa-shield-halved  m-8 w-100 text-center" ></i>
-            <h2>Compras protegidas</h2>
-          </article>
-          <article class="footer-artice m-10 w-100 flex flex-wrap center">
-            <i class="fa-solid fa-certificate  m-8 w-100 text-center"></i>
-            <h2>Profesionales verificados</h2>
-          </article>
-          <article class="footer-artice m-10 w-100 end flex flex-nowrap end align-end">
-            <p class="copyright opacity">Copyright © 2022 EasyFix S.R.L.</p>
-          </article>
-          </section>
-      </footer> 
+        <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
+          <i class="footer-icon fa-solid fa-heart w-100"></i>
+          <p class="footer-header w-100">Favoritos</p>
+        </div>
+        <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
+          <i class="footer-icon fa-solid fa-cart-shopping w-100"></i>
+          <p class="footer-header w-100">Carrito</p>
+        </div>
+        <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
+          <i class="footer-icon fa-solid fa-bell w-100"></i>
+          <p class="footer-header w-100">Notificaciones</p>
+        </div>
+        <div class="footer-div-icon flex flex-wrap w-25 align-center p-10 text-center">
+          <i class="footer-icon fa-solid fa-bars w-100"></i> 
+          <p class="footer-header w-100">Mas</p>
+        </div>
+      </div>
+    </footer>
+     <footer class="footer-desktop flex flex-nowrap bg-white">
+      <div class="footer-left w-30 p-10 b-r-4">
+        <img class="w-100" src="/images/LOGO EASY FIX.png">
+        <div class="redes-sociales felx wrap text-center">
+        <i class="icon-redes-sociales fa-brands fa-twitter w-100 m-8"></i>
+        <i class=" icon-redes-sociales fa-brands fa-instagram w-100 m-8"></i>
+        <i class=" icon-redes-sociales fa-brands fa-facebook w-100 m-8"></i>
+        </div>
+      </div>
+      <section class="footer-right w-70 p-10 flex flex-wrap ">
+        <article class="footer-artice m-10 w-100 flex flex-wrap center">
+          <i class="icon-footer-article fa-solid fa-shield-halved  m-8 w-100 text-center" ></i>
+          <h2>Compras protegidas</h2>
+          <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ducimus laudantium porro. Ex ipsam corrupti cumque enim molestias eligendi ipsa, aspernatur molestiae quisquam perspiciatis labore eos voluptate. Accusantium, voluptate aperiam.</p>
+        </article>
+        <article class="footer-artice m-10 w-100 flex flex-wrap center">
+          <i class=" icon-footer-article fa-solid fa-certificate  m-8 w-100 text-center"></i>
+          <h2>Profesionales verificados</h2>
+          <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci sapiente et, aut consectetur eveniet quam sequi officiis incidunt ab ducimus similique, magnam amet fuga iste maiores nesciunt tempora ex. Nemo!</p>
+        </article>
+        <article class="footer-artice m-10 w-100 end flex flex-nowrap end align-end">
+          <p class="copyright opacity">Copyright © 2022 EasyFix S.R.L.</p>
+        </article>
+        </section>
+    </footer> 
 </body>
 </html>
