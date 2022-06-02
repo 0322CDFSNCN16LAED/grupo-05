@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Fix</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700&display=swap" rel="stylesheet"/>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/71684982aa.js" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/utils.css" />
+
+    <link rel="stylesheet" href="/css/theme.css" />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+  <main class=" bg-gray">
+      <section class="w-85 m-auto">
+        <h2 class=" f-20">Servicio/s a contratar</h2>
+        <article class="b-orange b-radius-20 flex flex-wrap p-5 m-15 shadow">
+          <div class="w-100 flex flex-wrap space-between align-center">
+            <img src="/images/avatar.jpeg" class="w-15 align-self-center b-radius-100 shadow m-20" >
+            <div class="w-50 p-10">
+              <h3 class="f-20">Plomero</h3>
+              <p class="f-20">22/05/2022 | 16:00hs</p>
+            </div>
+            <i class="fas fa-trash-alt w-12 f-20"></i>
+          </div>
+          <div class="w-100 flex flex-wrap space-around f-18 p-10">
+            <p>Pablo Perez</p>
+            <p>$XXXX.xx</p>
+          </div>
+        </article>
+        <article class="b-orange b-radius-20 flex flex-wrap p-5 m-15 shadow">
+          <div class="w-100 flex flex-wrap space-between align-center">
+            <img src="/images/avatar.jpeg" class="w-15 align-self-center b-radius-100 shadow m-20" >
+            <div class="w-50 p-10">
+              <h3 class="f-20">Gasista</h3>
+              <p class="f-20">27/06/2022 | 13:00hs</p>
+            </div>
+            <i class="fas fa-trash-alt w-12 f-20"></i>
+          </div>
+          <div class="w-100 flex flex-wrap space-around f-18 p-10">
+            <p>Juan Martinez</p>
+            <p>$XXXX.xx</p>
+          </div>
+        </article>
+        <div class="f-20 m-8">
+         Total: $XXXX.xx
+        </div>
+        <button class="text-center b-radius-4 bg-grey b-1-hidden f-15 p-10 w-100 mb-10">
+          Comprar
+        </button>
+      </section>
+  </main>
+  <%- include('./partials/footer') %> 
+</body>
+</html>

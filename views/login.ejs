@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Fix</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700&display=swap" rel="stylesheet"/>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/71684982aa.js" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/utils.css" />
+
+    <link rel="stylesheet" href="/css/theme.css" />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+    <main class="bg-gray flex space-evenly align-center" >
+          <form action="login.html" method="POST" class=" bg-gray b-1-hidden b-radius-4 m-20 p-15 creat-form control-form" >
+           <div ><label for="NombreUsuario" class="hidden"> Nombre de usuario:</label>
+           <input type="text" name="NombreUsuario" placeholder="Nombre de Usuario" class=" b-1-hidden b-radius-4 p-10" >
+           </input></div>
+           <div > <label for="contrasenia" class="hidden"> Contraseña:</label>
+           <input type="password" name="contrasenia" placeholder="contraseña" class=" b-1-hidden b-radius-4 p-10" >
+           </input></div>
+           <div><button type="submit"  class=" b-1-hidden b-radius-4 botton-form p-10"> Login </button></div>
+        </form>
+    </main>
+    <%- include('./partials/footer') %> 
+  </body>
+  </html>
