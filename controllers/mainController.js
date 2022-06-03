@@ -3,6 +3,9 @@ const path = require('path');
 let mainController = {
     home: (req,res) => {
         res.render('home');
+    },
+    carrito:(req,res)=> {
+        res.render('carrito');
     }
 }
 

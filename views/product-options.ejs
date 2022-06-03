@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Easy Fix</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700&display=swap" rel="stylesheet"/>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://kit.fontawesome.com/71684982aa.js" crossorigin="anonymous"></script>
+    <%- include('./partials/head') %> 
 
     
     <link rel="stylesheet" href="/css/normalize.css" />
@@ -23,69 +11,188 @@
   </head>
   <body>
       <%- include('./partials/header') %>
-      <main class="p-20">
-          <section class="section p-b-10 bg-white m-8 b-1-hidden">
-              <h2 class=" heading p-10 m-auto text-center b-orange b-1-hidden">Categoria seleccionada</h2>
-              <article class="flex flex-wrap m-20 b-1-hidden">
-                <i class="person-picture fa-solid fa-user w-30 flex center align-center f-xxl bg-truewhite"></i>
-                <div class=" person-details w-70 b-1-hidden bg-truewhite p-15">
-                    <h3>Nombre</h3>
-                    <p class="person-description b-2 m-t-8 p-8 ">Descripcion</p>
-                    <div class="flex flex-nowrap m-t-8">
-                        <p class="m-r-5">Valoracion:</p>
-                        <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
-                    </div>
+
+
+      <p><%= servicios[0]%></p>
+     
+      <main>
+        <section class="container-card">
+          <% for (let i=0; i < servicios.length; i++) { %>
+            <article class="card-container">
+              <figure class = "img-container">
+                <img src=<%=servicios[i].imgServicio%>>
+              </figure>
+              <div class="text-container">
+                <h3> <%=servicios[i].nombre %> </h3>
+        
+                <% for (let i =0; i<(servicios[i].servicios).length; i++) {%>
+                  <p class = "title">
+                    <%= (servicios[i].servicios)[i] %>
+                  </p>  
+                <% } %>
+
+                <p class="description"> <%= servicios[i].descripcion %> </p>
+                <div class="icon">
+                  <i class="fas fa-shopping-cart"></i>
+                  <i class="far fa-comment"></i>
+                  <i class="far fa-heart"></i>
                 </div>
-              </article>
-              <article class="flex flex-wrap m-20 b-1-hidden"> 
-                <i class="person-picture fa-solid fa-user w-30 flex center align-center f-xxl bg-truewhite"></i>
-                <div class="person-details w-70 b-1-hidden bg-truewhite p-15">
-                    <h3>Nombre</h3>
-                    <p class="person-description b-2 m-t-8 p-8 ">Descripcion</p>
-                      <div class="flex flex-nowrap m-t-8">
-                        <p class="m-r-5">Valoracion:</p>
-                        <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
-                      </div>
-                </div>
-              </article>
-              <article class="flex flex-wrap m-20 b-1-hidden">
-                <i class="person-picture fa-solid fa-user w-30 flex center align-center f-xxl bg-truewhite"></i>
-                <div class=" person-details w-70 b-1-hidden bg-truewhite p-15">
-                    <h3>Nombre</h3>
-                    <p class="person-description b-2 m-t-8 p-8 ">Descripcion</p>
-                    <div class="flex flex-nowrap m-t-8">
-                        <p class="m-r-5">Valoracion:</p>
-                        <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-              </article>
-              <article class="flex flex-wrap m-20 b-1-hidden">
-                <i class="person-picture fa-solid fa-user w-30 flex center align-center f-xxl bg-truewhite"></i>
-                <div class="person-details w-70 b-1-hidden bg-truewhite p-15">
-                    <h3>Nombre</h3>
-                    <p class="person-description b-2 m-t-8 p-8 ">Descripcion</p>
-                     <div class="flex flex-nowrap m-t-8">
-                        <p class="m-r-5">Valoracion:</p>
-                        <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-              </article>
-              <article class="flex flex-wrap m-20 b-1-hidden">
-                <i class="person-picture fa-solid fa-user w-30 flex center align-center f-xxl bg-truewhite"></i>
-                <div class="person-details w-70 b-1-hidden bg-truewhite p-15">
-                    <h3>Nombre</h3>
-                    <p class="person-description b-2 m-t-8 p-8 ">Descripcion</p>
-                     <div class="flex flex-nowrap m-t-8">
-                        <p class="m-r-5">Valoracion:</p>
-                        <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-              </article>
-              <article>
-                  <h2 class="p-10 m-auto text-center b-orange b-1-hidden w-70 b-radius-4 ">Ver todos los fixers</h2>
-              </article>
-          </section>
+              </div>
+            </article>
+          <% } %>
+        </section>
       </main>
-      <%- include('./partials/footer') %> 
-  </body>
-  </html>
+
+<!--
+
+  <article class="card-container">
+              <figure class="img-container">
+                  <img src="images//foto1.jpg">
+              </figure>
+              <div class="text-container">
+                  <h3>Pedro Gonzalez</h3>
+                  <p class="title">Electricista</p>
+                  <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, repellendus?
+                  </p>
+               <div class="icon">
+                   <i class="fas fa-shopping-cart"></i>
+                   <i class="far fa-comment"></i>
+                   <i class="far fa-heart"></i>
+               </div>
+              </div>
+          </article>
+          <article class="card-container">
+           <figure class="img-container">
+               <img src="images//foto2.jpg">
+           </figure>
+           <div class="text-container">
+               <h3>David Canvas</h3>
+               <p class="title">Electricista</p>
+               <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, possimus!
+               </p>
+               <div class="icon">
+                 <i class="fas fa-shopping-cart"></i>
+                 <i class="far fa-comment"></i>
+                 <i class="far fa-heart"></i>
+             </div>
+           </div>
+          </article>
+       <article class="card-container">
+         <figure class="img-container">
+             <img src="images//foto3.jpg">
+         </figure>
+         <div class="text-container">
+             <h3>Malena Pitrelli</h3>
+             <p class="title">Electricista</p>
+             <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, possimus!
+             </p>
+             <div class="icon">
+               <i class="fas fa-shopping-cart"></i>
+               <i class="far fa-comment"></i>
+               <i class="far fa-heart"></i>
+           </div>
+         </div>
+       </article>
+
+
+        <section class="tarjetas">
+          <div class="cabecera">
+            <h1>¿Como funciona EASY FIX?</h1>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas laborum soluta alias culpa fugit facere perferendis ea ipsa labore? Adipisci?</h3>
+          </div>
+          
+          <div class="tarjeta">
+            <figure class="imagen">
+                <img src="images/registrate.jpg" alt="">
+            </figure>
+            <div class="titular">
+              <h3>Registrate</h3>
+            </div>
+          </div>
+          <div class="tarjeta">
+            <figure class="imagen">
+                <img src="images/seleccion.jpg" alt="">
+            </figure>
+            <div class="titular">
+              <h3>Elegi un profesional</h3>
+            </div>
+          </div>
+          <div class="tarjeta">
+            <figure class="imagen">
+                <img src="images/contrata.jpg" alt="">
+            </figure>
+            <div class="titular">
+              <h3>Contratalo</h3>
+            </div>
+          </div>
+        </section>
+  
+        <section class="comentarios">
+          <div class="card-contenedor">
+            <figure class="img-contenedor">
+                <img src="images/fotocomentario1.jpg" alt="">
+            </figure>
+            <div class="text-contenedor">
+              <h3>Carlos Meza</h3>
+                <p class="descripcion">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias ullam voluptate, odit modi quas.</p>
+              <div class="estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            </div>
+          </div>
+          <div class="card-contenedor">
+            <figure class="img-contenedor">
+                <img src="images/fotocomentario2.jpg" alt="">
+            </figure>
+            <div class="text-contenedor">
+              <h3>Gustavo Caceres</h3>
+                <p class="descripcion">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias ullam voluptate, odit modi quas.</p>
+              <div class="estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            </div>
+          </div>
+          <div class="card-contenedor">
+            <figure class="img-contenedor">
+                <img src="images/fotocomentario3.jpg" alt="">
+            </figure>
+            <div class="text-contenedor">
+              <h3>Roberto Prato</h3>
+                <p class="descripcion">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias ullam voluptate, odit modi quas.</p>
+              <div class="estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            </div>
+          </div>
+          <div class="card-contenedor">
+            <figure class="img-contenedor">
+                <img src="images/fotocomentario4.jpg" alt="">
+            </figure>
+            <div class="text-contenedor">
+              <h3>Carmelo frias</h3>
+                <p class="descripcion">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum alias ullam voluptate, odit modi quas.</p>
+              <div class="estrellas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            </div>
+          </div>
+        </section>
+
+       --> 
+        <%- include('./partials/footer') %> 
+    </body>
+    </html>
