@@ -12,3 +12,9 @@ Para el segundo sprint, comenzamos por proponernos ciertas caracteristicas por c
 5. Dejar de hacer: Procrastinar.
 
 # Sprint 3
+
+1. Comenzar a hacer: organizarse temprano.
+2. Hacer más: divirnos tareas.
+3. Continuar haciendo: comunicandonos; utilizar Trello.
+4. Hacer menos: las cosas a ultimo momento.
+5. Dejar de hacer: adelantar sprints antes de terminar el actual. 
