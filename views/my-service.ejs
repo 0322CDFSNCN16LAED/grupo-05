@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("./partials/head.ejs")  %>
+</head>
+<body class="">
+    <header>
+        <%- include ("./partials/header-nav.ejs") %>
+    </header>
+    <section>
+      <section class="w-100 p-0 m-0">
+        <div class="row ">
+            <div class=" col-xl-3 d-flex flex-column flex-shrink-0 p-3 text-white bg-dark justify-content-center">
+                <div class="d-flex justify-content-center  text-white text-decoration-none ">
+                  <span class="fs-4">Mi Cuenta</span>
+                </div>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                  <li class="nav-item">
+                      <ul><li><a href="/account" class="nav-link text-white">Mis datos</a></li></ul>
+                      <ul><li><a href="/add-service" class="nav-link text-white">Agregar servicios</a></li></ul>
+                      <ul><li><a href="/my-service" class="nav-link text-white">Mis servicios</a></li></ul>
+                      <ul><li><a href="#" class="nav-link text-white">Ayuda</a></li></ul>
+                      <ul><li><a href="#" class="nav-link text-white">Preguntas frecuentes</a></li></ul>
+                  </li>
+                </ul>
+              </div>
+  <div class="m-center col-xl-9 col-xxl-9 mb-4 mt-4">
+    <section class=" container ">
+                  <div class="mb-2 p-15">
+                    <h3>Mis servicios </h3>
+                    <hr>
+                    <div>
+                      <select class="form-select m-center mb-4" aria-label="Default select example">
+                        <option selected>Selecciona una profesion</option>
+                        <option value="1">Electricista</option>
+                        <option value="2">Plomero</option>
+                        <option value="3">Gasista</option>
+                        <option value="4">Carpintero</option>
+                        <option value="4">Herrero</option>
+                        <option value="5">Tec. Aire</option>
+                        <option value="6">Seguridad</option>
+                        <option value="7">Niñera</option>
+                        <option value="8">Pintor</option>
+                        <option value="9">Albañil</option>
+                        <option value="10">Jardineria</option>
+                        <option value="11">Tec. Pc</option>
+                        <option value="12">Mudanza</option>
+                      </select>
+                    </div>
+                    <div>
+                      <select class="form-select m-center mb-4 mt-4" aria-label="Default select example">
+                        <option selected>Selecciona un precio de referencia $$</option>
+                        <option value="1">$0  -  $2000</option>
+                        <option value="2">$2000  -  $4000</option>
+                        <option value="3">$4000  -  $6000</option>
+                        <option value="4">$6000  -  $8000</option>
+                        <option value="5">$4000  -  $6000</option>
+                        <option value="6">$6000  -  $8000</option>
+                        <option value="7">$8000  -  $9000</option>
+                        <option value="8">$9000  -  $10000</option>
+                        <option value="9">$10000  -  a confirmar </option>
+                      </select>
+                    </div>
+                    <div class="form-floating d-flex justify-content-center ">
+                      <textarea class="form-control mb-4" id="floatingTextarea"></textarea>
+                      <label for="floatingTextarea">Escribe una breve descripcion...</label>
+                    </div>
+                    <div class="text-center p-15 ">
+                      <button type="button" class="btn btn-primary mt-4 mb-4">Modificar</button>
+                      <button type="button" class="btn btn-danger mt-4 mb-4">Eliminar</button>
+                    </div>
+                  </div>
+                </section>
+  </div>
+              
+        
+      </section>
+    </section>
+        
+    <footer>
+        <%- include ("./partials/footer.ejs")  %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </footer>
+</body>
+</html>

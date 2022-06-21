@@ -1,27 +1,77 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <%- include('./partials/head') %>
-
-    
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/utils.css" />
-
-    <link rel="stylesheet" href="/css/theme.css" />
-  </head>
-  <body>
-    <%- include('./partials/header') %>
-    <main class="bg-gray flex space-evenly align-center" >
-          <form action="login.html" method="POST" class=" bg-gray b-1-hidden b-radius-4 m-20 p-15 creat-form control-form" >
-           <div ><label for="NombreUsuario" class="hidden"> Nombre de usuario:</label>
-           <input type="text" name="NombreUsuario" placeholder="Nombre de Usuario" class=" b-1-hidden b-radius-4 p-10" >
-           </input></div>
-           <div > <label for="contrasenia" class="hidden"> Contraseña:</label>
-           <input type="password" name="contrasenia" placeholder="contraseña" class=" b-1-hidden b-radius-4 p-10" >
-           </input></div>
-           <div><button type="submit"  class=" b-1-hidden b-radius-4 botton-form p-10"> Login </button></div>
+<html lang="en">
+<head>
+    <%- include ("./partials/head.ejs")  %> 
+</head>
+<body>
+    <%- include ("./partials/header-nav.ejs") %>
+    <section class="container d-flex justify-content-center">
+      <form class="col-12 col-xl-6">
+        <div class="d-flex justify-content-center ">
+          <h3 class="m-20">Inicia sesion</h3>
+        </div>
+        <!-- Email input -->
+        <div >
+          <div class="m-20">
+        <form class="form-outline mb-4 mt-4">
+          <input type="email" id="form2Example1" class="form-control" name="Email" placeholder="Email" />
         </form>
-    </main>
-    <%- include('./partials/footer') %> 
-  </body>
-  </html>
+      
+        <!-- Password input -->
+        <form class="form-outline mb-4 mt-4">
+          <input type="password" id="form2Example2" class="form-control" name="Contraseña" placeholder="Contraseña" />
+        </form> 
+        <form class="form-outline mb-4">
+          <input type="password" id="form2Example2" class="form-control" name="Contraseña" placeholder="Repita Contraseña" />
+        </form>
+      
+        <!-- 2 column grid layout for inline styling -->
+        <div class="row mb-4">
+          <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <form class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
+              <label class="form-check-label" for="form2Example34"> Remember me </label>
+            </form>
+          </div>
+      
+        </div>
+        
+        <!-- Submit button -->
+        <div class="d-flex just">
+
+          <button type="submit" class="btn btn-danger mb-4">Ingresa</button>
+        </div>
+        <div class="col d-flex justify-content-center">
+          <!-- Simple link -->
+          <a href="#!">Olvidaste tu contraseña?</a>
+        </div>
+      
+        <!-- Register buttons -->
+        <div class="text-center mb-4">
+          <p>No tienes cuenta? <a href="/register">Registrate</a></p>
+          <p>o inicia con:</p>
+          <button type="button" class="btn btn-danger btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+      
+          <button type="button" class="btn btn-danger btn-floating mx-1">
+            <i class="fab fa-google"></i>
+          </button>
+      
+          <button type="button" class="btn btn-danger btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+          </button>
+      
+          <button type="button" class="btn btn-danger btn-floating mx-1">
+            <i class="fab fa-github"></i>
+          </button>
+        </div>
+        </div>
+        </div>
+      </form>
+    </section>
+    <%- include ("./partials/footer.ejs")  %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

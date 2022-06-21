@@ -1,12 +1,19 @@
-const path = require('path');
+const db = require("../data-base/db")
+const allservices = db.getAll()
 
-let mainController = {
-    home: (req,res) => {
-        res.render('home');
+const dbProfessions = require("../data-base/db-professions")
+const allprofessions = dbProfessions.getAll()
+
+const controlador = {
+    index: (req,res) => {
+        res.render ("index",{allprofessions:allprofessions})
     },
-    carrito:(req,res)=> {
-        res.render('carrito');
-    }
+    professionals: (req,res) => {
+    res.render ("professionals",{allservices:allservices})
+    },
+     shop:(req,res)=>{
+        res.render("shop")
+    },
 }
 
-module.exports=mainController;
+module.exports = controlador;

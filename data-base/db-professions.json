@@ -1,0 +1,63 @@
+[
+    {
+        "imagen":"albañil.jpg",
+        "descripcion":"trabajos de albañileria",
+        "profesion":"Albañileria"
+    },
+    {
+        "imagen":"cam-seguridad.jpg",
+        "descripcion":"Instalacion de camaras de seguridad",
+        "profesion":"Seguridad"
+    },
+    {
+        "imagen":"carpintero.jpg",
+        "descripcion":"trabajos de carpinteria",
+        "profesion":"Carpinteria"
+    },
+    {
+        "imagen":"electricista.jpg",
+       "descripcion":"trabajos de Eelectricidad",
+       "profesion":"Electricidad"
+    },
+    {
+        "imagen":"gasista.jpg",
+        "descripcion":"trabajos de medicion y control de gases",
+        "profesion":"Gas"
+    },
+    {
+       "imagen":"jardineria.jpg",
+        "descripcion":"trabajos de jardineria",
+       "profesion":"Jardineria"
+    },
+    {
+        "imagen": "niñera.jpg",
+        "descripcion":"Cuidado de niñ@s",
+       "profesion":"Niñera"
+    },
+    {
+        "imagen":"pintor.jpg",
+        "descripcion":"trabajos de Pintura",
+        "profesion":"Pintura"
+    },
+    {
+        "imagen":"plomero.jpg",
+        "descripcion":"trabajos de Plomeria",
+        "profesion":"Plomeria"
+    },
+    {
+       "imagen":"tec-aire.png",
+        "descripcion":"Instalacion,reparacion y mantenimiento de aires",
+        "profesion":"Climatizacion"
+    },
+    {
+        "imagen":"tec-pc.jpg",
+        "descripcion":"Armado y reparacion de PC/Notebooks",
+        "profesion":"PC"
+    },
+    {
+        "imagen":"mudanza.jpg",
+        "descripcion":"Mudanzas",
+        "profesion":"Mudanza"
+    }
+
+]
