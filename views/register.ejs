@@ -9,85 +9,84 @@
       <div class="d-flex justify-content-center ">
         <h3 class="m-20">Registrate</h3>
       </div>
+
+      <form class="p-15 form-outline" method="POST" action="/user/register" >
         <div class="row mb-4 ">
           <div class="col-12 col-xl-6 mt-4">
-            <form class="p-15 form-outline" >
-              <input type="text" id="form3Example1" class="form-control" name="Nombre" placeholder="Nombre" />
-            </form>
+            <div class="form-group">
+              <label><b>Nombre completo:</b></label>
+              <input 
+                type="text" 
+                name="fullname" 
+                class="form-control"
+                value="<%= locals.oldData ? oldData.fullname : null %>"
+              >
+              <% if (locals.errors && errors.fullname) { %>
+                <div class="text-danger">
+                 <p> <%= errors.fullname.msg %> </p>
+                </div>
+              <% } %>
+            </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
-            <form class="p-15 form-outline" >
-              <input type="text" id="form3Example2" class="form-control" name="Apellido" placeholder="Apellido" />
-            </form>
+            <div class="form-group">
+              <label><b>Email:</b></label>
+              <input 
+                type="text" 
+                name="Email" 
+                class="form-control"
+                value="<%= locals.oldData ? oldData.Email : null %>"
+              >
+              <% if (locals.errors && errors.Email) { %>
+                <div class="text-danger">
+                 <p></p> <%= errors.Email.msg %> </p>
+                </div>
+              <% } %>
+            </div>
           </div>
-        </div>
-      
-        <!-- Email input -->
-        
-        <div class="row mb-4 ">
           <div class="col-12 col-xl-6 mt-4">
-            <form class="p-15 form-outline" >
-              <input type="email" id="form3Example1" class="form-control" name="Email" placeholder="Email"/>
-            </form>
+            <div class="form-group">
+              <label><b>Telefono</b></label>
+              <input 
+                type="text" 
+                name="phone" 
+                class="form-control"
+                value="<%= locals.oldData ? oldData.phone : null %>"
+              >
+              <% if (locals.errors && errors.phone) { %>
+                <div class="text-danger">
+                 <p> <%= errors.phone.msg %> </p>
+                </div>
+              <% } %>
+            </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
-            <form class="p-15 form-outline" >
-              <input type="tel" id="form3Example2" class="form-control" name="Telefono" placeholder="Telefono"/>
-            </form>
+            <div class="form-group">
+              <label><b>Contraseña</b></label>
+              <input 
+                type="text" 
+                name="password" 
+                class="form-control"
+                value=" "
+              >
+              <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                 <p> <%= errors.password.msg %> </p>
+                </div>
+              <% } %>
+            </div>
           </div>
-        </div>
-        
-        
-        <!-- Country input -->
-        <div class="row mb-4">
-          <div class="col-12 col-xl-6 mt-4 ">
-            <form class="p-15">
-              <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Localida">
-              <datalist id="datalistOptions">
-                <option value="Ciudad Autonoma de Buenos Aires">
-                  <option value="Avellaneda">
-                    <option value="Lanus">
-                      <option value="Merlo">
-                        <option value="Moreno">
-                        </datalist >
-                      </form>
-                    </div>
-                    
-                    <div class="col-12 col-xl-6 mt-4 ">
-                      <form class="p-15">
-                        <input class="form-control" list="datalistOptions1" id="exampleDataList" placeholder="Barrio">
-                        <datalist id="datalistOptions1">
-                          <option value="Boedo">
-                            <option value="Caballito">
-                              <option value="Almagro">
-                                <option value="Flores">
-                                  <option value="Palermo">
-                                  </datalist >
-                                </form>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- Password input -->
-                          <div class="row mb-4 ">
-                            <div class="col-12 col-xl-6 mt-4">
-                              <form class="p-15 form-outline" >
-                                <input type="password" id="form3Example1" class="form-control" name="password" placeholder="Contraseña" />
-                              </form>
-                            </div>
-                            <div class="col-12 col-xl-6 mt-4">
-                              <form class="p-15 form-outline" >
-                                <input type="password" id="form3Example2" class="form-control" name="password" placeholder=" Repita Contraseña"/>
-                              </form>
-                            </div>
-                          </div>
-                          
-                          <!-- Checkbox -->
-                          <form class="form-check d-flex justify-content-center mb-4 mt-4">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                            <label class="form-check-label" for="form2Example33">
-                              Acepto los Terminos y Condiciones.
-                             </label>
-                          </form>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Confirme la contraseña</b></label>
+              <input 
+                type="text" 
+                name="password-confirmation" 
+                class="form-control"
+                value=" "
+              >
+            </div>
+          </div>        
       
         <!-- Submit button -->
         <div class="tex-center d-flex just ">

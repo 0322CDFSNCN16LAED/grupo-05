@@ -3,11 +3,6 @@ const path = require("path");
 const app = express();
 // const methodOverride = require("method-override");
 
-const mainRouters= require ("./routes/mainRoutes");
-app.use("/", mainRouters);
-
-
-
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
@@ -20,4 +15,9 @@ app.listen (PORT,()=>{
 });
 
 app.set("view engine","ejs");
+
+// Routes
+const mainRouters= require ("./routes/mainRoutes");
+
+app.use("/", mainRouters);
 

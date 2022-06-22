@@ -1,0 +1,10 @@
+[
+ {
+  "id": 1,
+  "fullname": "roni graizman",
+  "Email": "roni@s.com",
+  "phone": "1234567890",
+  "password": "$2a$10$pQ1xfZof7nVRhkvu9zC.vOfZOgZ2ZMLsY6lD8dtCLc0xVP9Qf6gOC",
+  "password-confirmation": " soyunacontrase;a"
+ }
+]
