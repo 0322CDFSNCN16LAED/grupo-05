@@ -16,12 +16,12 @@
               <hr>
               <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <ul><li><a href="/account" class="nav-link text-white">Mis datos</a></li></ul>
-                    <ul><li><a href="/add-service" class="nav-link text-white">Agregar servicios</a></li></ul>
-                    <ul><li><a href="/my-service" class="nav-link text-white">Mis servicios</a></li></ul>
-                    <ul><li><a href="#" class="nav-link text-white">Ayuda</a></li></ul>
-                    <ul><li><a href="#" class="nav-link text-white">Preguntas frecuentes</a></li></ul>
-                </li>
+                  <ul><li><a href="/user/account" class="nav-link text-white">Mis datos</a></li></ul>
+                  <ul><li><a href="/user/add-service" class="nav-link text-white">Agregar servicios</a></li></ul>
+                  <ul><li><a href="/user/my-service" class="nav-link text-white">Mis servicios</a></li></ul>
+                  <ul><li><a href="#" class="nav-link text-white">Ayuda</a></li></ul>
+                  <ul><li><a href="#" class="nav-link text-white">Preguntas frecuentes</a></li></ul>
+              </li>
               </ul>
             </div>
 
@@ -29,37 +29,37 @@
       <section class="container ">
           <h3>Agregar servicios </h3>
           <hr>
-          <form action="/add-service" method="POST">
+          <form action="/user/add-service" method="POST">
              <div>
             <select class="form-select m-center mb-4 mt-4" aria-label="Default select example" name="profesion">
               <option selected>Selecciona una profesion</option>
-              <option value="1">Electricista</option>
-              <option value="Electricista">Plomero</option>
-              <option value="Electricista">Gasista</option>
-              <option value="Electricista">Carpintero</option>
-              <option value="Electricista">Herrero</option>
-              <option value="Electricista">Tec. Aire</option>
-              <option value="Electricista">Seguridad</option>
-              <option>Niñera</option>
-              <option>Pintor</option>
-              <option>Albañil</option>
-              <option>Jardineria</option>
-              <option>Tec. Pc</option>
-              <option>Mudanza</option>
+              <option value="Electricista">Electricista</option>
+              <option value="Plomero">Plomero</option>
+              <option value="Gasista">Gasista</option>
+              <option value="Carpintero">Carpintero</option>
+              <option value="Herrero">Herrero</option>
+              <option value="Tec. Aire">Tec. Aire</option>
+              <option value="Seguridad">Seguridad</option>
+              <option value="">Niñera</option>
+              <option value="Pintor">Pintor</option>
+              <option value="Albañil">Albañil</option>
+              <option value="Jardineria">Jardineria</option>
+              <option value="Tec. Pc">Tec. Pc</option>
+              <option value="Mudanza">Mudanza</option>
             </select>
           </div>
           <div>
             <select class="form-select m-center mb-4" aria-label="Default select example" name="precio">
               <option selected >Selecciona un precio de referencia $$</option>
-              <option value="1">$0  -  $2000</option>
-              <option value="2">$2000  -  $4000</option>
-              <option value="3">$4000  -  $6000</option>
-              <option value="4">$6000  -  $8000</option>
-              <option value="5">$4000  -  $6000</option>
-              <option value="6">$6000  -  $8000</option>
-              <option value="7">$8000  -  $9000</option>
-              <option value="8">$9000  -  $10000</option>
-              <option value="9">$10000  -  a confirmar </option>
+              <option value="$0  -  $2000">$0  -  $2000</option>
+              <option value="$2000  -  $4000">$2000  -  $4000</option>
+              <option value="$4000  -  $6000">$4000  -  $6000</option>
+              <option value="$6000  -  $8000">$6000  -  $8000</option>
+              <option value="$4000  -  $6000">$4000  -  $6000</option>
+              <option value="$6000  -  $8000">$6000  -  $8000</option>
+              <option value="$8000  -  $9000">$8000  -  $9000</option>
+              <option value="$9000  -  $10000">$9000  -  $10000</option>
+              <option value="$10000  -  a confirmar">$10000  -  a confirmar </option>
             </select>
           </div>
           <div class="form-floating d-flex justify-content-center ">
