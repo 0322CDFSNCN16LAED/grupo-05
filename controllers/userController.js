@@ -20,7 +20,7 @@ const controlador = {
 			});
 		}
 
-		let userInDB = User.findByField('Email', req.body.email);
+		let userInDB = User.findByField('email', req.body.email);
 
 		if (userInDB) {
 			return res.render('register', {
@@ -48,6 +48,33 @@ const controlador = {
     login: (req,res) => {
         res.render ("login")
     },
+    processLogin: (req, res) => {
+        let userToLogin = User.findByField('email', req.body.email);
+		
+		if(userToLogin) {
+			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+			if (isOkThePassword) {
+				delete userToLogin.password;
+				req.session.userLogged = userToLogin;
+
+				//if(req.body.remember_user) {
+				//	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+				//}
+
+				return res.redirect('index');
+			} 
+			return res.render('login', {
+				errors: {
+					email: {
+						msg: 'Las credenciales son inválidas'
+					}
+				}
+			});
+		}
+
+    },
+
+
     registerProfessionals: (req,res) => {
         res.render ("register-professional")
     },

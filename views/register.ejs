@@ -33,13 +33,13 @@
               <label><b>Email:</b></label>
               <input 
                 type="text" 
-                name="Email" 
+                name="email" 
                 class="form-control"
-                value="<%= locals.oldData && oldData.Email ? oldData.Email : null %>"
+                value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
               >
-              <% if (locals.errors && errors.Email) { %>
+              <% if (locals.errors && errors.email) { %>
                 <div class="text-danger">
-                 <p></p> <%= errors.Email.msg %> </p>
+                 <p></p> <%= errors.email.msg %> </p>
                 </div>
               <% } %>
             </div>

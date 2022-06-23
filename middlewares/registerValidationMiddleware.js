@@ -3,7 +3,7 @@ const { body } = require('express-validator');
 
 const registerValidation = [
     body('fullname').notEmpty().withMessage('Tenes que escribir tu nombre completo'),
-    body('Email').notEmpty().withMessage('Tenes que escribir tu Email').bail()
+    body('email').notEmpty().withMessage('Tenes que escribir tu Email').bail()
     .isEmail().withMessage('Tenes que escribir un correo electronico valido'),
     body('phone').notEmpty().withMessage('Ecribi tu numero de telefono').bail()
     .isLength({min: 5},{max: 10}).withMessage('Escribi un numero de telefono valido'),
