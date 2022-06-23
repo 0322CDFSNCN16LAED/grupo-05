@@ -6,40 +6,41 @@
 <body>
     <%- include ("./partials/header-nav.ejs") %>
     <section class="container d-flex justify-content-center">
-      <form class="col-12 col-xl-6">
+      <article class="col-12 col-xl-6">
         <div class="d-flex justify-content-center ">
           <h3 class="m-20">Inicia sesion</h3>
         </div>
         <!-- Email input -->
-        <div >
-          <div class="m-20">
-        <form class="form-outline mb-4 mt-4" method="POST" action="/user/login">
-          <input type="text" id="form2Example1" class="form-control" name="email" placeholder="Email" />
-								<% if (locals.errors && errors.email) { %>
-									<div class="text-danger">
-										<p> <%= errors.email.msg %> </p>
-									</div>
-								<% } %>
-      
-        <!-- Password input -->
-          <input type="password" id="form2Example2" class="form-control" name="password" placeholder="Contraseña" />
-        </form>
-      
-        <!-- 2 column grid layout for inline styling -->
-        <div class="row mb-4">
-         <div class="col d-flex justify-content-center"> 
-         <!--    Checkbox -->
-         <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
-        </label>
-          </div>     
-        </div>
-        
-        <!-- Submit button -->
-        <div class="d-flex just">
 
-          <button type="submit" class="btn btn-danger mb-4">Ingresa</button>
-        </div>
+        <div class="m-20">
+          <form class="form-outline mb-4 mt-4" method="POST" action="/user/login">
+            <input type="text" id="form2Example1" class="form-control mb-4" name="email" placeholder="Email" />
+                  <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                      <p> <%= errors.email.msg %> </p>
+                    </div>
+                  <% } %>
+        
+          <!-- Password input -->
+            <input type="password" id="form2Example2" class="form-control mb-4" name="password" placeholder="Contraseña" />
+          
+        
+          <!-- 2 column grid layout for inline styling -->
+          <div class="row mb-4">
+            <div class="col d-flex justify-content-center"> 
+              <!--    Checkbox -->
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+              </label>
+            </div>     
+          </div>
+          
+          <!-- Submit button -->
+          <div class="d-flex just">
+            <button type="submit" class="btn btn-danger mb-4">Ingresa</button>
+          </div>
+        </form>
+      </div>
         <div class="col d-flex justify-content-center">
           <!-- Simple link -->
           <a href="#!">Olvidaste tu contraseña?</a>
@@ -65,9 +66,7 @@
             <i class="fab fa-github"></i>
           </button>
         </div>
-        </div>
-        </div>
-      </form>
+      </article>
     </section>
     <%- include ("./partials/footer.ejs")  %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

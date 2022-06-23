@@ -6,7 +6,6 @@ const dbProfessionals = require("../models/Professionals")
 const allProfessionals = dbProfessionals.getAll()
 
 const controlador = {
-
     register: (req,res) => {
         res.render ("register")
     },
@@ -60,34 +59,19 @@ const controlador = {
 				//if(req.body.remember_user) {
 				//	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 				//}
-
-				return res.redirect('index');
+				return res.redirect('/');
 			} 
-			return res.render('login', {
+		}
+        else {
+            return res.render('login', {
 				errors: {
 					email: {
 						msg: 'Las credenciales son inválidas'
 					}
 				}
 			});
-		}
-
-    },
-
-
-    registerProfessionals: (req,res) => {
-        res.render ("register-professional")
-    },
-    processRegisterProfessionals: (req, res) => {
-        const resultValidation = validationResult(req);
-        if (resultValidation.isEmpty()){
-            res.send('paso la validacion');
-        } else {
-            return res.render('register-professional', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			})
         }
+
     },
     
     account: (req,res) => {
@@ -97,15 +81,22 @@ const controlador = {
         res.render ("add-service")
     },
     storeService: (req,res) => {
-        const newProfessiona = req.body;
-        if(allProfessionals.length){
-            newProfessiona.id= allProfessionals[allProfessionals.length - 1].id +1;
-        }else {
-            newProfessiona.id = 1;
-        }
-        newProfessiona.imagen = "foto1.jpg"
 
-        allProfessionals.push(newProfessiona);
+        const newProfessional = req.body;
+        if(allProfessionals.length){
+            newProfessional.id= allProfessionals[allProfessionals.length - 1].id +1;
+        }else {
+            newProfessional.id = 1;
+        }
+
+
+        newProfessional ={
+            ...locals.userLogged,
+            imagen: req.file.filename,
+            categoria: req.body.categoria,
+        }
+
+        allProfessionals.push(newProfessional);
 
         dbProfessionals.saveAll(allProfessionals);
 

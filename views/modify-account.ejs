@@ -33,15 +33,31 @@
   
             <div class="row g-2 d-flex just ">
               <div class="mb-3 col d-flex">
-                  <label for="staticEmail" class="col-xl-2 col-form-label w-100">Nombre completo: <%= locals.userLogged.fullname%>  </label>
+              
+                  <label for="staticEmail" class="col-xl-2 col-form-label">Nombre:</label>
+                <form class="col-xl-6">
+                  <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Nombre">
+                </form>
               </div>
+              <div class="mb-3 col d-flex">
+                <label for="staticEmail" class="col-xl-2 col-form-label">Apellido:</label>
+              <form class="col-xl-6">
+                <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Apellido">
+              </form>
             </div>
+          </div>
           <div class="row g-2 d-flex just">
             <div class="mb-3 col d-flex">
-                <label for="staticEmail" class="col-xl-2 col-form-label w-100">Email: <%= locals.userLogged.email%></label>
+                <label for="staticEmail" class="col-xl-2 col-form-label">Email:</label>
+              <form class="col-xl-6">
+                <input type="email" readonly class="form-control-plaintext" id="disabledInput" value="ejemplo@ejemplo.com">
+              </form>
             </div>
             <div class="mb-3 col d-flex">
-              <label for="staticEmail" class="col-xl-2 col-form-label w-100">Telefono: <%= locals.userLogged.phone%></label>
+              <label for="staticEmail" class="col-xl-2 col-form-label">Telefono:</label>
+            <form class="col-xl-6">
+              <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Telefono">
+            </form>
           </div>
         </div>
         <div class="row g-2 d-flex just">
