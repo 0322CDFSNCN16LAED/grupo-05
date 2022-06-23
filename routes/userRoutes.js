@@ -10,6 +10,8 @@ routes.get ("/register", userController.register );
 routes.post('/register', registerValidation, userController.processRegister);
 
 routes.get ("/register-professional",userController.registerProfessionals );
+routes.post ("/register-professional",userController.processRegisterProfessionals );
+
 routes.get ("/login", userController.login);
 routes.get ("/account", userController.account);
 routes.get ("/add-service", userController.addService);

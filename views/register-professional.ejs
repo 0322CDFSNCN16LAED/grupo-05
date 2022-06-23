@@ -6,19 +6,19 @@
 </head>
 <body>
     <%- include ("./partials/header-nav.ejs") %>
-    <section class="container p-15  text-ceter bg-grey">
+    <form class="container p-15  text-ceter" action="/user/register-professional" method="POST">
       <div class="d-flex justify-content-center ">
         <h3 class="m-20">Registrate</h3>
       </div>
         <div class="row mb-4 ">
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="text" id="form3Example1" class="form-control" name="Nombre" placeholder="Nombre" />
+              <input type="text" id="form3Example1" class="form-control" name="nombre" placeholder="Nombre" />
             </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="text" id="form3Example2" class="form-control" name="Apellido" placeholder="Apellido" />
+              <input type="text" id="form3Example2" class="form-control" name="apellido" placeholder="Apellido" />
             </div>
           </div>
         </div>
@@ -28,12 +28,12 @@
         <div class="row mb-4 ">
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="email" id="form3Example1" class="form-control" name="Email" placeholder="Email"/>
+              <input type="email" id="form3Example1" class="form-control" name= "email" placeholder="Email"/>
             </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="tel" id="form3Example2" class="form-control" name="Telefono" placeholder="Telefono"/>
+              <input type="tel" id="form3Example2" class="form-control" name="telefono" placeholder="Telefono"/>
             </div>
           </div>
         </div>
@@ -44,100 +44,66 @@
           <div class="col-12 col-xl-6 mt-4 ">
             <div class="p-15">
                 <div class="col-">
-                    <select id="inputState" class="form-select">
+                    <select id="inputState" class="form-select" name="localidad">
                       <option selected>Localidad</option>
-                      <option>Ciudad Autonoma de Buenos Aires</option>
-                      <option>Lanus</option>
-                      <option>Avellaneda</option>
-                      <option>Moreno</option>
-                      <option>Moron</option>
-                      <option>Merlo</option>
-                      <option>San Isidro</option>
+                      <option value="Ciudad Autonoma de Buenos Aires">Ciudad Autonoma de Buenos Aires</option>
+                      <option value="Lanus">Lanus</option>
+                      <option value="Avellaneda">Avellaneda</option>
+                      <option value="Moreno">Moreno</option>
+                      <option value="Moron">Moron</option>
+                      <option value="Merlo">Merlo</option>
+                      <option value="San Isidro">San Isidro</option>
                     </select>
                   </div>
                       </div>
                     </div>
                     
                     <div class="col-12 col-xl-6 mt-4 ">
-                      <div class="p-15">
-                        <select id="inputState" class="form-select">
+                    <div class="p-15">
+                        <select id="inputState" class="form-select" name="barrio">
                             <option selected>Barrio</option>
-                            <option>Boedo</option>
-                            <option>Caballito</option>
-                            <option>Boedo</option>
-                            <option>Flores</option>
-                            <option>Floresta</option>
-                            <option>Almagro</option>
-                            <option>Palermo</option>
-                            <option>Barrio Norte</option>
-                          </select>
-                                </div>
-                              </div>
+                            <option value="Boedo">Boedo</option>
+                            <option value="Caballito">Caballito</option>
+                            <option value="Nuñes">Nuñes</option>
+                            <option value="Flores">Flores</option>
+                            <option value="Floresta">Floresta</option>
+                            <option value="Almagro">Almagro</option>
+                            <option value="Palermo">Palermo</option>
+                            <option value="Barrio Nombre">Barrio Norte</option>
+                         </select>
+                      </div>
+                    </div>
                             </div>
                           </div>
-                            <!-- list-professions -->
-                            
-                            <div class="text-center">
-                              <div class="container">
-                                <select class="form-select m-center mb-3" aria-label="Default select example">
-                                  <option selected>Selecciona una profesion</option>
-                                  <option value="1">Electricista</option>
-                                  <option value="2">Plomero</option>
-                                  <option value="3">Gasista</option>
-                                  <option value="4">Carpintero</option>
-                                  <option value="4">Herrero</option>
-                                  <option value="5">Tec. Aire</option>
-                                  <option value="6">Seguridad</option>
-                                  <option value="7">Niñera</option>
-                                  <option value="8">Pintor</option>
-                                  <option value="9">Albañil</option>
-                                  <option value="10">Jardineria</option>
-                                  <option value="11">Tec. Pc</option>
-                                  <option value="12">Mudanza</option>
-                                </select>
-                              </div>
-                                <!-- Comments input -->
-                                <div class="form-floating d-flex justify-content-center mt-4 mb-4 m-center">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                    <label for="floatingTextarea">Describite como profesional</label>
-                                  </div>
 
-                                  <div class="input-group mt-4 mb-4">
-                                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                                    <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
-                                  </div>    
-                            </div>
                           <!-- Password input -->
-                          <div class="row mb-4 ">
-                            <div class="col-12 col-xl-6 mt-4">
-                              <div class="p-15 form-outline" >
-                                <input type="password" id="form3Example1" class="form-control" name="password" placeholder="Contraseña" />
-                              </div>
-                            </div>
-                            <div class="col-12 col-xl-6 mt-4">
-                              <div class="p-15 form-outline" >
-                                <input type="password" id="form3Example2" class="form-control" name="password" placeholder=" Repita Contraseña"/>
-                              </div>
-                            </div>
-                          </div>
+        <div class="row mb-4 ">
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="p-15 form-outline" >
+              <input type="password" id="form3Example1" class="form-control" name="password" placeholder="Contraseña" />
+            </div>
+          </div>
+        <div class="col-12 col-xl-6 mt-4">
+          <div class="p-15 form-outline" >
+            <input type="password" id="form3Example2" class="form-control" name="password" placeholder=" Repita Contraseña"/>
+          </div>
+        </div>
+        </div>
                           
                           <!-- Checkbox -->
-                          <div class="form-check d-flex justify-content-center mb-4 mt-4">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                            <label class="form-check-label" for="form2Example33">
-                              Acepto los Terminos y Condiciones.
-          </label>
+        <div class="form-check d-flex justify-content-center mb-4 mt-4">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+            <label class="form-check-label" for="form2Example33">Acepto los Terminos y Condiciones.</label>
         </div>
       
         <!-- Submit button -->
         <div class="tex-center d-flex just ">
           <button type="submit" class="btn btn-danger mb-4 mt-4">Registrate</button>
-        <button type="reset" class="btn btn-danger  mb-4 mt-4">Borrar</button>
         </div>
         
        
       
-    </section>
+    </form>
     <%- include ("./partials/footer.ejs")  %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

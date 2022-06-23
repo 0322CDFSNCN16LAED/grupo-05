@@ -1,15 +1,15 @@
-const db = require("../data-base/db")
-const allservices = db.getAll()
+const db = require("../models/Professionals")
+const allprofessionals = db.getAll()
 
-const dbProfessions = require("../data-base/db-professions")
-const allprofessions = dbProfessions.getAll()
+const dbServices = require("../models/Services")
+const allService = dbServices.getAll()
 
 const controlador = {
     index: (req,res) => {
-        res.render ("index",{allprofessions:allprofessions})
+        res.render ("index",{allService:allService})
     },
     professionals: (req,res) => {
-    res.render ("professionals",{allservices:allservices})
+    res.render ("professionals",{allprofessionals:allprofessionals})
     },
      shop:(req,res)=>{
         res.render("shop")

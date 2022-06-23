@@ -2,6 +2,8 @@ const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 const User = require('../models/User');
+const dbProfessionals = require("../models/Professionals")
+const allProfessionals = dbProfessionals.getAll()
 
 const controlador = {
 
@@ -49,6 +51,10 @@ const controlador = {
     registerProfessionals: (req,res) => {
         res.render ("register-professional")
     },
+    processRegisterProfessionals: (req, res) => {
+        res.send(req.body)
+    },
+    
     account: (req,res) => {
         res.render ("account")
     },
@@ -56,7 +62,19 @@ const controlador = {
         res.render ("add-service")
     },
     storeService: (req,res) => {
-        res.send(req.body)
+        const newProfessiona = req.body;
+        if(allProfessionals.length){
+            newProfessiona.id= allProfessionals[allProfessionals.length - 1].id +1;
+        }else {
+            newProfessiona.id = 1;
+        }
+        newProfessiona.imagen = "foto1.jpg"
+
+        allProfessionals.push(newProfessiona);
+
+        dbProfessionals.saveAll(allProfessionals);
+
+        res.redirect ("/professionals")
     },
     myService: (req,res) => {
         res.render ("my-service")

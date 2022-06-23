@@ -1,0 +1,16 @@
+[
+    {
+        "profesion": "Electricista",
+        "precio": "$0  -  $2000",
+        "descripcion": "soy un buen electricista",
+        "id": 1,
+        "imagen": "foto1.jpg"
+    },
+    {
+        "profesion": "Gasista",
+        "precio": "$0  -  $2000",
+        "imagen": "foto1.jpg",
+        "descripcion": "que buen gasista que soy",
+        "id": 2
+    }
+]
