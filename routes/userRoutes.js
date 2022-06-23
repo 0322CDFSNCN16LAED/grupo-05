@@ -2,6 +2,7 @@ const express = require("express");
 const routes = express.Router();
 const userController = require("../controllers/userController")
 const registerValidation = require('../middlewares/registerValidationMiddleware')
+const professionalRegisterValidation = require('../middlewares/professionalRegisterValidationMiddleware')
 
 // user controllers
 
@@ -10,7 +11,7 @@ routes.get ("/register", userController.register );
 routes.post('/register', registerValidation, userController.processRegister);
 
 routes.get ("/register-professional",userController.registerProfessionals );
-routes.post ("/register-professional",userController.processRegisterProfessionals );
+routes.post ("/register-professional", professionalRegisterValidation,userController.processRegisterProfessionals );
 
 routes.get ("/login", userController.login);
 routes.get ("/account", userController.account);

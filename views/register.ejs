@@ -19,7 +19,7 @@
                 type="text" 
                 name="fullname" 
                 class="form-control"
-                value="<%= locals.oldData ? oldData.fullname : null %>"
+                value="<%= locals.oldData && oldData.fullname ? oldData.fullname : null %>"
               >
               <% if (locals.errors && errors.fullname) { %>
                 <div class="text-danger">
@@ -35,7 +35,7 @@
                 type="text" 
                 name="Email" 
                 class="form-control"
-                value="<%= locals.oldData ? oldData.Email : null %>"
+                value="<%= locals.oldData && oldData.Email ? oldData.Email : null %>"
               >
               <% if (locals.errors && errors.Email) { %>
                 <div class="text-danger">
@@ -51,7 +51,7 @@
                 type="text" 
                 name="phone" 
                 class="form-control"
-                value="<%= locals.oldData ? oldData.phone : null %>"
+                value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"
               >
               <% if (locals.errors && errors.phone) { %>
                 <div class="text-danger">

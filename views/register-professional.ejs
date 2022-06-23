@@ -13,12 +13,22 @@
         <div class="row mb-4 ">
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="text" id="form3Example1" class="form-control" name="nombre" placeholder="Nombre" />
+              <input type="text" id="form3Example1" class="form-control" name="nombre" placeholder="Nombre" value="<%= locals.oldData && oldData.nombre ? oldData.nombre : null %>"/>
+              <% if (locals.errors && errors.nombre) { %>
+                <div class="text-danger">
+                 <p> <%= errors.nombre.msg %> </p>
+                </div>
+              <% } %>
             </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="text" id="form3Example2" class="form-control" name="apellido" placeholder="Apellido" />
+              <input type="text" id="form3Example2" class="form-control" name="apellido" placeholder="Apellido" value="<%= locals.oldData && oldData.apellido ? oldData.apellido : null %>"/>
+              <% if (locals.errors && errors.apellido) { %>
+                <div class="text-danger">
+                 <p> <%= errors.apellido.msg %> </p>
+                </div>
+              <% } %>
             </div>
           </div>
         </div>
@@ -28,12 +38,22 @@
         <div class="row mb-4 ">
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="email" id="form3Example1" class="form-control" name= "email" placeholder="Email"/>
+              <input type="email" id="form3Example1" class="form-control" name= "email" placeholder="Email" value="<%= locals.oldData && oldData.email ? oldData.email : null %>"/>
+              <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                 <p> <%= errors.email.msg %> </p>
+                </div>
+              <% } %>
             </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="tel" id="form3Example2" class="form-control" name="telefono" placeholder="Telefono"/>
+              <input type="tel" id="form3Example2" class="form-control" name="telefono" placeholder="Telefono" value="<%= locals.oldData && oldData.telefono ? oldData.telefono : null %>"/>
+              <% if (locals.errors && errors.telefono) { %>
+                <div class="text-danger">
+                 <p> <%= errors.telefono.msg %> </p>
+                </div>
+              <% } %>
             </div>
           </div>
         </div>
@@ -80,12 +100,17 @@
         <div class="row mb-4 ">
           <div class="col-12 col-xl-6 mt-4">
             <div class="p-15 form-outline" >
-              <input type="password" id="form3Example1" class="form-control" name="password" placeholder="Contraseña" />
+              <input type="password" id="form3Example1" class="form-control" name="password" placeholder="Contraseña" value=""/>
+              <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                 <p> <%= errors.password.msg %> </p>
+                </div>
+              <% } %>
             </div>
           </div>
         <div class="col-12 col-xl-6 mt-4">
           <div class="p-15 form-outline" >
-            <input type="password" id="form3Example2" class="form-control" name="password" placeholder=" Repita Contraseña"/>
+            <input type="password" id="form3Example2" class="form-control" name="password" placeholder=" Repita Contraseña" value = ""/>
           </div>
         </div>
         </div>

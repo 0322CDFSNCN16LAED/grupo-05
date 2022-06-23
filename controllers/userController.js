@@ -52,7 +52,15 @@ const controlador = {
         res.render ("register-professional")
     },
     processRegisterProfessionals: (req, res) => {
-        res.send(req.body)
+        const resultValidation = validationResult(req);
+        if (resultValidation.isEmpty()){
+            res.send('paso la validacion');
+        } else {
+            return res.render('register-professional', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
+        }
     },
     
     account: (req,res) => {
