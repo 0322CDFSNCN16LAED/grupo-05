@@ -81,26 +81,29 @@ const controlador = {
         res.render ("add-service")
     },
     storeService: (req,res) => {
-
-        const newProfessional = req.body;
+        if(req.file){
+           const newProfessional = req.body;
+        newProfessional.imagen = req.file.filename;
         if(allProfessionals.length){
             newProfessional.id= allProfessionals[allProfessionals.length - 1].id +1;
         }else {
             newProfessional.id = 1;
         }
-
-
-        newProfessional ={
-            ...locals.userLogged,
-            imagen: req.file.filename,
-            categoria: req.body.categoria,
-        }
-
+        console.log(req.body)
+        // newProfessional ={
+        //     ...locals.userLogged,
+        //     imagen: req.file.filename,
+        //     categoria: req.body.categoria,
+        // }
         allProfessionals.push(newProfessional);
 
         dbProfessionals.saveAll(allProfessionals);
 
-        res.redirect ("/professionals")
+        res.redirect ("/professionals")   
+        }else{
+            res.render("/user/add-service")
+        }
+      
     },
     myService: (req,res) => {
         res.render ("my-service")

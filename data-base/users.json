@@ -30,5 +30,13 @@
   "phone": "01131799588",
   "password": "$2a$10$IIJSvCslFBT4PjFAwlFNAOVyA8vt9slxKvqOkrggsLgphyoTfEeEa",
   "password-confirmation": "hola1234"
+ },
+ {
+  "id": 5,
+  "fullname": "Javier Alonso",
+  "email": "jaalonsosilva@gmail.com",
+  "phone": "01149580419",
+  "password": "$2a$10$O2IAD22PBzS7rhl6SO9KJu.c1RvtCUzrXjml0Ylh2.BSpcGzjqoxi",
+  "password-confirmation": "12345678"
  }
 ]
