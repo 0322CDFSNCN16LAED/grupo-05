@@ -81,34 +81,26 @@ const controlador = {
         res.render ("add-service")
     },
     storeService: (req,res) => {
-        if(req.file){
-           const newProfessional = req.body;
-        newProfessional.imagen = req.file.filename;
+        const newProfessional = req.body;
+        newProfessional.nombre = req.session.userLogged.fullname;
         if(allProfessionals.length){
             newProfessional.id= allProfessionals[allProfessionals.length - 1].id +1;
         }else {
             newProfessional.id = 1;
         }
-        console.log(req.body)
-        // newProfessional ={
-        //     ...locals.userLogged,
-        //     imagen: req.file.filename,
-        //     categoria: req.body.categoria,
-        // }
-        allProfessionals.push(newProfessional);
-
-        dbProfessionals.saveAll(allProfessionals);
-
-        res.redirect ("/professionals")   
-        }else{
-            res.render("/user/add-service")
+        if(req.file){
+            newProfessional.imagen = req.file.filename;       
         }
-      
+        allProfessionals.push(newProfessional);
+        dbProfessionals.saveAll(allProfessionals);
+        res.redirect ("/professionals");
     },
     myService: (req,res) => {
-        res.render ("my-service")
+        res.render ("my-service", {allprofessionals : allProfessionals})
     },
-    
+    modifyService:(req,res)=>{
+
+    }, 
 }
 
 module.exports = controlador;

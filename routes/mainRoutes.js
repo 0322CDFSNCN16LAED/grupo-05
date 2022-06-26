@@ -8,6 +8,7 @@ const mainController =  require ("../controllers/mainController");
 // main controllers
 routes.get ("/", mainController.index);
 routes.get ("/professionals", mainController.professionals);
+routes.delete("/professionals/:id", mainController.deleteService);
 routes.get ("/shop", mainController.shop);
 
 // User Route

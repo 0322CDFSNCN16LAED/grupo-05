@@ -33,5 +33,8 @@ routes.get ("/account", authMiddleware,userController.account);
 routes.get ("/add-service", authMiddleware,userController.addService);
 routes.post ("/add-service",uploadFile.single("imagen"), userController.storeService);
 routes.get ("/my-service", authMiddleware, userController.myService);
+routes.put("/modify-service", authMiddleware, userController.modifyService);
+
+
 
 module.exports = routes;

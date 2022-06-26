@@ -19,7 +19,14 @@
         <div class="card mb-3 col">
           <div class="row">
             <div class="p-0 col-md-3 w">
-              <img src="/images/<%= servicio.imagen %> " class="img-fluid rounded-start h-100" alt="...">
+
+              <% if(servicio.imagen) { %>
+                <img src="/images/avatars/<%= servicio.imagen %> " class="img-fluid rounded-start h-100" alt="...">
+              <%} else {%>  
+                <img src="/images/default.jpg" class="img-fluid rounded-start h-100" alt="...">
+               <%}%> 
+
+              
               </div>
               
             <div class="col-md-9">

@@ -4,14 +4,12 @@
         "profesion": "Electricista",
         "precio": "$0  -  $2000",
         "descripcion": "soy un buen electricista",
-        "id": 1,
-        "imagen": "foto1.jpg"
+        "id": 1
     },
     {
-        "nombre": "Pedro SIlice",
+        "nombre": "Pedro Silice",
         "profesion": "Gasista",
         "precio": "$0  -  $2000",
-        "imagen": "foto2.jpg",
         "descripcion": "que buen gasista que soy",
         "id": 2
     },
@@ -20,16 +18,33 @@
         "profesion": "Electricista",
         "precio": "$0  -  $2000",
         "descripcion": "soy un buen electricista",
-        "id": 3,
-        "imagen": "foto3.jpg"
+        "id": 3
     },
     {
         "nombre": "Pedro Marchal",
         "profesion": "Gasista",
         "precio": "$0  -  $2000",
-        "imagen": "foto4.jpg",
         "descripcion": "que buen gasista que soy",
         "id": 4
+    },
+    {
+        "profesion": "Plomero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "holaaaaaa ",
+        "imagen": "1656282053735.png",
+        "id": 5
+    },
+    {
+        "profesion": "Plomero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "",
+        "imagen": "1656283441525.jpg",
+        "id": 6
+    },
+    {
+        "profesion": "Herrero",
+        "precio": "$4000  -  $6000",
+        "descripcion": "",
+        "id": 7
     }
-    
 ]

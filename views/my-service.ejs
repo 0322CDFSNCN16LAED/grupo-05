@@ -25,54 +25,55 @@
                 </li>
                 </ul>
               </div>
-  <div class="m-center col-xl-9 col-xxl-9 mb-4 mt-4">
-    <section class=" container ">
-                  <div class="mb-2 p-15">
-                    <h3>Mis servicios </h3>
-                    <hr>
-                    <div>
-                      <select class="form-select m-center mb-4" aria-label="Default select example">
-                        <option selected>Selecciona una profesion</option>
-                        <option value="1">Electricista</option>
-                        <option value="2">Plomero</option>
-                        <option value="3">Gasista</option>
-                        <option value="4">Carpintero</option>
-                        <option value="4">Herrero</option>
-                        <option value="5">Tec. Aire</option>
-                        <option value="6">Seguridad</option>
-                        <option value="7">Niñera</option>
-                        <option value="8">Pintor</option>
-                        <option value="9">Albañil</option>
-                        <option value="10">Jardineria</option>
-                        <option value="11">Tec. Pc</option>
-                        <option value="12">Mudanza</option>
-                      </select>
-                    </div>
-                    <div>
-                      <select class="form-select m-center mb-4 mt-4" aria-label="Default select example">
-                        <option selected>Selecciona un precio de referencia $$</option>
-                        <option value="1">$0  -  $2000</option>
-                        <option value="2">$2000  -  $4000</option>
-                        <option value="3">$4000  -  $6000</option>
-                        <option value="4">$6000  -  $8000</option>
-                        <option value="5">$4000  -  $6000</option>
-                        <option value="6">$6000  -  $8000</option>
-                        <option value="7">$8000  -  $9000</option>
-                        <option value="8">$9000  -  $10000</option>
-                        <option value="9">$10000  -  a confirmar </option>
-                      </select>
-                    </div>
-                    <div class="form-floating d-flex justify-content-center ">
-                      <textarea class="form-control mb-4" id="floatingTextarea"></textarea>
-                      <label for="floatingTextarea">Escribe una breve descripcion...</label>
-                    </div>
-                    <div class="text-center p-15 ">
-                      <button type="button" class="btn btn-primary mt-4 mb-4">Modificar</button>
-                      <button type="button" class="btn btn-danger mt-4 mb-4">Eliminar</button>
+              
+              <section class="d-flex wrap just">
+                <% allprofessionals.forEach(servicio => {%>
+
+                  <% if (servicio.nombre == locals.userLogged.fullname) {%>
+                  <article class="card-p container-fluid d-flex just">
+                    <div class=" w-100 row">
+                      <div class="card mb-3 col">
+                        <div class="row">
+                          <div class="p-0 col-md-3 w">
+              
+                            <% if(servicio.imagen) { %>
+                              <img src="/images/avatars/<%= servicio.imagen %> " class="img-fluid rounded-start h-100" alt="...">
+                            <%} else {%>  
+                              <img src="/images/default.jpg" class="img-fluid rounded-start h-100" alt="...">
+                             <%}%> 
+              
+                            
+                            </div>
+                            
+                          <div class="col-md-9">
+                          <div class="card-body p-1 m-0 jus">
+                            <h5 class="card-title d-flex just border-b"><%= servicio.nombre %> </h5>
+                          
+                            <div class="pofessions d-flex wrap border-b">
+                              <ul></ul>
+                                <li class=" list-style mr-10"><span class="m-0" ><%= servicio.profesion %> </span></li>
+                              </ul>
+                            </div>
+                            <p class="card-text "><%= servicio.descripcion %> </p>
+                            <p class="fst-italic gray-light border-b border-t"> Precios de referencia: $<%= servicio.precio %> </p>
+                            <div class="d-flex just">
+                              <form action="/user/modify-service?_method=PUT" method="POST">
+                                <input type="submit" class="btn btn-danger mb-2 text-center" value="Modificar">
+                              </form>
+                              <form action="/professionals/<%=servicio.id%>?_method=DELETE" method="POST">
+                                <input type="submit" class="btn btn-danger mb-2 text-center" value="Eliminar">
+                              </form>  
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  </article>
+                  <%}%> 
+                  <%  }); %> 
+                
                 </section>
-  </div>
               
         
       </section>

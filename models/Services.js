@@ -5,5 +5,10 @@ const servicesJson= path.join(__dirname,"../data-base/Services.json")
 module.exports = {
     getAll: function (){
         return JSON.parse(fs.readFileSync(servicesJson,"utf-8"))
-    }
+    },
+    saveAll: function (service) {
+        const fileTxt = JSON.stringify(service, null, 4);
+
+        fs.writeFileSync(professionalsJson, fileTxt);
+    },
 }
