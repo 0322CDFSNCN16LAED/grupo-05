@@ -15,12 +15,13 @@
 <section class="d-flex wrap just">
   <% allprofessionals.forEach(servicio => {%>
     <article class="card-p container-fluid d-flex just">
-      <div class="row">
+      <div class=" w-100 row">
         <div class="card mb-3 col">
           <div class="row">
             <div class="p-0 col-md-3 w">
               <img src="/images/<%= servicio.imagen %> " class="img-fluid rounded-start h-100" alt="...">
               </div>
+              
             <div class="col-md-9">
             <div class="card-body p-1 m-0 jus">
               <h5 class="card-title d-flex just border-b"><%= servicio.nombre %> </h5>
@@ -32,7 +33,40 @@
               </div>
               <p class="card-text "><%= servicio.descripcion %> </p>
               <p class="fst-italic gray-light border-b border-t"> Precios de referencia: $<%= servicio.precio %> </p>
-              <button type="submit" class="btn btn-danger mb-2 text-center">Carrito</button>
+              <div class="d-flex just">
+                <!-- Button trigger modal -->
+                <input type="submit" class="btn btn-danger mb-2 text-center" value="Carrito">
+                <button type="button" class="btn btn-danger mb-2 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Presupuesto</button>
+                
+                
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Describe tu situacion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Problema:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Descripcion :</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Enviar mensaje</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  
+              </div>
             </div>
           </div>
         </div>
@@ -42,187 +76,8 @@
     <%  }); %> 
   
   </section>
-  
-  
-    <!-- <div class="card mb-3">
-      <div class="row g-0 ">
-        <div class="col-md-4 ">
-          <img src="/images/foto1.jpg" class="img-fluid rounded-start h-100" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <ul class="list-unstyled list-inline mb-1">
-              <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"> </i></li>
-              <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-              
-              <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-              <li class="list-inline-item"><i class="fa fa-star-half-alt fa-xs"></i></li>
-            </ul>
-            <h5 class="card-title ">Oscar Montero</h5>
-            <h6>Electricista</h6>
-              <div class="range-price">
-                  <h6 class="font-s border-b">Precios de referencia</h6>
-                  <p class="fst-italic gray-light"> $2900 - $4000</p>
-              </div>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-danger" type="button">Carrito</button>
-                </div>
-          </div>
-        </div>
-      </div>
-  </div> -->
-  
-  <!-- <div class="card mb-3">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="/images/foto2.jpg" class="img-fluid rounded-start h-100" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <ul class="list-unstyled list-inline mb-1">
-            <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"> </i></li>
-            <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-            <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-            <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star-half-alt fa-xs"></i></li>
-          </ul>
-          <h5 class="card-title ">Carlos Esparza</h5>
-          <h6>Electricista</h6>
-            <div class="range-price">
-                <h6 class="font-s border-b">Precios de referencia</h6>
-                <p class="fst-italic gray-light"> $2500 - $3500</p>
-            </div>
-            <div class="d-grid gap-2">
-              <button class="btn btn-danger" type="button">Carrito</button>
-            </div>
-        </div>
-      </div>
-    </div>
-</div>
-<div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="/images/foto3.jpg" class="img-fluid rounded-start h-100" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <ul class="list-unstyled list-inline mb-1">
-          <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"> </i></li>
-          <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-          <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-          <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-          <li class="list-inline-item"><i class="fa fa-star-half-alt fa-xs"></i></li>
-        </ul>
-        <h5 class="card-title ">Carlos Esparza</h5>
-        <h6>Electricista</h6>
-          <div class="range-price">
-              <h6 class="font-s border-b">Precios de referencia</h6>
-              <p class="fst-italic gray-light"> $2500 - $3500</p>
-          </div>
-          <div class="d-grid gap-2">
-            <button class="btn btn-danger" type="button">Carrito</button>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3">
-<div class="row g-0">
-  <div class="col-md-4">
-    <img src="/images/foto4.jpg" class="img-fluid rounded-start h-100" alt="...">
-  </div>
-  <div class="col-md-8">
-    <div class="card-body">
-      <ul class="list-unstyled list-inline mb-1">
-        <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"> </i></li>
-        <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-        <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-        <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-        <li class="list-inline-item"><i class="fa fa-star-half-alt fa-xs"></i></li>
-      </ul>
-      <h5 class="card-title ">Carlos Esparza</h5>
-      <h6>Electricista</h6>
-        <div class="range-price">
-            <h6 class="font-s border-b">Precios de referencia</h6>
-            <p class="fst-italic gray-light">  $2500 - $3500</p>
-        </div>
-        <div class="d-grid gap-2">
-          <button class="btn btn-danger" type="button">Carrito</button>
-        </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="/images/foto1.jpg" class="img-fluid rounded-start h-100" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <ul class="list-unstyled list-inline mb-1">
-          <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"> </i></li>
-          <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-          <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-          <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-          <li class="list-inline-item"><i class="fa fa-star-half-alt fa-xs"></i></li>
-        </ul>
-        <h5 class="card-title ">Carlos Esparza</h5>
-        <h6>Electricista</h6>
-          <div class="range-price">
-              <h6 class="font-s border-b">Precios de referencia</h6>
-              <p class="fst-italic gray-light"> $2500 - $3500</p>
-          </div>
-          <div class="d-grid gap-2">
-            <button class="btn btn-danger" type="button">Carrito</button>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3">
-<div class="row g-0">
-  <div class="col-md-4">
-    <img src="/images/foto2.jpg" class="img-fluid rounded-start h-100" alt="...">
-  </div>
-  <div class="col-md-8">
-    <div class="card-body">
-      <ul class="list-unstyled list-inline mb-1">
-        <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"> </i></li>
-        <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-        <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-        <li class="list-inline-item me-0"><i class="fa fa-star fa-xs"></i></li>
-        <li class="list-inline-item"><i class="fa fa-star-half-alt fa-xs"></i></li>
-      </ul>
-      <h5 class="card-title ">Carlos Esparza</h5>
-      <h6>Electricista</h6>
-        <div class="range-price">
-            <h6 class="font-s border-b">Precios de referencia</h6>
-            <p class="fst-italic gray-light"> $2500 - $3500</p>
-        </div>
-        <div class="d-grid gap-2">
-          <button class="btn btn-danger" type="button">Carrito</button>
-        </div>
-    </div>
-  </div>
-</div>
-</div> -->
 
-  <section class="container">
-    <!-- Jumbotron -->
-  <div
-  class="bg-image p-5 shadow-1-strong rounded mb-5 text-white norepet "
-  style="background-image: url('/images/foto5.jpg');"
-  >
-  <h1 class="mb-3 h2">¿Sos profesional?</h1>
-  
-  <p>
-    ¿Queres vender tus servicios?
-  </p>
-  <button type="button" class="btn btn-danger btn-floating">Registrate</button>
-  </div>
-  <!-- Jumbotron -->
-  </section>
+
     </main>
     <footer>
         <%- include ("./partials/footer.ejs")  %>

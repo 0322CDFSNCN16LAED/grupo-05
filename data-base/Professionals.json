@@ -1,5 +1,6 @@
 [
     {
+        "nombre": "Carlos Pedraza",
         "profesion": "Electricista",
         "precio": "$0  -  $2000",
         "descripcion": "soy un buen electricista",
@@ -7,10 +8,27 @@
         "imagen": "foto1.jpg"
     },
     {
+        "nombre": "Pedro SIlice",
         "profesion": "Gasista",
         "precio": "$0  -  $2000",
-        "imagen": "foto1.jpg",
+        "imagen": "foto2.jpg",
         "descripcion": "que buen gasista que soy",
         "id": 2
+    },
+    {
+        "nombre": "Maria Ojeda",
+        "profesion": "Electricista",
+        "precio": "$0  -  $2000",
+        "descripcion": "soy un buen electricista",
+        "id": 3,
+        "imagen": "foto3.jpg"
+    },
+    {
+        "nombre": "Pedro Marchal",
+        "profesion": "Gasista",
+        "precio": "$0  -  $2000",
+        "imagen": "foto4.jpg",
+        "descripcion": "que buen gasista que soy",
+        "id": 4
     }
 ]
