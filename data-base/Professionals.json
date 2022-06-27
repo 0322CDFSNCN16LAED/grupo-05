@@ -46,5 +46,29 @@
         "precio": "$4000  -  $6000",
         "descripcion": "",
         "id": 7
+    },
+    {
+        "profesion": "Electricista",
+        "precio": "$6000  -  $8000",
+        "descripcion": "hola prueba 3",
+        "nombre": "Sofia Castro Murphy",
+        "id": 10,
+        "imagen": "1656351352548.jpg"
+    },
+    {
+        "profesion": "Electricista",
+        "precio": "$6000  -  $8000",
+        "descripcion": "dgdfgdfgfd",
+        "nombre": "Javier Alonso",
+        "id": 11,
+        "imagen": "1656352608132.jpg"
+    },
+    {
+        "profesion": "Plomero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "dgfdgdfgdfgf",
+        "nombre": "Javier Alonso",
+        "id": 12,
+        "imagen": "1656352702850.jpg"
     }
 ]
