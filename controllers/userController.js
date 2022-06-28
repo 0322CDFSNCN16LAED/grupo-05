@@ -96,6 +96,7 @@ const controlador = {
         res.redirect ("/professionals");
     },
     myService: (req,res) => {
+        const allProfessionals = dbProfessionals.getAll()
         res.render ("my-service", {allprofessionals : allProfessionals})
     },
     modifyService:(req,res)=>{
