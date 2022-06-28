@@ -56,10 +56,11 @@
         "imagen": "1656351352548.jpg"
     },
     {
-        "profesion": "Electricista",
-        "precio": "$6000  -  $8000",
-        "descripcion": "dgdfgdfgfd",
+        "profesion": "Tec. Pc",
+        "precio": "$4000  -  $6000",
+        "descripcion": "sdsadwdqwdsa",
         "nombre": "Javier Alonso",
+<<<<<<< HEAD
         "id": 11,
         "imagen": "1656352608132.jpg"
     },
@@ -77,5 +78,8 @@
         "descripcion": "hierro",
         "nombre": "roni graizman",
         "id": 13
+=======
+        "id": 14
+>>>>>>> db61e4349c8bf5ea550e200b30771952636163ed
     }
 ]
