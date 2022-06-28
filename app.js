@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const methodOverride = require("method-override");
 const session = require("express-session");
+const coockieParser = require("cookie-parser")
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 app.use(session({secret:"Secreto", resave:false, saveUninitialized:false,}));
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 app.use(methodOverride("_method"));
 app.use(userLoggedMiddleware)
-
+app.use(coockieParser())
 const PORT= 3030;
 app.listen (PORT,()=>{
     console.log("Corriendo en servidor")
