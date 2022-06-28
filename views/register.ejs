@@ -80,9 +80,14 @@
               <label><b>Confirme la contraseña</b></label>
               <input 
                 type="password" 
-                name="password-confirmation" 
+                name="passwordConfirmation" 
                 class="form-control"
               >
+               <% if (locals.errors && errors.passwordConfirmation) { %>
+                <div class="text-danger">
+                 <p> <%= errors.passwordConfirmation.msg %> </p>
+                </div>
+              <% } %>
             </div>
           </div>        
       

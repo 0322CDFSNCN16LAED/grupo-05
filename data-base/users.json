@@ -38,5 +38,12 @@
   "phone": "01149580419",
   "password": "$2a$10$O2IAD22PBzS7rhl6SO9KJu.c1RvtCUzrXjml0Ylh2.BSpcGzjqoxi",
   "password-confirmation": "12345678"
+ },
+ {
+  "id": 6,
+  "fullname": "roni graizman",
+  "email": "ronigraiz@gmail.com",
+  "phone": "1234567890",
+  "password": "$2a$10$.laz9G16Y0Nm9VY98rO8TerUV8iQafD5vhzayJaCeZrVk3Pe86BSW"
  }
 ]

@@ -12,13 +12,13 @@ const controlador = {
     professionals: (req,res) => {
     const allprofessionals = db.getAll()
 
-    res.render ("professionals",{allprofessionals:allprofessionals})
+    res.render ("professionals", {allprofessionals:allprofessionals})
     },
      shop:(req,res)=>{
         res.render("shop")
     },
     deleteService:(req,res)=>{
-         const allprofessionals = db.getAll()
+       const allprofessionals = db.getAll()
        const filteredList = allprofessionals.filter((service)=>{
             return service.id != req.params.id;
        }) 

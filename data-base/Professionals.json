@@ -70,5 +70,12 @@
         "nombre": "Javier Alonso",
         "id": 12,
         "imagen": "1656352702850.jpg"
+    },
+    {
+        "profesion": "Herrero",
+        "precio": "$4000  -  $6000",
+        "descripcion": "hierro",
+        "nombre": "roni graizman",
+        "id": 13
     }
 ]

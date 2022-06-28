@@ -31,12 +31,27 @@ const controlador = {
 				oldData: req.body
 			});
 		}
+
+        let passwordConfirmation = req.body.password == req.body.passwordConfirmation
+
+        if (!passwordConfirmation) {
+            return res.render('register', {
+                errors: {
+                    passwordConfirmation: {
+                        msg: 'Debes escribir la misma contraseña'
+                    }
+                }
+            })
+        }
+
+
         let newUserID = User.generateId()
 		let userToCreate = {
 			...req.body,
 			password: bcryptjs.hashSync(req.body.password, 10),
-            id: newUserID
+            id: newUserID,
 		}
+        delete userToCreate.passwordConfirmation;
 
 		let userCreated = User.create(userToCreate);
 
@@ -101,6 +116,10 @@ const controlador = {
     modifyService:(req,res)=>{
 
     }, 
+    logout: (req, res) => {
+		req.session.destroy();
+		return res.redirect('/');
+    }
 }
 
 module.exports = controlador;

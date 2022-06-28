@@ -9,30 +9,16 @@
     </header>
     <section class="w-100 p-0 m-0 prueba">
       <div class="row col-xxl-12">
-          <div class=" col-xl-3 col-xxl-3  p- text-white bg-dark justify-content-center">
-              <div class="d-flex justify-content-center  text-white text-decoration-none ">
-                <span class="fs-4">Mi Cuenta</span>
-              </div>
-              <hr>
-              <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                  <ul><li><a href="/user/account" class="nav-link text-white">Mis datos</a></li></ul>
-                  <ul><li><a href="/user/add-service" class="nav-link text-white">Agregar servicios</a></li></ul>
-                  <ul><li><a href="/user/my-service" class="nav-link text-white">Mis servicios</a></li></ul>
-                  <ul><li><a href="#" class="nav-link text-white">Ayuda</a></li></ul>
-                  <ul><li><a href="#" class="nav-link text-white">Preguntas frecuentes</a></li></ul>
-              </li>
-              </ul>
-            </div>
+        <%- include ("./partials/account-header.ejs") %>
 
     <div class="m-center col-xl-9 col-xxl-9 mb-4 mt-4 ">
       <section class="container ">
           <h3>Agregar servicios </h3>
           <hr>
           <form action="/user/add-service" method="POST" enctype="multipart/form-data">
-             <div>
+          <div>
+            <label for="profesion">Selecciona una profesion</label> 
             <select class="form-select m-center mb-4 mt-4" aria-label="Default select example" name="profesion">
-              <option selected>Selecciona una profesion</option>
               <option value="Electricista">Electricista</option>
               <option value="Plomero">Plomero</option>
               <option value="Gasista">Gasista</option>
@@ -49,8 +35,8 @@
             </select>
           </div>
           <div>
+            <label for="precio">Rango de precio</label>
             <select class="form-select m-center mb-4" aria-label="Default select example" name="precio">
-              <option selected >Selecciona un precio de referencia $$</option>
               <option value="$0  -  $2000">$0  -  $2000</option>
               <option value="$2000  -  $4000">$2000  -  $4000</option>
               <option value="$4000  -  $6000">$4000  -  $6000</option>
