@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("./partials/head.ejs")  %>
+</head>
+<body>
+    <header>
+        <%- include ("./partials/header-nav.ejs") %>
+    </header>
+    <section class="w-100 p-0 m-0">
+      <div class="row ">
+        <%- include ("./partials/account-header.ejs") %>
+          <div class="p-0 col-xl-9">
+            <section class=" p-15 text-ceter bg-gre">
+              <div class="mb-4 mt-4">
+                <h3>Mis datos</h3>
+                <hr>
+              </div> 
+  
+            <div class="row g-2 d-flex just ">
+              <div class="mb-3 col d-flex">
+              
+                  <label for="staticEmail" class="col-xl-2 col-form-label">Nombre:</label>
+                <form class="col-xl-6">
+                  <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Nombre">
+                </form>
+              </div>
+              <div class="mb-3 col d-flex">
+                <label for="staticEmail" class="col-xl-2 col-form-label">Apellido:</label>
+              <form class="col-xl-6">
+                <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Apellido">
+              </form>
+            </div>
+          </div>
+          <div class="row g-2 d-flex just">
+            <div class="mb-3 col d-flex">
+                <label for="staticEmail" class="col-xl-2 col-form-label">Email:</label>
+              <form class="col-xl-6">
+                <input type="email" readonly class="form-control-plaintext" id="disabledInput" value="ejemplo@ejemplo.com">
+              </form>
+            </div>
+            <div class="mb-3 col d-flex">
+              <label for="staticEmail" class="col-xl-2 col-form-label">Telefono:</label>
+            <form class="col-xl-6">
+              <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Telefono">
+            </form>
+          </div>
+        </div>
+        <div class="row g-2 d-flex just">
+          <div class="mb-3 col-md d-flex">
+              <label for="staticEmail" class="col-xl-3 col-form-label">Localidad:</label>
+            <form class="col-xl-6">
+              <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Localidad">
+            </form>
+          </div>
+          <div class="mb-3 col-md d-flex">
+            <label for="staticEmail" class="col-xl-2 col-form-label">Barrio:</label>
+          <form class="col-xl-6">
+            <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Barrio">
+          </form>
+        </div>
+      </div>
+      <div class="row g-2 d-flex just">
+        <div class="mb-3 col-md d-flex">
+            <label for="staticEmail" class="col-xl-3 col-form-label">Direccion:</label>
+          <form class="col-xl-6">
+            <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Direccion">
+          </form>
+        </div>
+        <div class="mb-3 col-md d-flex">
+          <label for="staticEmail" class="col-xl-2 col-form-label">C.P.:</label>
+        <form class="col-xl-6">
+          <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="C.P">
+        </form>
+      </div>
+    </div>
+    <div class="row g-2 d-flex just">
+      <div class="mb-3 col-md d-flex">
+          <label for="staticEmail" class="col-xl-3 col-form-label">Piso:</label>
+        <form class="col-xl-6">
+          <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Piso">
+        </form>
+      </div>
+      <div class="mb-3 col-md d-flex">
+        <label for="staticEmail" class="col-xl-2 col-form-label">Dpto.:</label>
+      <form class="col-xl-6">
+        <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Depto">
+      </form>
+    </div>
+  </div>
+   
+      <hr>
+      <!--
+        modificar la cuenta
+        <form action="POST" method="">
+
+        </form>
+      -->
+        
+      </section>
+      </div>
+      </div>
+      </section>
+    <footer>
+        <%- include ("./partials/footer.ejs")  %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </footer>
+</body>
+</html>

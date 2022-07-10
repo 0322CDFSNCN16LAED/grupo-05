@@ -1,66 +1,125 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <%- include('./partials/head') %> 
+<html lang="en">
+<head>
+    <%- include ("./partials/head.ejs")  %> 
+</head>
+<body class="">
+    <%- include ("./partials/header-nav.ejs") %>
+    <section class="container p-15  text-ceter">
+      <div class="d-flex justify-content-center ">
+        <h3 class="m-20">Registrate</h3>
+      </div>
 
-    
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/utils.css" />
-
-    <link rel="stylesheet" href="/css/theme.css" />
-  </head>
-  <body>
-    <%- include('./partials/header') %>
-    <main  class="bg-gray flex space-evenly align-center">
-      <form action="register.html" method="POST" class="b-orange b-1-hidden b-radius-4 m-20 p-15 creat-form form-field">
-        <div class="control-form"> <label for="fotoperfil"> Foto usuario:</label>
-        <input type="file" name="fotoperfil" placeholder="fotoperfil" class=" b-1-hidden b-radius-4 p-10 flex flex-wrap">
-        </input></div>
-        <div class="control-form"> <label for="NombreCompleto"> Nombre y apellido:</label>
-        <input type="text" name="Nombre" placeholder="Nombre y Apellido" class="b-1-hidden b-radius-4 p-10 control">
-        </input></div>
-        <div class="control-form"><label for="NombreUsuario"> Nombre de usuario:</label>
-        <input type="text" name="NombreUsuario" placeholder="Nombre de Usuario" class="b-1-hidden b-radius-4 p-10 control">
-      </input></div>
-      <div class="control-form"><label for="FechaNacimiento"> Fecha de nacimiento:</label>
-      <input type="date" name="FechaNacimiento" placeholder="mm/dd/yy" class="b-1-hidden b-radius-4 p-10 control">
-      </input></div>
-      <div class="control-form"><label for="Domicilio"> Domicilio:</label>
-      <input type="text" name="Domicilio" placeholder="Domicilio" class="b-1-hidden b-radius-4 p-10 control">
-      </input></div>
-      <div class="control-form"><label for="documento"> Documento:</label>
-      <input type="text" name="documento" placeholder="documento" class="b-1-hidden b-radius-4 p-10 control">
-      </input></div>
-      <div class="control-form"><label for="telefono"> Teléfono:</label>
-      <input type="number" name="telefono" placeholder="Teléfono" class="b-1-hidden b-radius-4 p-10 telefono">
-      </input></div>
-      <div class="control-form"><label for="trabajos"> Qué estas buscando?:</label></div>
-         <div><label for="plomeria"> Plomeria:</label>
-          <input type="checkbox" name="plomeria" value="plomeria">
-          </input></div>
-         <div><label for="electricista"> Electricista:</label>
-            <input type="checkbox" name="electricista" value="electricista">
-            </input></div>
-         <div><label for="Pintura"> Pintura:</label>
-            <input type="checkbox" name="pintura" value="pintura">
-            </input></div>
-         <div><label for="ninera"> Niñera:</label>
-            <input type="checkbox" name="ninera" value="ninera">
-            </input></div>
-         <div><label for="gasista"> Gasista :</label>
-              <input type="checkbox" name="gasista" value="gasista">
-              </input></div>
-            <div><label for="limpieza"> Limpieza :</label>
-              <input type="checkbox" name="limpieza" value="limpieza">
-              </input></div>
-    <div class="control-form"> <label for="contrasenia"> Contraseña:</label>
-    <input type="password" name="contrasenia" placeholder="contraseña" class="b-1-hidden b-radius-4 p-10  control">
-    </input></div>
-      <botton type="submit" class=" botton-form">Guardar</botton>
-      <botton type="reset" class="  botton-form">Borrar</botton>
-    </div>
-  </form>
-  </main>
-    <%- include('./partials/footer') %>
+      <form class="p-15 form-outline" method="POST" action="/user/register" >
+        <div class="row mb-4 ">
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Nombre completo:</b></label>
+              <input 
+                type="text" 
+                name="fullname" 
+                class="form-control"
+                value="<%= locals.oldData && oldData.fullname ? oldData.fullname : null %>"
+              >
+              <% if (locals.errors && errors.fullname) { %>
+                <div class="text-danger">
+                 <p> <%= errors.fullname.msg %> </p>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Email:</b></label>
+              <input 
+                type="text" 
+                name="email" 
+                class="form-control"
+                value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
+              >
+              <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                 <p></p> <%= errors.email.msg %> </p>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Telefono</b></label>
+              <input 
+                type="text" 
+                name="phone" 
+                class="form-control"
+                value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"
+              >
+              <% if (locals.errors && errors.phone) { %>
+                <div class="text-danger">
+                 <p> <%= errors.phone.msg %> </p>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Contraseña</b></label>
+              <input 
+                type="password" 
+                name="password" 
+                class="form-control"
+              >
+              <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                 <p> <%= errors.password.msg %> </p>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Confirme la contraseña</b></label>
+              <input 
+                type="password" 
+                name="passwordConfirmation" 
+                class="form-control"
+              >
+               <% if (locals.errors && errors.passwordConfirmation) { %>
+                <div class="text-danger">
+                 <p> <%= errors.passwordConfirmation.msg %> </p>
+                </div>
+              <% } %>
+            </div>
+          </div>        
+      
+        <!-- Submit button -->
+        <div class="tex-center d-flex just ">
+          <button type="submit" class="btn btn-danger mb-4 mt-4">Registrate</button>
+        </div>
+        
+        <!-- Register buttons -->
+        <div class="text-center ">
+          <p> o registrate con:</p>
+          <button type="button" class="btn btn-danger btn-floating mx-1 mb-4">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+      
+          <button type="button" class="btn btn-danger btn-floating mx-1 mb-4">
+            <i class="fab fa-google"></i>
+          </button>
+      
+          <button type="button" class="btn btn-danger btn-floating mx-1 mb-4">
+            <i class="fab fa-twitter"></i>
+          </button>
+      
+          <button type="button" class="btn btn-danger btn-floating mx-1 mb-4">
+            <i class="fab fa-github"></i>
+          </button>
+        </div>
+      
+    </section>
+    <%- include ("./partials/footer.ejs")  %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
+
+

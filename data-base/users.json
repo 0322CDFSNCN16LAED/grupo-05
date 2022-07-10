@@ -1,0 +1,49 @@
+[
+ {
+  "id": 1,
+  "fullname": "roni graizman",
+  "email": "roni@s.com",
+  "phone": "1234567890",
+  "password": "$2a$10$pQ1xfZof7nVRhkvu9zC.vOfZOgZ2ZMLsY6lD8dtCLc0xVP9Qf6gOC",
+  "password-confirmation": "hola12345"
+ },
+ {
+  "id": 2,
+  "fullname": "Sofia Castro Murphy",
+  "email": "socastro@itba.edu.ar",
+  "phone": "01131799588",
+  "password": "$2a$10$1aGQx6W2gccyMICUZa32P.I5eDW.2wr000gXO7gaVBf2DFFL4ZdEG",
+  "password-confirmation": " hola12345"
+ },
+ {
+  "id": 3,
+  "fullname": "Sofia Castro Murphy",
+  "email": "sofia.castromurphy@gmail.com",
+  "phone": "01131799588",
+  "password": "$2a$10$0fwCZgAmwnn3zCV.VovXDuSdiAg.lsn8kdJIL7srBDsQx8Qt0DmBS",
+  "password-confirmation": "hola12345"
+ },
+ {
+  "id": 4,
+  "fullname": "Sofia Castro Murphy",
+  "email": "sofia@gmail.com",
+  "phone": "01131799588",
+  "password": "$2a$10$IIJSvCslFBT4PjFAwlFNAOVyA8vt9slxKvqOkrggsLgphyoTfEeEa",
+  "password-confirmation": "hola1234"
+ },
+ {
+  "id": 5,
+  "fullname": "Javier Alonso",
+  "email": "jaalonsosilva@gmail.com",
+  "phone": "01149580419",
+  "password": "$2a$10$O2IAD22PBzS7rhl6SO9KJu.c1RvtCUzrXjml0Ylh2.BSpcGzjqoxi",
+  "password-confirmation": "12345678"
+ },
+ {
+  "id": 6,
+  "fullname": "roni graizman",
+  "email": "ronigraiz@gmail.com",
+  "phone": "1234567890",
+  "password": "$2a$10$.laz9G16Y0Nm9VY98rO8TerUV8iQafD5vhzayJaCeZrVk3Pe86BSW"
+ }
+]

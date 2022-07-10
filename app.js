@@ -1,25 +1,27 @@
-const express = require("express");
+const express = require ("express");
 const path = require("path");
 const app = express();
+const methodOverride = require("method-override");
+const session = require("express-session");
+const coockieParser = require("cookie-parser")
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
-const rutasMain = require('./routers/main.js');
-const rutasUser = require('./routers/user.js');
-const rutasProduct = require('./routers/product.js');
-
+app.use(session({secret:"Secreto", resave:false, saveUninitialized:false,}));
 app.use(express.static(path.join(__dirname, "public")));
-
-const PORT = 3000;
-
-app.listen(PORT, () => {
-  console.log("corriendo en el puerto " + PORT);
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
+app.use(methodOverride("_method"));
+app.use(userLoggedMiddleware)
+app.use(coockieParser())
+const PORT= 3030;
+app.listen (PORT,()=>{
+    console.log("Corriendo en servidor")
 });
 
-app.set('view engine', 'ejs');
+app.set("view engine","ejs");
 
-app.use("/", rutasMain);
-app.use("/user", rutasUser);
-app.use("/product", rutasProduct);
+// Routes
+const mainRouters= require ("./routes/mainRoutes");
 
-
-
+app.use("/", mainRouters);
 
