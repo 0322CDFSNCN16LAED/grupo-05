@@ -22,14 +22,14 @@ routes.post ('/login', userController.processLogin);
 // user Logout
 routes.get ('/logout', authMiddleware, userController.logout);
 
-routes.get("/modify-service/:id", authMiddleware, userController.modifyService)
-routes.put("/modify-service/:id", userController.processModifyService);
 
 routes.get ("/account", authMiddleware,userController.account);
 routes.get ("/add-service", authMiddleware, userController.addService);
 routes.post ("/add-service", uploadFile.single("imagen"), userController.storeService);
 routes.get ("/my-service", authMiddleware, userController.myService);
 
+routes.get("/modify-service/:id", authMiddleware, userController.modifyService)
+routes.put("/modify-service/:id", uploadFile.single("imagen"), userController.processModifyService);
 
 
 

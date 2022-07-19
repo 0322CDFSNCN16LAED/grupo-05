@@ -3,7 +3,6 @@ const { validationResult } = require('express-validator');
 
 const User = require('../models/User');
 const dbProfessionals = require("../models/Professionals");
-const { findByPk } = require('../models/User');
 const allProfessionals = dbProfessionals.getAll()
 
 const controlador = {
@@ -120,20 +119,18 @@ const controlador = {
         res.render("modify-service", {serviceId : req.params.id})
     }, 
     processModifyService:(req,res)=>{
-        //const services = dbProfessionals.getAll();
-        //const serviceIndex = services.findIndex((s)=> {s.id == req.params.id});
-        //let service = services[serviceIndex];
+        const services = allProfessionals
+        const serviceIndex = services.findIndex((s)=> {s.id == req.params.id});
+        let service = services[serviceIndex];
 
-        res.send(req.body)
+        service.profesion = req.body.profesion;
+        service.precio = req.body.precio;
+        service.descripcion = req.body.descripcion;
 
-        //const modifiedService = req.body;
-
-        //service.profesion = modifiedService.profesion;
-        //service.precio = modifiedService.precio;
-        //service.descripcion = modifiedService.descripcion;
-        //dbProfessionals.saveAll(services)
+        dbProfessionals.saveAll(services)
     
-        //res.redirect('/user/my-service')
+        res.redirect('/user/my-service')
+        console.log(req.body)
     },
     logout: (req, res) => {
 		req.session.destroy();

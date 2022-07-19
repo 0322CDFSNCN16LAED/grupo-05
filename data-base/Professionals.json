@@ -75,5 +75,20 @@
         "descripcion": "",
         "nombre": "Sofia Castro Murphy",
         "id": 15
+    },
+    {
+        "profesion": "Carpintero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "12345678910",
+        "nombre": "Javier Alonso",
+        "id": 16
+    },
+    {
+        "profesion": "Plomero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "plomera",
+        "nombre": "Javier Alonso",
+        "id": 17,
+        "imagen": "1658196396060.jpg"
     }
 ]
