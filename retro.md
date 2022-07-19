@@ -18,3 +18,27 @@ Para el segundo sprint, comenzamos por proponernos ciertas caracteristicas por c
 3. Continuar haciendo: comunicandonos; utilizar Trello.
 4. Hacer menos: las cosas a ultimo momento.
 5. Dejar de hacer: adelantar sprints antes de terminar el actual. 
+
+# Sprint 4
+
+1. Comenzar a hacer: organizarse y comprometerse con el proyecto.
+2. Hacer más: divirnos tareas.
+3. Continuar haciendo: comunicandonos.
+4. Hacer menos: dejar todo para ultimo momento.
+5. Dejar de hacer: ... 
+
+# Sprint 5
+
+1. Comenzar a hacer: organizarse y comprometerse con el proyecto.
+2. Hacer más: divirnos tareas.
+3. Continuar haciendo: ...
+4. Hacer menos: dejar todo para ultimo momento.
+5. Dejar de hacer: ... 
+
+# Sprint 6
+
+1. Comenzar a hacer: 
+2. Hacer más: 
+3. Continuar haciendo:
+4. Hacer menos: 
+5. Dejar de hacer:
