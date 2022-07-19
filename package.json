@@ -1,23 +1,25 @@
 {
-  "name": "grupo-05",
+  "name": "prueba-ejs",
   "version": "1.0.0",
-  "description": "**EASY FIX** es un e-commerce que funciona como una plataforma de conexion entre servicios domesticos(electricista, plomero, gasista, pintor, niñera, fumigador, etc) y clientes. Brinda seguridad y confianza a la hora de contratar un servicio, por medio de reseñas e informacion profesional de la persona. Un usuario puede tanto consumir un servicio como ofrecerlo.\r - - -\r ## Publico objetivo",
+  "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/0322CDFSNCN16LAED/grupo-05.git"
+    "start": "nodemon -e js app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/0322CDFSNCN16LAED/grupo-05/issues"
-  },
-  "homepage": "https://github.com/0322CDFSNCN16LAED/grupo-05#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
   }
 }

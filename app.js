@@ -1,35 +1,27 @@
-const express = require("express");
-
+const express = require ("express");
 const path = require("path");
-
 const app = express();
+const methodOverride = require("method-override");
+const session = require("express-session");
+const coockieParser = require("cookie-parser")
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
+app.use(session({secret:"Secreto", resave:false, saveUninitialized:false,}));
 app.use(express.static(path.join(__dirname, "public")));
-
-const PORT = 3000;
-
-app.listen(PORT, () => {
-  console.log("corriendo en el puerto " + PORT);
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
+app.use(methodOverride("_method"));
+app.use(userLoggedMiddleware)
+app.use(coockieParser())
+const PORT= 3030;
+app.listen (PORT,()=>{
+    console.log("Corriendo en servidor")
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/home.html"));
-});
-app.get("/product-options", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/product-options.html"));
-});
-app.get("/product-detail", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/product-detail.html"));
-});
-app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/register.html"));
-});
-app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/login.html"));
-});
-app.get("/carrito", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/carrito.html"));
-});
-app.get("/worker-register", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/worker-register.html"));
-});
+app.set("view engine","ejs");
+
+// Routes
+const mainRouters= require ("./routes/mainRoutes");
+
+app.use("/", mainRouters);
+

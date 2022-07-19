@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg">
+    <div class="container-fluid">
+      <a class="navbar-brand col-2 p-15" href="/">
+        <i class="bi bi-wrench-adjustable-circle icon "></i>
+        <samp class="Easy">Easy</samp> <span class="Fix">Fix</span> 
+      </a>
+      <button class="navbar-toggler burger fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse just" id="navbarSupportedContent">
+        <ul class="navbar-nav meauto mb-2 mb-lg-0">
+          <li class="nav-item fw-bold ">
+            <a class="nav-link fs-6 text-white" aria-current="page" href="/">Inicio</a>
+          </li>
+          <li class="nav-item fw-bold ">
+            <a class="nav-link fs-6 text-white" aria-current="page" href="#contact">Contacto</a>
+          </li>
+          <% if(locals.isLogged) {%>
+            <li class="nav-item fw-bold ">
+              <a class="nav-link fs-6 text-white " aria-current="page" href="/user/account">Cuenta</a>
+            </li>
+          <%}%>  
+          <li class="nav-item fw-bold ">
+            <a class="nav-link fs-6 text-white" aria-current="page" href="/shop">Carrito</a>
+          </li>
+          <%if(!locals.isLogged){%>
+            <li class="nav-item fw-bold ">
+              <a class="nav-link fs-6 text-white" aria-current="page" href="/user/login">Ingresa</a>
+            </li>
+            <li class="nav-item fw-bold ">
+              <a class="nav-link fs-6 text-white" aria-current="page" href="/user/register">Registrate</a>
+            </li>
+          <%}%>  
+        </ul>
+        
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button type="button" class=" btn btn-danger">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>

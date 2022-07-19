@@ -1,0 +1,94 @@
+[
+    {
+        "nombre": "Carlos Pedraza",
+        "profesion": "Electricista",
+        "precio": "$0  -  $2000",
+        "descripcion": "soy un buen electricista",
+        "id": 1
+    },
+    {
+        "nombre": "Pedro Silice",
+        "profesion": "Gasista",
+        "precio": "$0  -  $2000",
+        "descripcion": "que buen gasista que soy",
+        "id": 2
+    },
+    {
+        "nombre": "Maria Ojeda",
+        "profesion": "Electricista",
+        "precio": "$0  -  $2000",
+        "descripcion": "soy un buen electricista",
+        "id": 3
+    },
+    {
+        "nombre": "Pedro Marchal",
+        "profesion": "Gasista",
+        "precio": "$0  -  $2000",
+        "descripcion": "que buen gasista que soy",
+        "id": 4
+    },
+    {
+        "profesion": "Plomero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "holaaaaaa ",
+        "imagen": "1656282053735.png",
+        "id": 5
+    },
+    {
+        "profesion": "Plomero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "",
+        "imagen": "1656283441525.jpg",
+        "id": 6
+    },
+    {
+        "profesion": "Herrero",
+        "precio": "$4000  -  $6000",
+        "descripcion": "",
+        "id": 7
+    },
+    {
+        "profesion": "Electricista",
+        "precio": "$6000  -  $8000",
+        "descripcion": "hola prueba 3",
+        "nombre": "Sofia Castro Murphy",
+        "id": 10,
+        "imagen": "1656351352548.jpg"
+    },
+    {
+        "profesion": "Herrero",
+        "precio": "$4000  -  $6000",
+        "descripcion": "hierro",
+        "nombre": "roni graizman",
+        "id": 13
+    },
+    {
+        "profesion": "Herrero",
+        "precio": "$9000  -  $10000",
+        "descripcion": "bla bla bla herrero",
+        "nombre": "Sofia Castro Murphy",
+        "id": 14
+    },
+    {
+        "profesion": "Seguridad",
+        "precio": "$6000  -  $8000",
+        "descripcion": "",
+        "nombre": "Sofia Castro Murphy",
+        "id": 15
+    },
+    {
+        "profesion": "Carpintero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "12345678910",
+        "nombre": "Javier Alonso",
+        "id": 16
+    },
+    {
+        "profesion": "Plomero",
+        "precio": "$6000  -  $8000",
+        "descripcion": "plomera",
+        "nombre": "Javier Alonso",
+        "id": 17,
+        "imagen": "1658196396060.jpg"
+    }
+]
