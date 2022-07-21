@@ -45,5 +45,25 @@
   "email": "ronigraiz@gmail.com",
   "phone": "1234567890",
   "password": "$2a$10$.laz9G16Y0Nm9VY98rO8TerUV8iQafD5vhzayJaCeZrVk3Pe86BSW"
+ },
+ {
+  "id": 7,
+  "fullname": "Javier Alonso",
+  "email": "javi@gmail.com",
+  "phone": "01149580419",
+  "direccion": "Av Rivadavia 4350",
+  "departamento": "4",
+  "piso": "c",
+  "password": "$2a$10$9H.typAjI9wtzQMk3.tsr.pOjG5OXfgN6qwpHtzmAvMvl7FB7JH5e"
+ },
+ {
+  "id": 8,
+  "fullname": "Javier Alonso",
+  "email": "javiiiss@outlook.com",
+  "phone": "01149580419",
+  "direccion": "Av Rivadavia 4350",
+  "departamento": "C",
+  "piso": "4",
+  "password": "$2a$10$NCEmyj.CrpzKZZeS2qispO6fvBN4pX0Jvwg4zSYGtynADFWQnN4fS"
  }
 ]

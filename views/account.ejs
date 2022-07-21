@@ -46,30 +46,16 @@
       </div>
       <div class="row g-2 d-flex just">
         <div class="mb-3 col-md d-flex">
-            <label for="staticEmail" class="col-xl-3 col-form-label">Direccion:</label>
-          <form class="col-xl-6">
-            <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Direccion">
-          </form>
+            <label for="staticEmail" class="col-xl-3 col-form-label">Direccion:<%= locals.userLogged.direccion%></label>
         </div>
-        <div class="mb-3 col-md d-flex">
-          <label for="staticEmail" class="col-xl-2 col-form-label">C.P.:</label>
-        <form class="col-xl-6">
-          <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="C.P">
-        </form>
-      </div>
+        
     </div>
     <div class="row g-2 d-flex just">
       <div class="mb-3 col-md d-flex">
-          <label for="staticEmail" class="col-xl-3 col-form-label">Piso:</label>
-        <form class="col-xl-6">
-          <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Piso">
-        </form>
+          <label for="staticEmail" class="col-xl-3 col-form-label">Piso:<%= locals.userLogged.piso%></label>
       </div>
       <div class="mb-3 col-md d-flex">
-        <label for="staticEmail" class="col-xl-2 col-form-label">Dpto.:</label>
-      <form class="col-xl-6">
-        <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Depto">
-      </form>
+        <label for="staticEmail" class="col-xl-2 col-form-label">Dpto.:<%= locals.userLogged.departamento%></label>
     </div>
   </div>
    

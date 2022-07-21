@@ -27,7 +27,7 @@ routes.get ("/account", authMiddleware,userController.account);
 routes.get ("/add-service", authMiddleware, userController.addService);
 routes.post ("/add-service", uploadFile.single("imagen"), userController.storeService);
 routes.get ("/my-service", authMiddleware, userController.myService);
-
+routes.delete("/my-service/:id", userController.deleteService);
 routes.get("/modify-service/:id", authMiddleware, userController.modifyService)
 routes.put("/modify-service/:id", uploadFile.single("imagen"), userController.processModifyService);
 

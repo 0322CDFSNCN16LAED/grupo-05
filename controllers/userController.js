@@ -5,6 +5,7 @@ const User = require('../models/User');
 const dbProfessionals = require("../models/Professionals");
 const allProfessionals = dbProfessionals.getAll()
 
+
 const controlador = {
     register: (req,res) => {
         res.render ("register")
@@ -113,6 +114,16 @@ const controlador = {
     myService: (req,res) => {
         const allProfessionals = dbProfessionals.getAll()
         res.render ("my-service", {allprofessionals : allProfessionals})
+    },
+     deleteService:(req,res)=>{
+       const allprofessionals = dbProfessionals.getAll();
+       console.log(allprofessionals)
+       const filteredList = allprofessionals.filter((service)=>{
+            return service.id != req.params.id;
+       }) 
+       dbProfessionals.saveAll(filteredList);
+      
+       res.redirect("/user/my-service");
     },
     modifyService:(req,res)=>{
         let id = req.params.id;

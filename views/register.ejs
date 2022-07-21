@@ -62,6 +62,77 @@
           </div>
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
+              <label><b>Localidad:</b></label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccione Localidad</option>
+                <option value="Capital Federal">Capital Federal</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Barrio:</b></label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Selecione Barrio</option>
+                <option value="Boedo">Boedo</option>
+                <option value="Caballido">Caballido</option>
+                <option value="Almagro">Almagro</option>
+                <option value="Palermo">Palermo</option>
+                <option value="Puerto Madero">Puerto Madero</option>
+                <option value="Retiro">Retiro</option>
+                <option value="Pompeya">Pompeya</option>
+                <option value="Parque Chacabuco">Parque Chacabuco</option>
+                <option value="Parque Patricios">Parque Patricios</option>
+                <option value="Flores">Flores</option>
+                <option value="Floresta">Floresta</option>
+                <option value="Mataderos">Mataderos</option>
+                <option value="Nuñez">Nuñez</option>
+                <option value="Agronomía">Agronomía</option>
+                <option value="Barracas">Barracas</option>
+                <option value="Belgrano">Belgrano</option>
+                <option value="Barracas">Barracas</option>
+                <option value="Chacarita">Chacarita</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Direccion:</b></label>
+              <input 
+                type="text" 
+                name="direccion" 
+                class="form-control"
+                value="<%= locals.oldData && oldData.direccion ? oldData.direccion : null %>"
+              >
+              <% if (locals.errors && errors.direccion) { %>
+                <div class="text-danger">
+                 <p> <%= errors.direccion.msg %> </p>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Piso:</b></label>
+              <input 
+              type="text" 
+              name="piso" 
+              class="form-control"
+              value="">
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
+              <label><b>Departamento:</b></label>
+              <input 
+                type="text" 
+                name="departamento" 
+                class="form-control"
+                value="">
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 mt-4">
+            <div class="form-group">
               <label><b>Contraseña</b></label>
               <input 
                 type="password" 

@@ -17,15 +17,7 @@ const controlador = {
      shop:(req,res)=>{
         res.render("shop")
     },
-    deleteService:(req,res)=>{
-       const allprofessionals = db.getAll()
-       const filteredList = allprofessionals.filter((service)=>{
-            return service.id != req.params.id;
-       }) 
-       db.saveAll(filteredList);
-      
-       res.redirect("../user/my-service");
-    },
+   
 }
 
 module.exports = controlador;
