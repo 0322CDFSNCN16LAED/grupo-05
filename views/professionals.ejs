@@ -8,9 +8,11 @@
         <%- include ("./partials/header-nav.ejs") %>
     </header>
     <main>
+      <!--tiene que existir profesion-->
       <div class="aqua-gradient tittle d-flex justify-content-center align-items-center">
-        <h1 class="text-white">Encontra los mejores profesionales del rubro</h1>
+        <h1 class="text-white">Encontra los mejores profesionales en <%=profesion%></h1>
        </div>
+
 
 <section class="d-flex wrap just">
   <% allprofessionals.forEach(servicio => {%>

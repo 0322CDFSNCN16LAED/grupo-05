@@ -14,4 +14,70 @@ module.exports = {
     getOne: function (id) {
         return this.getAll().find((p) => p.id == id);
     },
+    getFilteredProfessionals: function(opcion){
+        const allProfessionals = this.getAll();
+        switch(opcion){
+            case "Albañileria":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Albañil";
+                })
+                break;
+            case "Seguridad":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Seguridad";
+                })
+                break;
+            case "Carpinteria":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Carpintero";
+                })
+                break;
+            case "Electricidad":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Electricista";
+                })
+                break;
+            case "Gas":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Gasista";
+                })
+                break;
+            case "Jardineria":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Jardineria";
+                })
+                break;
+            case "Niñera":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Niñera";
+                })
+                break;
+            case "Pintura":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Pintor";
+                })
+                break;  
+            case "Plomeria":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Plomero";
+                })
+                break; 
+            case "Climatizacion":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Tec. Aire";
+                })
+                break;   
+            case "PC":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Tec. Pc";
+                })
+                break; 
+            case "Mudanza":
+                filteredProfessionals = allProfessionals.filter((p)=>{
+                    return p.profesion == "Mudanza";
+                })
+                break; 
+        }
+        return filteredProfessionals;
+    }
 }

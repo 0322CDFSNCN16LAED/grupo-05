@@ -76,7 +76,16 @@ const controlador = {
 				//	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 				//}
 				return res.redirect('/');
-			} 
+			}
+            else {
+                return res.render('login', {
+                    errors: {
+                        password: {
+                            msg: 'La contraseña es inválida'
+                        }
+                    }
+                });
+            } 
 		}
         else {
             return res.render('login', {

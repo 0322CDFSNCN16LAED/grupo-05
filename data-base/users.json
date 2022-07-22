@@ -65,5 +65,16 @@
   "departamento": "C",
   "piso": "4",
   "password": "$2a$10$NCEmyj.CrpzKZZeS2qispO6fvBN4pX0Jvwg4zSYGtynADFWQnN4fS"
+ },
+ {
+  "id": 9,
+  "fullname": "Gian Guazzone",
+  "email": "gianguazzone@gmail.com",
+  "phone": "11334567890",
+  "barrio": "Retiro",
+  "direccion": "Juncal",
+  "piso": "6",
+  "departamento": "D",
+  "password": "$2a$10$OkKcyiOkT9BnsDA70gaimuOEem/e5yrhysuRnCB5KKegG5OtaE8Ua"
  }
 ]

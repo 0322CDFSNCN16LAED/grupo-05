@@ -3,6 +3,10 @@ const routes = express.Router();
 
 const userController = require("../controllers/userController")
 
+
+//perfil carrito y cosas de usuarios
+
+
 // Middlewares 
 const registerValidation = require('../middlewares/registerValidationMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware');

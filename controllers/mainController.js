@@ -10,9 +10,13 @@ const controlador = {
         res.render ("index",{allService:allService})
     },
     professionals: (req,res) => {
-    const allprofessionals = db.getAll()
-
-    res.render ("professionals", {allprofessionals:allprofessionals})
+        if(req.params.id){
+            const filteredProfessionals = db.getFilteredProfessionals(req.params.id)
+            res.render ("professionals", {allprofessionals:filteredProfessionals, profesion: req.params.id})
+        }else{
+            const allprofessionals = db.getAll()
+            res.render ("professionals", {allprofessionals:allprofessionals})
+        }
     },
      shop:(req,res)=>{
         res.render("shop")

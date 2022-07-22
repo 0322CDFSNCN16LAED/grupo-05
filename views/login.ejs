@@ -23,7 +23,11 @@
         
           <!-- Password input -->
             <input type="password" id="form2Example2" class="form-control mb-4" name="password" placeholder="Contraseña" />
-          
+              <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                  <p> <%= errors.password.msg %> </p>
+                </div>
+              <% } %>
         
           <!-- 2 column grid layout for inline styling -->
           <div class="row mb-4">

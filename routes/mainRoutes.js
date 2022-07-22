@@ -7,11 +7,12 @@ const mainController =  require ("../controllers/mainController");
 
 // main controllers
 routes.get ("/", mainController.index);
-routes.get ("/professionals", mainController.professionals);
 routes.get ("/shop", mainController.shop);
 
 // User Route
 routes.use('/user', userRoutes);
+
+routes.get ("/professionals/:id?", mainController.professionals);
 
 
 module.exports = routes;
