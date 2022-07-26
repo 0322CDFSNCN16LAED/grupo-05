@@ -1,7 +1,7 @@
 const express = require("express");
 const routes = express.Router();
 
-const userController = require("../controllers/userController")
+const userController = require("../controllers2/userController")
 
 
 //perfil carrito y cosas de usuarios

@@ -10,7 +10,7 @@
     <main>
       <!--tiene que existir profesion-->
       <div class="aqua-gradient tittle d-flex justify-content-center align-items-center">
-        <h1 class="text-white">Encontra los mejores profesionales en <%=profesion%></h1>
+        <h1 class="text-white">Encontra los mejores profesionales en <%=allprofessionals.profesion%></h1>
        </div>
 
 
@@ -41,40 +41,36 @@
                 </ul>
               </div>
               <p class="card-text "><%= servicio.descripcion %> </p>
-              <p class="fst-italic gray-light border-b border-t"> Precios de referencia: <%= servicio.precio %> </p>
+              <p class="fst-italic gray-light border-b border-t"> Precios de visita: <%= servicio.precio %> </p>
               <div class="d-flex just">
                 <!-- Button trigger modal -->
                 <input type="submit" class="btn btn-danger mb-2 text-center" value="Carrito">
-                <button type="button" class="btn btn-danger mb-2 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Presupuesto</button>
+                <button type="button" class="btn btn-danger mb-2 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Contacto</button>
                 
                 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Describe tu situacion</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Datos de contacto del profesional.</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <form>
                           <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Problema:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="recipient-name" class="col-form-label">Nombre y Apellido: <%= servicio.nombre %> </label>
                           </div>
                           <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Descripcion :</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <label for="message-text" class="col-form-label">Telefono:</label>
+                          </div>
+                          <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Email:</label>
                           </div>
                         </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Enviar mensaje</button>
                       </div>
                     </div>
                   </div>
                 </div>
-                  
               </div>
             </div>
           </div>
@@ -83,7 +79,6 @@
     </div>
     </article> 
     <%  }); %> 
-  
   </section>
 
 
