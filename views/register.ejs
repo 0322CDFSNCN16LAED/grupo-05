@@ -10,7 +10,7 @@
         <h3 class="m-20">Registrate</h3>
       </div>
 
-      <form class="p-15 form-outline" method="POST" action="/user/register" >
+      <form class="p-15 form-outline" method="POST" action="/user/register" enctype="multipart/form-data" >
         <div class="row mb-4 ">
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
@@ -131,6 +131,10 @@
                 value="">
             </div>
           </div>
+          <div class="input-group mt-4 mb-4">
+            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="imagen">
+            <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
+          </div> 
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Contraseña</b></label>

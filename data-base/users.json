@@ -76,5 +76,18 @@
   "piso": "6",
   "departamento": "D",
   "password": "$2a$10$OkKcyiOkT9BnsDA70gaimuOEem/e5yrhysuRnCB5KKegG5OtaE8Ua"
+ },
+ {
+  "id": 10,
+  "fullname": "Javier Alonso",
+  "email": "javiiiss@hotmail.com",
+  "phone": "01149580419",
+  "localidad": "Capital Federal",
+  "barrio": "Mataderos",
+  "direccion": "Av Rivadavia 4350",
+  "piso": "4",
+  "departamento": "C",
+  "password": "$2a$10$N6Uub3IqFky6OGzIDTvpU.2eB5F9oMy.mvOSDRucVtAkr0GnPPPCG",
+  "imagen": "1659278932820.jpg"
  }
 ]

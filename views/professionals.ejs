@@ -43,10 +43,13 @@
               <p class="card-text "><%= servicio.descripcion %> </p>
               <p class="fst-italic gray-light border-b border-t"> Precios de visita: <%= servicio.precio %> </p>
               <div class="d-flex just">
+                <a href="/user/service-detail/<%=servicio.id%> "> <input type="submit" class="btn btn-danger mb-2 text-center" value="Ver perfil"></a>
+              
                 <!-- Button trigger modal -->
-                <input type="submit" class="btn btn-danger mb-2 text-center" value="Carrito">
+                <!-- <input type="submit" class="btn btn-danger mb-2 text-center" value="Carrito">
+
                 <button type="button" class="btn btn-danger mb-2 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Contacto</button>
-                
+                 -->
                 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
