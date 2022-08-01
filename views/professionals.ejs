@@ -44,36 +44,6 @@
               <p class="fst-italic gray-light border-b border-t"> Precios de visita: <%= servicio.precio %> </p>
               <div class="d-flex just">
                 <a href="/user/service-detail/<%=servicio.id%> "> <input type="submit" class="btn btn-danger mb-2 text-center" value="Ver perfil"></a>
-              
-                <!-- Button trigger modal -->
-                <!-- <input type="submit" class="btn btn-danger mb-2 text-center" value="Carrito">
-
-                <button type="button" class="btn btn-danger mb-2 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Contacto</button>
-                 -->
-                
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Datos de contacto del profesional.</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Nombre y Apellido: <%= servicio.nombre %> </label>
-                          </div>
-                          <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Telefono:</label>
-                          </div>
-                          <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Email:</label>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

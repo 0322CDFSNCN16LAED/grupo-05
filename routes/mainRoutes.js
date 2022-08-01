@@ -8,6 +8,7 @@ const authRoutes = require("./authRoutes")
 // main controllers
 routes.get ("/", mainController.index);
 routes.get ("/shop", mainController.shop);
+
 routes.get ("/:id?", mainController.professionals);
 
 // User Route

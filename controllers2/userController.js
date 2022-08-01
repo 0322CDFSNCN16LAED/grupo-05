@@ -49,7 +49,7 @@ const controlador = {
     }, 
     serviceDetail: (req,res)=>{
         const product = dbProfessionals.getOne(req.params.id);
-        res.send(product)
+        res.render("service-detail",{product})
         // res.render("service-detail",{product:product})
 
     },
