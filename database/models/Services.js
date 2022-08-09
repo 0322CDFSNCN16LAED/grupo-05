@@ -31,4 +31,6 @@ module.exports = function(sequelize, dataTypes){
             foreignKey: "userId"
         });
     }
+
+    return Service;
 }
