@@ -2,7 +2,7 @@
 
 const express = require("express");
 const routes = express.Router();
-const authController = require("../controllers2/authController")
+const authController = require("../controllers/authController")
 
 // Middlewares 
 const registerValidation = require('../middlewares/registerValidationMiddleware')
