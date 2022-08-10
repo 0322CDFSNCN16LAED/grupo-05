@@ -39,7 +39,7 @@ const controlador = {
             return res.render('register', {
                 errors: {
                     passwordConfirmation: {
-                        msg: 'Debes escribir la misma contraseña'
+                        msg: 'credenciales inválidas'
                     }
                 }
             })
@@ -84,7 +84,7 @@ const controlador = {
                 return res.render('login', {
                     errors: {
                         password: {
-                            msg: 'La contraseña es inválida'
+                            msg: 'credenciales inválidas'
                         }
                     }
                 });
@@ -94,7 +94,7 @@ const controlador = {
             return res.render('login', {
                 errors: {
                     email: {
-                        msg: 'Las credenciales son inválidas'
+                        msg: 'credenciales inválidas'
                     }
                 }
             });
