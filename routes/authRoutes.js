@@ -11,7 +11,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const uploadFile = require('../middlewares/multerMiddleware');
 
 routes.get ('/register', guestMiddleware,authController.register );
-routes.post('/register', registerValidation, authController.processRegister);
+routes.post('/register', registerValidation, uploadFile, authController.processRegister);
 
 // user Login
 routes.get ('/login', guestMiddleware,authController.login);
