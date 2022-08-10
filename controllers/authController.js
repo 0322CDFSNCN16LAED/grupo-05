@@ -59,7 +59,7 @@ const controlador = {
     
         let userCreated = User.create(userToCreate);
     
-        return res.redirect('/user/login');
+        return res.redirect('/auth/login');
         
     },
     
