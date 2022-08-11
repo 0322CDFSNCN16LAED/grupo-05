@@ -1,14 +1,17 @@
-const db = require("../models/Professionals")
-const allprofessionals = db.getAll()
+// const db = require("../models/Professionals")
+// const allprofessionals = db.getAll()
 
-const dbServices = require("../models/Services")
-const allService = dbServices.getAll()
-
+// const dbServices = require("../models/Services")
+// const allService = dbServices.getAll()
+const db = require("../database/models");
 const controlador = {
     
     index: (req,res) => {
-        res.send(db.Service)
-        //res.render ("index",{allService:allService})
+        db.Category.findAll()
+        .then(function(categoria){
+            return res.render("index",{categoria})
+        })
+        // res.render ("index",{allService:allService})
     },
     professionals: (req,res) => {
         if(req.params.id){

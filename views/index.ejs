@@ -151,16 +151,14 @@
 
       <!-- Professions Cards -->
 <section class="container-card">
-  <% allService.forEach(profesion => {%>
+  <% categoria.forEach(profesion => {%>
   <div class="card w-80 m-15 bg-6 ovf-hiden bg-2 b-shadow transition-ease">
     <figure>
-        <img src="/images/<%= profesion.imagen %> " alt="gasista">
+        <img src="/images/<%= profesion.categoryPhoto %> " alt="">
     </figure>
     <div class="contenido">
-      <p class="descripcion">
-        <%= profesion.descripcion %>  
-      </p>
-      <a href="/<%= profesion.profesion%>" class="btn btn-danger btn-floating"><%= profesion.profesion %></a>
+      
+      <a href="/<%= profesion.name%>" class="btn btn-danger btn-floating"><%= profesion.name %></a>
      
     </div>
   </div>
