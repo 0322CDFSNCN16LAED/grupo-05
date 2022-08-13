@@ -8,8 +8,7 @@ module.exports = function(sequelize, dataTypes){
 		},
 		localidad: {type:dataTypes.STRING, allowNull:false},
         barrio:{ type: dataTypes.STRING, allowNull:false},
-        calle: {type: dataTypes.STRING, allowNull:false},
-        numero:  {type:dataTypes.INTEGER, allowNull:false},
+        direccion: {type: dataTypes.STRING, allowNull:false},
         piso: {type:dataTypes.INTEGER},
         departamento: {type:dataTypes.STRING},
         userId: {type:dataTypes.INTEGER}

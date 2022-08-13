@@ -4,60 +4,73 @@ const { validationResult } = require('express-validator');
 const User = require('../models/User');
 const dbProfessionals = require("../models/Professionals");
 const allProfessionals = dbProfessionals.getAll()
-
+const db = require("../database/models");
 const controlador = {
 
     register: (req,res) => {
         res.render ("register")
     },
     processRegister: (req, res) => {
-        const resultValidation = validationResult(req);
+        // const resultValidation = validationResult(req);
+        // if (resultValidation.errors.length > 0) {
+        //     return res.render('register', {
+        //         errors: resultValidation.mapped(),
+        //         oldData: req.body
+        //     });
+        // }
+        db.Address.create({
+            localidad:req.body.localidad,
+            barrio: req.body.barrio,
+            direccion:req.body.direccion,
+            piso:req.body.piso,
+            departamento:req.body.departamento,
+        })
+        db.User.create( {
+            fullName:req.body.fullname,
+            phoneNumber:req.body.phone,
+            email:req.body.email,
+            password:req.body.password,
+        })
     
-        if (resultValidation.errors.length > 0) {
-            return res.render('register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
-        }
     
-        let userInDB = User.findByField('email', req.body.email);
+        // let userInDB = User.findByField('email', req.body.email);
     
-        if (userInDB) {
-            return res.render('register', {
-                errors: {
-                    email: {
-                        msg: 'Este email ya está registrado'
-                    }
-                },
-                oldData: req.body
-            });
-        }
+        // if (userInDB) {
+        //     return res.render('register', {
+        //         errors: {
+        //             email: {
+        //                 msg: 'Este email ya está registrado'
+        //             }
+        //         },
+        //         oldData: req.body
+        //     });
+        // }
     
-        let passwordConfirmation = req.body.password == req.body.passwordConfirmation
+        // let passwordConfirmation = req.body.password == req.body.passwordConfirmation
     
-        if (!passwordConfirmation) {
-            return res.render('register', {
-                errors: {
-                    passwordConfirmation: {
-                        msg: 'credenciales inválidas'
-                    }
-                }
-            })
-        }
+        // if (!passwordConfirmation) {
+        //     return res.render('register', {
+        //         errors: {
+        //             passwordConfirmation: {
+        //                 msg: 'credenciales inválidas'
+        //             }
+        //         }
+        //     })
+        // }
         
     
-        let newUserID = User.generateId()
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            id: newUserID,
-        }
-        if(req.file){
-            userToCreate.imagen = req.file.filename;       
-        }
-        delete userToCreate.passwordConfirmation;
+        // let newUserID = User.generateId()
+        // let userToCreate = {
+        //     ...req.body,
+        //     password: bcryptjs.hashSync(req.body.password, 10),
+        //     id: newUserID,
+        // }
+        // if(req.file){
+        //     userToCreate.imagen = req.file.filename;       
+        // }
+        // delete userToCreate.passwordConfirmation;
     
-        let userCreated = User.create(userToCreate);
+        // let userCreated = User.create(userToCreate);
     
         return res.redirect('/auth/login');
         
