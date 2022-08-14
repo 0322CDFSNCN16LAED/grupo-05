@@ -55,21 +55,22 @@ const controlador = {
              })
          }
 
-         await Address.create({
-            localidad:req.body.localidad,
-            barrio: req.body.barrio,
-            direccion:req.body.direccion,
-            piso:req.body.piso,
-            departamento:req.body.departamento,
-        })
-        await User.create( {
+         const userToCreate = await User.create( {
             fullName:req.body.fullname,
             profilePicture: req.file,
             phoneNumber:req.body.phone,
             email:req.body.email,
             password: await bcrypt.hash(req.body.password, 12),
         })
-        
+        const addressToCreate = await Address.create({
+            localidad:req.body.localidad,
+            barrio: req.body.barrio,
+            direccion:req.body.direccion,
+            piso:req.body.piso,
+            departamento:req.body.departamento,
+            userId: userToCreate.id
+        })
+
         res.redirect('/auth/login');
         
     },

@@ -26,7 +26,6 @@ module.exports = function(sequelize, dataTypes){
             as:"user", 
             foreignKey: "userId"
         });
-
     }
     return Address;
 }

@@ -10,7 +10,6 @@ module.exports = function(sequelize, dataTypes){
         profilePicture:{ type: dataTypes.INTEGER},
         phoneNumber:{type: dataTypes.INTEGER},
         email: {type: dataTypes.STRING},
-        addressId: {type:dataTypes.INTEGER},
         password:{type:dataTypes.STRING},
         createdAt:{type:dataTypes.DATE},
         updatedAt: {type:dataTypes.DATE}
@@ -22,9 +21,9 @@ module.exports = function(sequelize, dataTypes){
 	let User = sequelize.define(alias,cols,config);
 
     User.associate = function(models){
-        User.belongsTo(models.Address, { 
+        User.hasMany(models.Address, { 
             as:"address", 
-            foreignKey: "addressId"
+            foreignKey: "userId"
         });
         User.hasMany(models.Service, {
             as: "services",
