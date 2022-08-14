@@ -34,7 +34,7 @@
   
             <div class="row g-2 d-flex just ">
               <div class="mb-3 col d-flex">
-                  <label for="staticEmail" class="col-xl-2 col-form-label w-100"><b>Nombre completo:</b> <%= locals.userLogged.fullname%>  </label>
+                  <label for="staticEmail" class="col-xl-2 col-form-label w-100"><b>Nombre completo:</b> <%= locals.userLogged.fullName%>  </label>
               </div>
             </div>
           <div class="row g-2 d-flex just">
@@ -42,29 +42,29 @@
                 <label for="staticEmail" class="col-xl-2 col-form-label w-100"><b>Email:</b> <%= locals.userLogged.email%></label>
             </div>
             <div class="mb-3 col d-flex">
-              <label for="staticEmail" class="col-xl-2 col-form-label w-100"><b>Telefono:</b> <%= locals.userLogged.phone%></label>
+              <label for="staticEmail" class="col-xl-2 col-form-label w-100"><b>Telefono:</b> <%= locals.userLogged.phoneNumber%></label>
           </div>
         </div>
         <div class="row g-2 d-flex just">
           <div class="mb-3 col-md d-flex">
-              <label for="staticEmail" class="col-xl-3 col-form-label"><b>Localidad:</b> <%= locals.userLogged.localidad%></label>
+              <label for="staticEmail" class="col-xl-3 col-form-label"><b>Localidad:</b> <%= locals.userLogged.address.localidad %></label>
           </div>
           <div class="mb-3 col-md d-flex">
-            <label for="staticEmail" class="col-xl-2 col-form-label w-100"><b>Barrio:</b> <%= locals.userLogged.barrio%></label>
+            <label for="staticEmail" class="col-xl-2 col-form-label w-100"><b>Barrio:</b> <%= locals.userLogged.address.barrio%></label>
         </div>
       </div>
       <div class="row g-2 d-flex just">
         <div class="mb-3 col-md d-flex">
-            <label for="staticEmail" class="col-xl-3 col-form-label"><b>Direccion:</b> <%= locals.userLogged.direccion%></label>
+            <label for="staticEmail" class="col-xl-3 col-form-label"><b>Direccion:</b> <%= locals.userLogged.address.direccion%></label>
         </div>
         
     </div>
     <div class="row g-2 d-flex just">
       <div class="mb-3 col-md d-flex">
-          <label for="staticEmail" class="col-xl-3 col-form-label"><b>Piso:</b> <%= locals.userLogged.piso%></label>
+          <label for="staticEmail" class="col-xl-3 col-form-label"><b>Piso:</b> <%= locals.userLogged.address.piso%></label>
       </div>
       <div class="mb-3 col-md d-flex">
-        <label for="staticEmail" class="col-xl-2 col-form-label"><b>Dpto.:</b> <%= locals.userLogged.departamento%></label>
+        <label for="staticEmail" class="col-xl-2 col-form-label"><b>Dpto.:</b> <%= locals.userLogged.address.departamento%></label>
     </div>
   </div>
    

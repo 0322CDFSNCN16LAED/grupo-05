@@ -78,19 +78,23 @@ const controlador = {
     login: (req,res) => {
         res.render ("login")
     },
-    processLogin: (req, res) => {
-        let userToLogin = User.findOne(
-            {
+    processLogin: async (req, res) => {
+        let userToLogin = await User.findOne(
+            {     
                 where: {
                     email: req.body.email,
-            }
+                }
         })
         
         if(userToLogin) {
             let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
             if (isOkThePassword) {
                 delete userToLogin.password;
-                req.session.userLogged = userToLogin;
+                req.session.userLogged = await User.findByPk(userToLogin.id, {
+                    include: [{association: "address"}]
+                })
+
+                console.log(req.session.userLogged.address)
     
                 //if(req.body.remember_user) {
                 //	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
