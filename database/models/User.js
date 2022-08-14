@@ -7,11 +7,11 @@ module.exports = function(sequelize, dataTypes){
 			autoIncrement: true
 		},
 		fullName: {type:dataTypes.STRING},
-        profilePicture:{ type: dataTypes.INTEGER} ,
+        profilePicture:{ type: dataTypes.INTEGER},
         phoneNumber:{type: dataTypes.INTEGER},
         email: {type: dataTypes.STRING},
         addressId: {type:dataTypes.INTEGER},
-        password:{type:dataTypes.STRING} ,
+        password:{type:dataTypes.STRING},
         createdAt:{type:dataTypes.DATE},
         updatedAt: {type:dataTypes.DATE}
 	}

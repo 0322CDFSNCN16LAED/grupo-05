@@ -11,11 +11,13 @@ module.exports = function(sequelize, dataTypes){
         direccion: {type: dataTypes.STRING, allowNull:false},
         piso: {type:dataTypes.INTEGER},
         departamento: {type:dataTypes.STRING},
-        userId: {type:dataTypes.INTEGER}
+        userId: {type:dataTypes.INTEGER},
+        createdAt:{type:dataTypes.DATE},
+        updatedAt: {type:dataTypes.DATE}
 	}
 	let config = {
 		tableName: "addresses",
-		timestamps: false
+		timestamps: true
 	}
 	let Address = sequelize.define(alias,cols,config);
 

@@ -1,78 +1,76 @@
-const bcryptjs = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const { User } = require("../database/models");
+const { Address } = require("../database/models");
 
-const User = require('../models/User');
 const dbProfessionals = require("../models/Professionals");
 const allProfessionals = dbProfessionals.getAll()
-const db = require("../database/models");
+
 const controlador = {
 
     register: (req,res) => {
         res.render ("register")
     },
-    processRegister: (req, res) => {
-        // const resultValidation = validationResult(req);
-        // if (resultValidation.errors.length > 0) {
-        //     return res.render('register', {
-        //         errors: resultValidation.mapped(),
-        //         oldData: req.body
-        //     });
-        // }
-        db.Address.create({
+    processRegister: async (req, res) => {
+
+         const resultValidation = await validationResult(req);
+         if (resultValidation.errors.length > 0) {
+             return res.render('register', {
+                 errors: resultValidation.mapped(),
+                 oldData: req.body
+             });
+         }
+    
+    
+         UserInDB = await User.findOne({
+            where:{
+                email: req.body.email
+            }
+         })
+
+         console.log(UserInDB)
+
+         
+         if (UserInDB != null){
+                return res.render('register', {
+                    errors: {
+                        email: {
+                            msg: 'Este email ya está registrado'
+                        }
+                    },
+                    oldData: req.body
+                });
+            }
+         
+    
+         let passwordConfirmation = await req.body.password == req.body.passwordConfirmation
+    
+         if (!passwordConfirmation) {
+             return res.render('register', {
+                 errors: {
+                     passwordConfirmation: {
+                         msg: 'credenciales inválidas'
+                     }
+                 }
+             })
+         }
+
+         await Address.create({
             localidad:req.body.localidad,
             barrio: req.body.barrio,
             direccion:req.body.direccion,
             piso:req.body.piso,
             departamento:req.body.departamento,
         })
-        db.User.create( {
+        await User.create( {
             fullName:req.body.fullname,
+            profilePicture: req.file,
             phoneNumber:req.body.phone,
             email:req.body.email,
-            password:req.body.password,
+            password: await bcrypt.hash(req.body.password, 12),
         })
-    
-    
-        // let userInDB = User.findByField('email', req.body.email);
-    
-        // if (userInDB) {
-        //     return res.render('register', {
-        //         errors: {
-        //             email: {
-        //                 msg: 'Este email ya está registrado'
-        //             }
-        //         },
-        //         oldData: req.body
-        //     });
-        // }
-    
-        // let passwordConfirmation = req.body.password == req.body.passwordConfirmation
-    
-        // if (!passwordConfirmation) {
-        //     return res.render('register', {
-        //         errors: {
-        //             passwordConfirmation: {
-        //                 msg: 'credenciales inválidas'
-        //             }
-        //         }
-        //     })
-        // }
         
-    
-        // let newUserID = User.generateId()
-        // let userToCreate = {
-        //     ...req.body,
-        //     password: bcryptjs.hashSync(req.body.password, 10),
-        //     id: newUserID,
-        // }
-        // if(req.file){
-        //     userToCreate.imagen = req.file.filename;       
-        // }
-        // delete userToCreate.passwordConfirmation;
-    
-        // let userCreated = User.create(userToCreate);
-    
-        return res.redirect('/auth/login');
+        res.redirect('/auth/login');
         
     },
     
@@ -80,10 +78,15 @@ const controlador = {
         res.render ("login")
     },
     processLogin: (req, res) => {
-        let userToLogin = User.findByField('email', req.body.email);
+        let userToLogin = User.findOne(
+            {
+                where: {
+                    email: req.body.email,
+            }
+        })
         
         if(userToLogin) {
-            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
             if (isOkThePassword) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
