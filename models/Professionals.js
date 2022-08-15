@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path")
 const professionalsJson= path.join(__dirname,"../data-base/Professionals.json")
+const db = require("../database/models")
 
 module.exports = {
     getAll: function (){
@@ -79,5 +80,13 @@ module.exports = {
                 break; 
         }
         return filteredProfessionals;
+    },
+    getCategoryId: function(category){
+        for (let i = 0; i<db.Category.length ; i++){
+            if(category == db.Category[i].name){
+                return db.Category[i].id;
+            }
+        }
+
     }
 }

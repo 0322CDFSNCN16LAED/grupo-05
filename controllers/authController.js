@@ -5,6 +5,7 @@ const { Address } = require("../database/models");
 
 const dbProfessionals = require("../models/Professionals");
 const allProfessionals = dbProfessionals.getAll()
+const db = require("../database/models")
 
 const controlador = {
 
@@ -20,17 +21,13 @@ const controlador = {
                  oldData: req.body
              });
          }
-    
-    
+
          UserInDB = await User.findOne({
             where:{
                 email: req.body.email
             }
          })
-
          console.log(UserInDB)
-
-         
          if (UserInDB != null){
                 return res.render('register', {
                     errors: {
@@ -41,17 +38,15 @@ const controlador = {
                     oldData: req.body
                 });
             }
-         
-    
          let passwordConfirmation = await req.body.password == req.body.passwordConfirmation
-    
          if (!passwordConfirmation) {
              return res.render('register', {
                  errors: {
                      passwordConfirmation: {
                          msg: 'credenciales inválidas'
                      }
-                 }
+                 },
+                 oldData: req.body
              })
          }
 
@@ -84,7 +79,7 @@ const controlador = {
                 where: {
                     email: req.body.email,
                 }
-        })
+            })
         
         if(userToLogin) {
             let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
@@ -107,7 +102,7 @@ const controlador = {
                         password: {
                             msg: 'credenciales inválidas'
                         }
-                    }
+                    }, oldData : req.body
                 });
             } 
         }
@@ -117,7 +112,8 @@ const controlador = {
                     email: {
                         msg: 'credenciales inválidas'
                     }
-                }
+                },
+                oldData:req.body
             });
         }
     

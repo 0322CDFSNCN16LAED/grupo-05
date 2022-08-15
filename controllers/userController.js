@@ -15,28 +15,18 @@ const controlador = {
         res.render ("add-service")
     },
     storeService: (req,res) => {
-        /*const newService = req.body;
-    newService.nombre = req.session.userLogged.fullname;
-    db.Service.create ({
-        categoryId:1,
-        jobDescription: newService.descripcion,
-        price: newService.precio,
-        userId: req.session.userLogged.id
-    })
-    res.redirect("/professionals")*/
-        const newProfessional = req.body;
-        newProfessional.nombre = req.session.userLogged.fullname;
-        if(allProfessionals.length){
-            newProfessional.id= allProfessionals[allProfessionals.length - 1].id +1;
-        }else {
-            newProfessional.id = 1;
-        }
-        if(req.file){
-            newProfessional.imagen = req.file.filename;       
-        }
-        allProfessionals.push(newProfessional);
-        dbProfessionals.saveAll(allProfessionals);
-        res.redirect ("/professionals");
+        const newService = req.body;
+        newService.nombre = req.session.userLogged.fullname;
+        db.Service.create ({
+            categoryId: dbProfessionals.getCategoryId(req.body.profesion),
+            jobDescription: newService.descripcion,
+            price: newService.precio,
+            userId: req.session.userLogged.id
+            /* if(req.file){
+                photo = req.file.filename;       
+            } */
+        })
+        res.redirect("/professionals")
     },
     myService: (req,res) => {
         const allProfessionals = dbProfessionals.getAll()
