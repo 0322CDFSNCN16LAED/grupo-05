@@ -1,7 +1,10 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const { User } = require("../database/models");
+const { Category } = require("../database/models");
+const { Service } = require("../database/models");
 
-const User = require('../models/User');
+
 const dbProfessionals = require("../models/Professionals");
 const allProfessionals = dbProfessionals.getAll()
 
@@ -12,13 +15,15 @@ const controlador = {
         res.render ("account")
     },
     addService: (req,res) => {
-        res.render ("add-service")
+        Category.findAll()
+        .then(function(result) {
+            console.log(result[0].name)
+            res.render("add-service", { categorias : result })})
     },
     storeService: (req,res) => {
         const newService = req.body;
-        newService.nombre = req.session.userLogged.fullname;
-        db.Service.create ({
-            categoryId: dbProfessionals.getCategoryId(req.body.profesion),
+        Service.create ({
+            categoryId: newService.profesion,
             jobDescription: newService.descripcion,
             price: newService.precio,
             userId: req.session.userLogged.id
@@ -26,11 +31,19 @@ const controlador = {
                 photo = req.file.filename;       
             } */
         })
-        res.redirect("/professionals")
+        res.redirect("/")
     },
-    myService: (req,res) => {
-        const allProfessionals = dbProfessionals.getAll()
-        res.render ("my-service", {allprofessionals : allProfessionals})
+    myService: async (req,res) => {
+       const services = await Service.findAll({
+            where: {
+                userId: req.session.userLogged.id
+            },
+            include: [
+                {association: "category"}
+            ]
+        })
+        console.log(services)
+        res.render ("my-service", { services })
     },
      deleteService:(req,res)=>{
        const allprofessionals = dbProfessionals.getAll();

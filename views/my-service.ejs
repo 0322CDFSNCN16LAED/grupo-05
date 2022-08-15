@@ -13,7 +13,7 @@
           <%- include ("./partials/account-header.ejs") %>
               
               <section class=" col-xl-9 d-flex wrap just">
-                <% allprofessionals.forEach(servicio => {%>
+                <% services.forEach(servicio => {%>
 
                   <% if (servicio.nombre == locals.userLogged.fullname) {%>
                   <article class="card-p container-fluid d-flex just">
@@ -37,11 +37,11 @@
                           
                             <div class="pofessions d-flex wrap border-b">
                               <ul></ul>
-                                <li class=" list-style mr-10"><span class="m-0" ><%= servicio.profesion %> </span></li>
+                                <li class=" list-style mr-10"><span class="m-0" ><%= servicio.category.name %> </span></li>
                               </ul>
                             </div>
-                            <p class="card-text "><%= servicio.descripcion %> </p>
-                            <p class="fst-italic gray-light border-b border-t"> Precios de referencia: $<%= servicio.precio %> </p>
+                            <p class="card-text "><%= servicio.jobDescription %> </p>
+                            <p class="fst-italic gray-light border-b border-t"> Precios de referencia: $<%= servicio.price %> </p>
                             <div class="d-flex just">
                               <form action="/user/modify-service/<%=servicio.id%>" method="GET">
                                 <input type="submit" class="btn btn-danger mb-2 text-center" value="Modificar">

@@ -89,7 +89,7 @@ const controlador = {
                     include: [{association: "address"}]
                 })
 
-                console.log(req.session.userLogged.address)
+                console.log(req.session.userLogged.address[0])
     
                 //if(req.body.remember_user) {
                 //	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
