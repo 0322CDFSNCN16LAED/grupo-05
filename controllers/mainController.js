@@ -1,5 +1,8 @@
 // const db = require("../models/Professionals")
 // const allprofessionals = db.getAll()
+const { User } = require("../database/models");
+const { Category } = require("../database/models");
+const { Service } = require("../database/models");
 
 // const dbServices = require("../models/Services")
 // const allService = dbServices.getAll()
@@ -14,13 +17,17 @@ const controlador = {
         // res.render ("index",{allService:allService})
     },
     professionals: (req,res) => {
-        db.Service.findAll({
+        Service.findAll({
+            where: {
+                categoryId: req.params.id
+            },
             include: [
-                {association: "category"},{association:"user"}
+                {association: "category"},
+                {association: "user"}
             ]
         })
         .then(function(servicios){
-            res.render("professionals",{servicios})
+            res.render("professionals", {servicios})
         })
     },
      shop:(req,res)=>{

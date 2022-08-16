@@ -13,17 +13,18 @@
           <%- include ("./partials/account-header.ejs") %>
               
               <section class=" col-xl-9 d-flex wrap just">
-                <% services.forEach(servicio => {%>
+                <% for(let i = 0; i < services.length; i++){%>
+                  
 
-                  <% if (servicio.nombre == locals.userLogged.fullname) {%>
+                  <% if (services[i].user.fullName == locals.userLogged.fullName) {%>
                   <article class="card-p container-fluid d-flex just">
                     <div class="  row">
                       <div class="card mb-3 col">
                         <div class="row">
                           <div class="p-0 col-md-3 w">
               
-                            <% if(servicio.imagen) { %>
-                              <img src="/images/avatars/<%= servicio.imagen %> " class="img-fluid rounded-start h-100" alt="...">
+                            <% if(services[i].servicePhoto[0]) { %>
+                              <img src="/images/avatars/<%= services[i].servicePhoto[0].photo %> " class="img-fluid rounded-start h-100" alt="foto de servicio">
                             <%} else {%>  
                               <img src="/images/default.jpg" class="img-fluid rounded-start h-100" alt="...">
                              <%}%> 
@@ -33,20 +34,20 @@
                             
                           <div class="col-md-9">
                           <div class="card-body p-1 m-0 jus">
-                            <h5 class="card-title d-flex just border-b"><%= servicio.nombre %> </h5>
+                            <h5 class="card-title d-flex just border-b"><%= services[i].user.fullName %> </h5>
                           
                             <div class="pofessions d-flex wrap border-b">
                               <ul>
-                                <li class=" list-style mr-10"><span class="m-0" ><%= servicio.category.name %> </span></li>
+                                <li class=" list-style mr-10"><span class="m-0" ><%= services[i].category.name %> </span></li>
                               </ul>
                             </div>
-                            <p class="card-text "><%= servicio.jobDescription %> </p>
-                            <p class="fst-italic gray-light border-b border-t"> Precios de referencia: $<%= servicio.price %> </p>
+                            <p class="card-text "><%= services[i].jobDescription %> </p>
+                            <p class="fst-italic gray-light border-b border-t"> Precios de referencia: $<%= services[i].price %> </p>
                             <div class="d-flex just">
-                              <form action="/user/modify-service/<%=servicio.id%>" method="GET">
+                              <form action="/user/modify-service/<%=services[i].id%>" method="GET">
                                 <input type="submit" class="btn btn-danger mb-2 text-center" value="Modificar">
                               </form>
-                              <form action="/user/my-service/<%=servicio.id%>?_method=DELETE" method="POST">
+                              <form action="/user/my-service/<%=services[i].id%>?_method=DELETE" method="POST">
                                 <input type="submit" class="btn btn-danger mb-2 text-center" value="Eliminar">
                               </form>  
                             </div>
@@ -57,7 +58,7 @@
                   </div>
                   </article>
                   <%}%> 
-                  <%  }); %> 
+                  <% }; %> 
                 
                 </section>
               

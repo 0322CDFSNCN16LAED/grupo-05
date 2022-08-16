@@ -4,6 +4,7 @@ const db = require('../database/models');
 const { User } = require("../database/models");
 const { Category } = require("../database/models");
 const { Service } = require("../database/models");
+const { ServicePhoto } = require("../database/models");
 
 
 const dbProfessionals = require("../models/Professionals");
@@ -18,20 +19,22 @@ const controlador = {
     addService: (req,res) => {
         Category.findAll()
         .then(function(result) {
-            console.log(result[0].name)
             res.render("add-service", { categorias : result })})
     },
-    storeService: (req,res) => {
-        const newService = req.body;
-        Service.create ({
+    storeService: async (req,res) => {
+        const newService = await req.body;
+        const ServiceToCreate = await Service.create ({
             categoryId: newService.profesion,
             jobDescription: newService.descripcion,
             price: newService.precio,
             userId: req.session.userLogged.id
-            /* if(req.file){
-                photo = req.file.filename;       
-            } */
         })
+        if (req.file) {
+            const ServicePhotoToCreate = await ServicePhoto.create({
+                photo: req.file.filename,
+                serviceId: ServiceToCreate.id
+            })
+        }
         res.redirect("/user/my-service");
     },
     myService: async (req,res) => {
@@ -40,10 +43,12 @@ const controlador = {
                 userId: req.session.userLogged.id
             },
             include: [
-                {association: "category"}
+                {association: "category"},
+                {association: "user"},
+                {association: "servicePhoto"}
             ]
         })
-        console.log(services)
+        console.log(services[0].servicePhoto[0].photo)
         res.render ("my-service", { services })
     },
      deleteService:(req,res)=>{

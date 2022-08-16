@@ -23,7 +23,7 @@ module.exports = function(sequelize, dataTypes){
             foreignKey: "categoryId"
         });
         Service.hasMany(models.ServicePhoto, {
-            as: "servicesPhotos",
+            as: "servicePhoto",
             foreignKey: "serviceId"
         });
         Service.belongsTo(models.User, { 

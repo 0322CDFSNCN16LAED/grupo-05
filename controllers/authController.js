@@ -27,7 +27,7 @@ const controlador = {
                 email: req.body.email
             }
          })
-         console.log(UserInDB)
+
          if (UserInDB != null){
                 return res.render('register', {
                     errors: {
@@ -88,8 +88,6 @@ const controlador = {
                 req.session.userLogged = await User.findByPk(userToLogin.id, {
                     include: [{association: "address"}]
                 })
-
-                console.log(req.session.userLogged.address[0])
     
                 //if(req.body.remember_user) {
                 //	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
