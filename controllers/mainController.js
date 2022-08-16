@@ -14,13 +14,14 @@ const controlador = {
         // res.render ("index",{allService:allService})
     },
     professionals: (req,res) => {
-        if(req.params.id){
-            const filteredProfessionals = db.getFilteredProfessionals(req.params.id)
-            res.render ("professionals", {allprofessionals:filteredProfessionals, profesion: req.params.id})
-        }else{
-            const allprofessionals = db.getAll()
-            res.render ("professionals", {allprofessionals:allprofessionals})
-        }
+        db.Service.findAll({
+            include: [
+                {association: "category"},{association:"user"}
+            ]
+        })
+        .then(function(servicios){
+            res.render("professionals",{servicios})
+        })
     },
      shop:(req,res)=>{
         res.render("shop")

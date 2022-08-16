@@ -10,12 +10,12 @@
     <main>
       <!--tiene que existir profesion-->
       <div class="aqua-gradient tittle d-flex justify-content-center align-items-center">
-        <h1 class="text-white">Encontra los mejores profesionales en <%=allprofessionals.profesion%></h1>
+        <h1 class="text-white">Encontra los mejores profesionales en <%=servicios.profesion%></h1>
        </div>
 
 
 <section class="d-flex wrap just">
-  <% allprofessionals.forEach(servicio => {%>
+  <% servicios.forEach(servicio => {%>
     <article class="card-p container-fluid d-flex just">
       <div class=" w-100 row">
         <div class="card mb-3 col">
@@ -33,15 +33,15 @@
               
             <div class="col-md-9">
             <div class="card-body p-1 m-0 jus">
-              <h5 class="card-title d-flex just border-b"><%= servicio.nombre %> </h5>
+              <h5 class="card-title d-flex just border-b"><%= servicio.user.fullName %> </h5>
             
               <div class="pofessions d-flex wrap border-b">
                 <ul></ul>
-                  <li class=" list-style mr-10"><span class="m-0" ><%= servicio.profesion %> </span></li>
+                  <li class=" list-style mr-10"><span class="m-0" ><%= servicio.category.name %> </span></li>
                 </ul>
               </div>
-              <p class="card-text "><%= servicio.descripcion %> </p>
-              <p class="fst-italic gray-light border-b border-t"> Precios de visita: <%= servicio.precio %> </p>
+              <p class="card-text "><%= servicio.jobDescription %> </p>
+              <p class="fst-italic gray-light border-b border-t"> Precios de visita: <%= servicio.price %> </p>
               <div class="d-flex just">
                 <a href="/user/service-detail/<%=servicio.id%> "> <input type="submit" class="btn btn-danger mb-2 text-center" value="Ver perfil"></a>
               </div>
