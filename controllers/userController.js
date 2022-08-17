@@ -29,9 +29,10 @@ const controlador = {
             price: newService.precio,
             userId: req.session.userLogged.id
         })
-        if (req.file) {
+        console.log(req.files)
+        for (let i = 0; i < req.files.length; i ++) {
             const ServicePhotoToCreate = await ServicePhoto.create({
-                photo: req.file.filename,
+                photo: req.file? req.file.filename : "default.jpg",
                 serviceId: ServiceToCreate.id
             })
         }
@@ -48,7 +49,6 @@ const controlador = {
                 {association: "servicePhoto"}
             ]
         })
-        console.log(services[0].servicePhoto[0].photo)
         res.render ("my-service", { services })
     },
      deleteService:(req,res)=>{
@@ -76,7 +76,20 @@ const controlador = {
         // let id = req.params.id;
         // res.render("modify-service", {serviceId : req.params.id})
     }, 
-    serviceDetail: (req,res)=>{
+    serviceDetail: async (req,res)=>{
+
+        const servicio = await Service.findOne({
+            where: {
+                id : req.params.id
+            },
+            include: [
+                    {association: "category"},
+                    {association: "user"},
+                    {association: "servicePhoto"}
+            ]
+        })
+
+        res.render("service-detail", { servicio })
         // const product = dbProfessionals.getOne(req.params.id);
         // res.render("service-detail",{product})
         // // res.render("service-detail",{product:product})

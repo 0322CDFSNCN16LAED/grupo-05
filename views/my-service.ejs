@@ -23,11 +23,9 @@
                         <div class="row">
                           <div class="p-0 col-md-3 w">
               
-                            <% if(services[i].servicePhoto[0]) { %>
-                              <img src="/images/avatars/<%= services[i].servicePhoto[0].photo %> " class="img-fluid rounded-start h-100" alt="foto de servicio">
-                            <%} else {%>  
-                              <img src="/images/default.jpg" class="img-fluid rounded-start h-100" alt="...">
-                             <%}%> 
+                            
+                             <img src="/images/avatars/<%= services[i].user.profilePicture %> " class="img-fluid rounded-start h-100" alt="foto de servicio">
+                            
               
                             
                             </div>

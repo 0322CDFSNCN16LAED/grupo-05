@@ -23,11 +23,13 @@ const controlador = {
             },
             include: [
                 {association: "category"},
-                {association: "user"}
+                {association: "user"},
+                {association: "servicePhoto"}
             ]
         })
         .then(function(servicios){
-            res.render("professionals", {servicios})
+            console.log(servicios)
+            res.render("professionals", { servicios })
         })
     },
      shop:(req,res)=>{

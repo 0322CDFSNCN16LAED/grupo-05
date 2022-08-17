@@ -56,6 +56,7 @@ const controlador = {
             phoneNumber:req.body.phone,
             email:req.body.email,
             password: await bcrypt.hash(req.body.password, 12),
+            profilePicture: req.file? req.file.filename : "defaultProfilePicture.png" 
         })
         const addressToCreate = await Address.create({
             localidad:req.body.localidad,

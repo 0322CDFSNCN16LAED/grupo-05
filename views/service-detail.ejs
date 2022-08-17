@@ -10,11 +10,11 @@
     <section class="container">
         <article class=" container-fluid d-flex wrap just">
     <div class="avatar mx-auto white col-md-3 mb-3 mt-4">
-        <img src="/images/foto1.jpg" class="rounded-circle img-fluid"
-          alt="woman avatar">
+        <img src="/images/avatars/<%=servicio.user.profilePicture %>" class="rounded-circle img-fluid"
+          alt="woman avatar"> 
       </div>
       <div class="col-md-9 mb-3 mt-4 text-center">
-        <h1 > Nombre </h1>
+        <h1 > <%= servicio.user.fullName %> </h1>
         <div class="d-flex just justify-content-center">
             <input type="submit" class="btn btn-danger mb-2 text-center " value="Carrito">
         </div>
@@ -31,13 +31,13 @@
                     <div class="modal-body">
                       <form>
                         <div class="mb-3">
-                          <label for="recipient-name" class="col-form-label">Nombre y Apellido: </label>
+                          <label for="recipient-name" class="col-form-label">Nombre y Apellido: <%= servicio.user.fullName %>  </label>
                         </div>
                         <div class="mb-3">
-                          <label for="message-text" class="col-form-label">Telefono:</label>
+                          <label for="message-text" class="col-form-label">Telefono: <%= servicio.user.phoneNumber %> </label>
                         </div>
                         <div class="mb-3">
-                          <label for="message-text" class="col-form-label">Email:</label>
+                          <label for="message-text" class="col-form-label">Email: <%= servicio.user.email %> </label>
                         </div>
                       </form>
                     </div>
@@ -52,7 +52,7 @@
 <div class="text-center">
     <label class="col-md-12" for="">Descripcion</label>
     <div class="form-floating d-flex justify-content-center ">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi perspiciatis tempore repellat modi maxime rem, culpa praesentium ad, dolores earum ipsa, error doloribus nemo! Dolore hic delectus maxime ducimus eaque laudantium, facilis dolor aperiam quod sed, recusandae animi, illum quo nulla ipsa? Et earum ad ex adipisci temporibus enim quo?</p>
+        <p> <%= servicio.jobDescription %> </p>
       </div><hr>
 </div>
         </article>
