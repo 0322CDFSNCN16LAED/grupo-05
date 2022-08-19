@@ -16,6 +16,12 @@ const controlador = {
     account: (req,res) => {
         res.render ("account")
     },
+    modifyAccount: (req,res) => {
+        res.render ("modify-account")
+    },
+    processModifyAccount: (req,res) => {
+        // logica
+    },
     addService: (req,res) => {
         Category.findAll()
         .then(function(result) {
@@ -60,13 +66,7 @@ const controlador = {
         })
 
       })
-    //    const allprofessionals = dbProfessionals.getAll();
-    //    console.log(allprofessionals)
-    //    const filteredList = allprofessionals.filter((service)=>{
-    //         return service.id != req.params.id;
-    //    }) 
-    //    dbProfessionals.saveAll(filteredList);
-      
+    
      
     },
     modifyService:(req,res)=>{
@@ -76,8 +76,7 @@ const controlador = {
         .then(function([servicio,categoria]){
             res.render("modify-service",{servicio,categoria})
         })
-        // let id = req.params.id;
-        // res.render("modify-service", {serviceId : req.params.id})
+       
     }, 
     serviceDetail: async (req,res)=>{
 
@@ -93,9 +92,6 @@ const controlador = {
         })
 
         res.render("service-detail", { servicio })
-        // const product = dbProfessionals.getOne(req.params.id);
-        // res.render("service-detail",{product})
-        // // res.render("service-detail",{product:product})
 
     },
     processModifyService:(req,res)=>{
@@ -110,18 +106,6 @@ const controlador = {
             }
         })
         res.redirect("/user/my-service");
-
-        // const services = allProfessionals
-        // const serviceIndex = services.findIndex((s)=> {s.id == req.params.id});
-        // let service = services[serviceIndex];
-
-        // service.profesion = req.body.profesion; 
-        // service.precio = req.body.precio;
-        // service.descripcion = req.body.descripcion;
-
-        // dbProfessionals.saveAll(services)
-    
-        res.redirect('/user/my-service')
 
     },
     logout: (req, res) => {

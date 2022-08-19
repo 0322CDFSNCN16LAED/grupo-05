@@ -12,90 +12,170 @@
         <%- include ("./partials/account-header.ejs") %>
           <div class="p-0 col-xl-9">
             <section class=" p-15 text-ceter bg-gre">
-              <div class="mb-4 mt-4">
-                <h3>Mis datos</h3>
+              <div class="mt-4 d-flex justify-content-center just">
+                <h3>Modificar Mis datos</h3>
                 <hr>
               </div> 
-  
-            <div class="row g-2 d-flex just ">
-              <div class="mb-3 col d-flex">
-              
-                  <label for="staticEmail" class="col-xl-2 col-form-label">Nombre:</label>
-                <form class="col-xl-6">
-                  <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Nombre">
-                </form>
+              <form class="p-15 form-outline" method="get" action="/user/ModifyAccount" enctype="multipart/form-data" >
+                <div class="row mb-4 ">
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Nombre completo:</b></label>
+                      <input 
+                        type="text" 
+                        name="fullname" 
+                        class="form-control"
+                        value="<%= locals.oldData && oldData.fullname ? oldData.fullname : null %>"
+                      >
+                      <% if (locals.errors && errors.fullname) { %>
+                        <div class="text-danger">
+                         <p> <%= errors.fullname.msg %> </p>
+                        </div>
+                      <% } %>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Email:</b></label>
+                      <input 
+                        type="text" 
+                        name="email" 
+                        class="form-control"
+                        value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
+                      >
+                      <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                         <p></p> <%= errors.email.msg %> </p>
+                        </div>
+                      <% } %>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Telefono</b></label>
+                      <input 
+                        type="text" 
+                        name="phone" 
+                        class="form-control"
+                        value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"
+                      >
+                      <% if (locals.errors && errors.phone) { %>
+                        <div class="text-danger">
+                         <p> <%= errors.phone.msg %> </p>
+                        </div>
+                      <% } %>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Localidad:</b></label>
+                      <select class="form-select" aria-label="Default select example" name="localidad">
+                        <option selected>Seleccione Localidad</option>
+                        <option value="Capital Federal">Capital Federal</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Barrio:</b></label>
+                      <select class="form-select" aria-label="Default select example" name="barrio">
+                        <option selected>Selecione Barrio</option>
+                        <option value="Boedo">Boedo</option>
+                        <option value="Caballido">Caballido</option>
+                        <option value="Almagro">Almagro</option>
+                        <option value="Palermo">Palermo</option>
+                        <option value="Puerto Madero">Puerto Madero</option>
+                        <option value="Retiro">Retiro</option>
+                        <option value="Pompeya">Pompeya</option>
+                        <option value="Parque Chacabuco">Parque Chacabuco</option>
+                        <option value="Parque Patricios">Parque Patricios</option>
+                        <option value="Flores">Flores</option>
+                        <option value="Floresta">Floresta</option>
+                        <option value="Mataderos">Mataderos</option>
+                        <option value="Nuñez">Nuñez</option>
+                        <option value="Agronomía">Agronomía</option>
+                        <option value="Barracas">Barracas</option>
+                        <option value="Belgrano">Belgrano</option>
+                        <option value="Barracas">Barracas</option>
+                        <option value="Chacarita">Chacarita</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Direccion:</b></label>
+                      <input 
+                        type="text" 
+                        name="direccion" 
+                        class="form-control"
+                        value="<%= locals.oldData && oldData.direccion ? oldData.direccion : null %>"
+                      >
+                      <% if (locals.errors && errors.direccion) { %>
+                        <div class="text-danger">
+                         <p> <%= errors.direccion.msg %> </p>
+                        </div>
+                      <% } %>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Piso:</b></label>
+                      <input 
+                      type="text" 
+                      name="piso" 
+                      class="form-control"
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Departamento:</b></label>
+                      <input 
+                        type="text" 
+                        name="departamento" 
+                        class="form-control"
+                        value="">
+                    </div>
+                  </div>
+                  <div class="input-group mt-4 mb-4">
+                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="imagen">
+                    <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
+                  </div> 
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Contraseña Anterior</b></label>
+                      <input 
+                        type="password" 
+                        name="password" 
+                        class="form-control"
+                      >
+                      <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                         <p> <%= errors.password.msg %> </p>
+                        </div>
+                      <% } %>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6 mt-4">
+                    <div class="form-group">
+                      <label><b>Contraceña Nueva</b></label>
+                      <input 
+                        type="password" 
+                        name="passwordConfirmation" 
+                        class="form-control"
+                      >
+                       <% if (locals.errors && errors.passwordConfirmation) { %>
+                        <div class="text-danger">
+                         <p> <%= errors.passwordConfirmation.msg %> </p>
+                        </div>
+                      <% } %>
+                    </div>
+                  </div>        
               </div>
-              <div class="mb-3 col d-flex">
-                <label for="staticEmail" class="col-xl-2 col-form-label">Apellido:</label>
-              <form class="col-xl-6">
-                <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Apellido">
+              <div class="tex-center d-flex just ">
+                <button type="submit" class="btn btn-danger mb-4 mt-4">Guardar</button>
+              </div>
               </form>
-            </div>
-          </div>
-          <div class="row g-2 d-flex just">
-            <div class="mb-3 col d-flex">
-                <label for="staticEmail" class="col-xl-2 col-form-label">Email:</label>
-              <form class="col-xl-6">
-                <input type="email" readonly class="form-control-plaintext" id="disabledInput" value="ejemplo@ejemplo.com">
-              </form>
-            </div>
-            <div class="mb-3 col d-flex">
-              <label for="staticEmail" class="col-xl-2 col-form-label">Telefono:</label>
-            <form class="col-xl-6">
-              <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Telefono">
-            </form>
-          </div>
-        </div>
-        <div class="row g-2 d-flex just">
-          <div class="mb-3 col-md d-flex">
-              <label for="staticEmail" class="col-xl-3 col-form-label">Localidad:</label>
-            <form class="col-xl-6">
-              <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Localidad">
-            </form>
-          </div>
-          <div class="mb-3 col-md d-flex">
-            <label for="staticEmail" class="col-xl-2 col-form-label">Barrio:</label>
-          <form class="col-xl-6">
-            <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Barrio">
-          </form>
-        </div>
-      </div>
-      <div class="row g-2 d-flex just">
-        <div class="mb-3 col-md d-flex">
-            <label for="staticEmail" class="col-xl-3 col-form-label">Direccion:</label>
-          <form class="col-xl-6">
-            <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Direccion">
-          </form>
-        </div>
-        <div class="mb-3 col-md d-flex">
-          <label for="staticEmail" class="col-xl-2 col-form-label">C.P.:</label>
-        <form class="col-xl-6">
-          <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="C.P">
-        </form>
-      </div>
-    </div>
-    <div class="row g-2 d-flex just">
-      <div class="mb-3 col-md d-flex">
-          <label for="staticEmail" class="col-xl-3 col-form-label">Piso:</label>
-        <form class="col-xl-6">
-          <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Piso">
-        </form>
-      </div>
-      <div class="mb-3 col-md d-flex">
-        <label for="staticEmail" class="col-xl-2 col-form-label">Dpto.:</label>
-      <form class="col-xl-6">
-        <input type="text" readonly class="form-control-plaintext" id="disabledInput" value="Depto">
-      </form>
-    </div>
-  </div>
-   
-      <hr>
-      <!--
-        modificar la cuenta
-        <form action="POST" method="">
-
-        </form>
-      -->
         
       </section>
       </div>
