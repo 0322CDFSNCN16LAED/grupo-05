@@ -29,7 +29,6 @@ const controlador = {
             price: newService.precio,
             userId: req.session.userLogged.id
         })
-        console.log(req.files)
         for (let i = 0; i < req.files.length; i ++) {
             const ServicePhotoToCreate = await ServicePhoto.create({
                 photo: req.file? req.file.filename : "default.jpg",

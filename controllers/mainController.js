@@ -28,7 +28,7 @@ const controlador = {
             ]
         })
         .then(function(servicios){
-            console.log(servicios)
+            
             res.render("professionals", { servicios })
         })
     },
