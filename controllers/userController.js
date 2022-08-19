@@ -5,6 +5,7 @@ const { User } = require("../database/models");
 const { Category } = require("../database/models");
 const { Service } = require("../database/models");
 const { ServicePhoto } = require("../database/models");
+const { Address } = require("../database/models");
 
 
 const dbProfessionals = require("../models/Professionals");
@@ -19,8 +20,29 @@ const controlador = {
     modifyAccount: (req,res) => {
         res.render ("modify-account")
     },
-    processModifyAccount: (req,res) => {
-        // logica
+    processModifyAccount: async (req,res) => {
+        const userBuscado = await User.findByPk(req.params.id)
+        const addressBuscada = await Address.findOne({
+            where: {
+                userId: req.params.id
+            }
+        })
+            await userBuscado.update({
+                fullName: req.body.fullName,
+                profilePicture: req.body.profilePicture,
+                phoneNumber: req.body.phoneNumber,
+                email: req.body.email,
+                profilePicture: req.file? req.file.filename : userBuscado.profilePicture
+            })
+            await addressBuscada.update({
+                localidad: req.body.localidad,
+                barrio: req.body.barrio,
+                direccion: req.body.direccion,
+                piso: req.body.piso,
+                departamento: req.body.departamento,
+            })
+        
+            res.redirect("/user/account");
     },
     addService: (req,res) => {
         Category.findAll()
@@ -57,23 +79,22 @@ const controlador = {
         res.render ("my-service", { services })
     },
      deleteService:(req,res)=>{
-      db.Service.findByPk(req.params.id).then((service)=>{
+      Service.findByPk(req.params.id).then((service)=>{
         service.setServicePhoto([]).then(()=>{
             service.destroy().then(()=>{
                 res.redirect("/user/my-service");
             })
         })
-
       })
     
      
     },
     modifyService:(req,res)=>{
-        let pedidoService = db.Service.findByPk(req.params.id)
-        let pedidoCategory = db.Category.findAll();
+        let pedidoService = Service.findByPk(req.params.id)
+        let pedidoCategory = Category.findAll();
         Promise.all([pedidoService,pedidoCategory])
         .then(function([servicio,categoria]){
-            res.render("modify-service",{servicio,categoria})
+            res.render("modify-service", {servicio, categoria})
         })
        
     }, 

@@ -16,16 +16,16 @@
                 <h3>Modificar Mis datos</h3>
                 <hr>
               </div> 
-              <form class="p-15 form-outline" method="get" action="/user/ModifyAccount" enctype="multipart/form-data" >
+              <form class="p-15 form-outline" method="POST" action="/modify-account/<%= locals.userLogged.id %>" enctype="multipart/form-data" >
                 <div class="row mb-4 ">
                   <div class="col-12 col-xl-6 mt-4">
                     <div class="form-group">
                       <label><b>Nombre completo:</b></label>
                       <input 
                         type="text" 
-                        name="fullname" 
+                        name="fullName" 
                         class="form-control"
-                        value="<%= locals.oldData && oldData.fullname ? oldData.fullname : null %>"
+                        value="<%= locals.userLogged.fullName %>"
                       >
                       <% if (locals.errors && errors.fullname) { %>
                         <div class="text-danger">
@@ -41,7 +41,7 @@
                         type="text" 
                         name="email" 
                         class="form-control"
-                        value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
+                        value="<%= locals.userLogged.email %>"
                       >
                       <% if (locals.errors && errors.email) { %>
                         <div class="text-danger">
@@ -55,9 +55,9 @@
                       <label><b>Telefono</b></label>
                       <input 
                         type="text" 
-                        name="phone" 
+                        name="phoneNumber" 
                         class="form-control"
-                        value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"
+                        value="<%= locals.userLogged.phoneNumber %>"
                       >
                       <% if (locals.errors && errors.phone) { %>
                         <div class="text-danger">
@@ -70,7 +70,7 @@
                     <div class="form-group">
                       <label><b>Localidad:</b></label>
                       <select class="form-select" aria-label="Default select example" name="localidad">
-                        <option selected>Seleccione Localidad</option>
+                        <option selected><%= locals.userLogged.address[0].localidad %></option>
                         <option value="Capital Federal">Capital Federal</option>
                       </select>
                     </div>
@@ -79,7 +79,7 @@
                     <div class="form-group">
                       <label><b>Barrio:</b></label>
                       <select class="form-select" aria-label="Default select example" name="barrio">
-                        <option selected>Selecione Barrio</option>
+                        <option selected> <%= locals.userLogged.address[0].barrio %> </option>
                         <option value="Boedo">Boedo</option>
                         <option value="Caballido">Caballido</option>
                         <option value="Almagro">Almagro</option>
@@ -108,7 +108,7 @@
                         type="text" 
                         name="direccion" 
                         class="form-control"
-                        value="<%= locals.oldData && oldData.direccion ? oldData.direccion : null %>"
+                        value="<%= locals.userLogged.address[0].direccion %>"
                       >
                       <% if (locals.errors && errors.direccion) { %>
                         <div class="text-danger">
@@ -124,6 +124,7 @@
                       type="text" 
                       name="piso" 
                       class="form-control"
+                      value= "<%= locals.userLogged.address[0].piso %> "
                       >
                     </div>
                   </div>
@@ -134,43 +135,13 @@
                         type="text" 
                         name="departamento" 
                         class="form-control"
-                        value="">
+                        value="<%= locals.userLogged.address[0].departamento %> ">
                     </div>
                   </div>
                   <div class="input-group mt-4 mb-4">
                     <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="imagen">
                     <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
-                  </div> 
-                  <div class="col-12 col-xl-6 mt-4">
-                    <div class="form-group">
-                      <label><b>Contraseña Anterior</b></label>
-                      <input 
-                        type="password" 
-                        name="password" 
-                        class="form-control"
-                      >
-                      <% if (locals.errors && errors.password) { %>
-                        <div class="text-danger">
-                         <p> <%= errors.password.msg %> </p>
-                        </div>
-                      <% } %>
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-6 mt-4">
-                    <div class="form-group">
-                      <label><b>Contraceña Nueva</b></label>
-                      <input 
-                        type="password" 
-                        name="passwordConfirmation" 
-                        class="form-control"
-                      >
-                       <% if (locals.errors && errors.passwordConfirmation) { %>
-                        <div class="text-danger">
-                         <p> <%= errors.passwordConfirmation.msg %> </p>
-                        </div>
-                      <% } %>
-                    </div>
-                  </div>        
+                  </div>         
               </div>
               <div class="tex-center d-flex just ">
                 <button type="submit" class="btn btn-danger mb-4 mt-4">Guardar</button>
