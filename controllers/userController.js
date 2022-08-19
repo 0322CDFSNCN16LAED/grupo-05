@@ -52,11 +52,14 @@ const controlador = {
         res.render ("my-service", { services })
     },
      deleteService:(req,res)=>{
-        Service.destroy({
-            where: {
-                id: req.params.id
-            }
+      db.Service.findByPk(req.params.id).then((service)=>{
+        service.setServicePhoto([]).then(()=>{
+            service.destroy().then(()=>{
+                res.redirect("/user/my-service");
+            })
         })
+
+      })
     //    const allprofessionals = dbProfessionals.getAll();
     //    console.log(allprofessionals)
     //    const filteredList = allprofessionals.filter((service)=>{
@@ -64,7 +67,7 @@ const controlador = {
     //    }) 
     //    dbProfessionals.saveAll(filteredList);
       
-     res.redirect("/user/my-service");
+     
     },
     modifyService:(req,res)=>{
         let pedidoService = db.Service.findByPk(req.params.id)
