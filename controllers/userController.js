@@ -57,12 +57,14 @@ const controlador = {
             price: newService.precio,
             userId: req.session.userLogged.id
         })
-        for (let i = 0; i < req.files.length; i ++) {
+        let maxCount = req.files.length ? req.files.length : 1;
+        for (let i = 0; i < maxCount ; i ++) {
             const ServicePhotoToCreate = await ServicePhoto.create({
-                photo: req.file? req.file.filename : "default.jpg",
+                photo: req.files.length ? req.files[i].filename : "default.jpg",
                 serviceId: ServiceToCreate.id
             })
         }
+    
         res.redirect("/user/my-service");
     },
     myService: async (req,res) => {
@@ -99,7 +101,7 @@ const controlador = {
        
     }, 
     serviceDetail: async (req,res)=>{
-
+        
         const servicio = await Service.findOne({
             where: {
                 id : req.params.id
@@ -110,8 +112,14 @@ const controlador = {
                     {association: "servicePhoto"}
             ]
         })
+        const photos = await ServicePhoto.findAll({
+            where: {
+                serviceId : req.params.id
+            },
+            include: [{association: "service"}]
+        })
 
-        res.render("service-detail", { servicio })
+        res.render("service-detail", { servicio:servicio, photos: JSON.stringify(photos)  })
 
     },
     processModifyService:(req,res)=>{
