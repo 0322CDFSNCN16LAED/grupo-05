@@ -29,6 +29,13 @@ module.exports = function(sequelize, dataTypes){
             as: "services",
             foreignKey: "userId"
         });
+        User.belongsToMany(models.Service, {
+            as: "servicesRequested",
+            through: "user_service",
+            foreignKey: "userId",
+            otherKey: "serviceId",
+            timestaps: false
+        });
     }
     return User;
 }
