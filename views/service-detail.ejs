@@ -57,32 +57,24 @@
 </div>
         </article>
 <article class="container-fluid">
-    <div class="card-group">
-        <div class="card">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
-          <div class="card-body">
-            <p class="card-text">
-              <small class="text-muted">Trabajo realizado el 15/03/2021</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
-          <div class="card-body">
-            <p class="card-text">
-              <small class="text-muted">Trabajo realizado el 10/11/2021</small>
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-          <div class="card-body">
-            <p class="card-text">
-              <small class="text-muted">Trabajo realizado el 03/10/2022</small>
-            </p>
-          </div>
+  <div class="card-group">
+    <% for (let i = 0; i < servicio.servicePhoto.length; i++) { %> 
+
+      <div class="card">
+        <img src="/images/avatars/<%=servicio.servicePhoto[i].photo%>" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+        <div class="card-body">
+          <p class="card-text">
+            <small class="text-muted">Trabajo realizado el 15/03/2021</small>
+          </p>
         </div>
       </div>
+      
+      <% } %> 
+  </div>
+    <% for (let i = 0; i < servicio.servicePhoto.length; i++) { %> 
+      
+      
+      <% } %> 
 </article>
     </section>
     <footer class="bg-dark text-center text-white">

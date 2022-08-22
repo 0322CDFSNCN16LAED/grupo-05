@@ -57,11 +57,18 @@ const controlador = {
             price: newService.precio,
             userId: req.session.userLogged.id
         })
-        for (let i = 0; i < req.files.length; i ++) {
+        if (req.file) {
             const ServicePhotoToCreate = await ServicePhoto.create({
-                photo: req.file? req.file.filename : "default.jpg",
+                photo: req.files? req.file.filename : "default.jpg",
                 serviceId: ServiceToCreate.id
             })
+        } else if (req.files) {
+            for (let i = 0; i < req.files.length; i ++) {
+                const ServicePhotoToCreate = await ServicePhoto.create({
+                    photo: req.files? req.files[i].filename : "default.jpg",
+                    serviceId: ServiceToCreate.id
+                })
+            }
         }
         res.redirect("/user/my-service");
     },
@@ -110,7 +117,6 @@ const controlador = {
                     {association: "servicePhoto"}
             ]
         })
-
         res.render("service-detail", { servicio })
 
     },
