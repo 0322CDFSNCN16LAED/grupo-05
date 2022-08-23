@@ -134,10 +134,9 @@ const controlador = {
         res.redirect("/user/my-service");
 
     },
-    logout: (req, res) => {
-		req.session.destroy();
-		return res.redirect('/');
-    }
+    servicePending:(req,res)=>{
+    res.render("service-pending")
+  }
 }
 
 module.exports = controlador;
