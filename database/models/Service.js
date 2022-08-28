@@ -37,6 +37,10 @@ module.exports = function(sequelize, dataTypes){
             otherKey: "userId",
             timestaps: false
         });
+        Service.hasMany(models.Solicitations, {
+            as: "solicitations",
+            foreignKey: "serviceId"
+        });
     }
 
     return Service;

@@ -11,20 +11,28 @@
       <div class="row ">
         <%- include ("./partials/account-header.ejs") %>
           <div class="p-0 col-xl-9">
-            <h1> servicios pendientes. falta terminar la vista e implementar funcionalidad </h1>
-            <div>
-              <% for (let i = 0; i < usuario.servicesRequested.length; i ++) { %> 
-                <h2> Nombre del profesional: <%= profesionalesBuscados[i].fullName %> </h2>
-                <ul>
-                  <li> Servicio: <%= usuario.servicesRequested[i].jobDescription %>  </li>
-                  <li> Precio: <%= usuario.servicesRequested[i].price %>  </li>
-                  <li> Fecha solicitada: <%= usuario.solicitations[i].serviceDate %>  </li>
-                  <li> Estado de la solicitud: <%= usuario.solicitations[i].solicitationState %>  </li>
-                </ul>
-              <% } %> 
-            </div>
+            <h1> Notificaciones </h1>
+          
 
-      </div>
+          
+            <% for (let i = 0; i < servicios.length; i++) { %>
+            <%  if(servicios[i].usersRequested.length > 0) { %> 
+
+              <% for (let j = 0; i < servicios[i].usersRequested.length; j ++) { %> 
+
+                <h2> <%=servicios[i].usersRequested[j].fullName %>  </h2>
+                <ul>
+                  <li> <%= servicios[i].category.name %>  </li>
+                  <li> <%= servicios[i].jobDescription %> </li>
+                  <li> <%= servicios[i].solicitations[j].serviceDate %>  </li>
+                </ul>
+
+              <% } %> 
+            <% } %> 
+            <% } %> 
+          </div>
+
+
       </div>
       </section>
       <footer class="bg-dark text-center text-white">

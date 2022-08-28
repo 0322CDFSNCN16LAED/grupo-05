@@ -8,11 +8,12 @@ module.exports = function(sequelize, dataTypes){
 		},
 		userId: {type:dataTypes.INTEGER},
         serviceId: {type:dataTypes.INTEGER},
-        serviceDate: {type:dataTypes.DATE}
+		createdAt:{type:dataTypes.DATE},
+        updatedAt: {type:dataTypes.DATE}
 	}
 	let config = {
 		tableName: "user_service",
-		timestamps: false
+		timestamps: true
 	}
 	let UserService = sequelize.define(alias,cols,config);
 

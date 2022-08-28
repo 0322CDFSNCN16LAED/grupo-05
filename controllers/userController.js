@@ -6,6 +6,8 @@ const { Category } = require("../database/models");
 const { Service } = require("../database/models");
 const { ServicePhoto } = require("../database/models");
 const { Address } = require("../database/models");
+const { Solicitations } = require("../database/models");
+const { UserService } = require("../database/models");
 
 
 const dbProfessionals = require("../models/Professionals");
@@ -134,9 +136,64 @@ const controlador = {
         res.redirect("/user/my-service");
 
     },
-    servicePending:(req,res)=>{
-    res.render("service-pending")
-  }
+    notifications: async (req, res) => {
+
+        const servicios = await Service.findAll({
+            where: {
+                userId: req.session.userLogged.id
+            },
+            include: [
+                {association: "category"},
+                {association: "usersRequested"},
+                {association: "solicitations"},
+            ]
+        })
+
+        res.send(servicios)
+    },
+
+    // Solicitudes de servicio
+
+    serviceSolicitation: async (req, res) => {
+
+        await UserService.create({
+            userId: req.session.userLogged.id,
+            serviceId: req.params.id
+        })
+        await Solicitations.create({
+            userId: req.session.userLogged.id,
+            serviceId: req.params.id,
+            serviceDate: req.body.date,
+            solicitationState: "Pendiente"
+        })
+
+        res.redirect("/")
+    },
+    servicePending: async (req,res)=>{
+
+        const usuario = await User.findOne({
+            where: {
+                id: req.session.userLogged.id
+            },
+            include: [
+                {association: "servicesRequested"},
+                {association: "solicitations"},
+            ]
+        })
+
+        const profesionalesBuscados = []
+        for (let i = 0; i < usuario.servicesRequested.length; i++) {
+            const profesionalBuscado = await User.findOne({
+                where: {
+                    id: usuario.servicesRequested[i].userId
+                }
+            })
+            profesionalesBuscados.push(profesionalBuscado)
+        }
+
+        res.render("service-pending", { usuario , profesionalesBuscados })
+        
+    }
 }
 
 module.exports = controlador;

@@ -24,7 +24,11 @@ routes.delete("/my-service/:id", userController.deleteService);
 routes.get("/modify-service/:id", authMiddleware, userController.modifyService)
 routes.put("/modify-service/:id", uploadFile.single("imagen"), userController.processModifyService);
 routes.get("/service-detail/:id", userController.serviceDetail)
+
 routes.get("/service-pending", userController.servicePending)
+
+routes.post("/service-solicitation/:id", userController.serviceSolicitation)
+routes.get("/notifications", userController.notifications)
 
 
 
