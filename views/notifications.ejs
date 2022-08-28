@@ -16,19 +16,14 @@
 
           
             <% for (let i = 0; i < servicios.length; i++) { %>
-            <%  if(servicios[i].usersRequested.length > 0) { %> 
-
-              <% for (let j = 0; i < servicios[i].usersRequested.length; j ++) { %> 
-
-                <h2> <%=servicios[i].usersRequested[j].fullName %>  </h2>
-                <ul>
-                  <li> <%= servicios[i].category.name %>  </li>
-                  <li> <%= servicios[i].jobDescription %> </li>
-                  <li> <%= servicios[i].solicitations[j].serviceDate %>  </li>
-                </ul>
-
-              <% } %> 
-            <% } %> 
+              <% if(servicios[i].solicitations.length > 0) { %> 
+                <% for (let j = 0; j < servicios[i].solicitations.length; j++) { %>
+                  <h3> pide el servicio: <%= cliente[j].fullName %>  </h3>
+                  <p>  direccion del servicio: <%= cliente[j].address[0].direccion %> </p>
+                  <p>  fecha solicitada: <%= servicios[i].solicitations[j].serviceDate %> </p>
+                  <p>  estado del servicio: <%= servicios[i].solicitations[j].solicitationState %> </p>
+                <% } %>
+              <% } %>
             <% } %> 
           </div>
 

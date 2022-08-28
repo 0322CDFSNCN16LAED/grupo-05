@@ -11,16 +11,15 @@
       <div class="row ">
         <%- include ("./partials/account-header.ejs") %>
           <div class="p-0 col-xl-9">
-            <h1> servicios pendientes. falta terminar la vista e implementar funcionalidad </h1>
+            <h1> solicitudes de servicio pendientes</h1>
             <div>
-              <% for (let i = 0; i < usuario.servicesRequested.length; i ++) { %> 
-                <h2> Nombre del profesional: <%= profesionalesBuscados[i].fullName %> </h2>
-                <ul>
-                  <li> Servicio: <%= usuario.servicesRequested[i].jobDescription %>  </li>
-                  <li> Precio: <%= usuario.servicesRequested[i].price %>  </li>
-                  <li> Fecha solicitada: <%= usuario.solicitations[i].serviceDate %>  </li>
-                  <li> Estado de la solicitud: <%= usuario.solicitations[i].solicitationState %>  </li>
-                </ul>
+              <% for (let i = 0; i < usuario.solicitations.length; i ++) { %> 
+                <h3> profesional: <%= profesional[i].user.fullName %> </h2>
+                <p> categoria del servicio: <%= profesional[i].category.name %> </p>
+                <p> precio: <%= profesional[i].price %> </p>
+                <p> fecha solicitada: <%= usuario.solicitations[i].serviceDate %> </p>
+                <p> estado de la solicitud: <%= usuario.solicitations[i].solicitationState %> </p>
+
               <% } %> 
             </div>
 

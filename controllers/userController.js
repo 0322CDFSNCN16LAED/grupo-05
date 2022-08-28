@@ -143,13 +143,28 @@ const controlador = {
                 userId: req.session.userLogged.id
             },
             include: [
-                {association: "category"},
-                {association: "usersRequested"},
                 {association: "solicitations"},
             ]
         })
 
-        res.send(servicios)
+        const cliente = []
+        for (let i = 0; i < servicios.length; i ++) {
+            if(servicios[i].solicitations.length > 0) {
+                for (let j = 0; j < servicios[i].solicitations.length; j ++) {
+                    const clienteBscado = await User.findOne({
+                        where: {
+                            id: servicios[i].solicitations[j].userId
+                        },
+                        include: [
+                            {association: "address"}
+                        ]
+                    })
+                    cliente.push(clienteBscado)
+                }
+            }
+        }
+
+        res.render("notifications", { servicios, cliente })
     },
 
     // Solicitudes de servicio
@@ -176,23 +191,26 @@ const controlador = {
                 id: req.session.userLogged.id
             },
             include: [
-                {association: "servicesRequested"},
                 {association: "solicitations"},
             ]
         })
 
-        const profesionalesBuscados = []
-        for (let i = 0; i < usuario.servicesRequested.length; i++) {
-            const profesionalBuscado = await User.findOne({
+        const profesional = []
+
+        for (let i = 0; i < usuario.solicitations.length; i ++) {
+            const servicioBuscado = await Service.findOne({
                 where: {
-                    id: usuario.servicesRequested[i].userId
-                }
+                    id: usuario.solicitations[i].serviceId
+                },
+                include: [
+                    {association: "user"},
+                    {association: "category"}
+                ]
             })
-            profesionalesBuscados.push(profesionalBuscado)
+            profesional.push(servicioBuscado)
         }
 
-        res.render("service-pending", { usuario , profesionalesBuscados })
-        
+        res.render("service-pending", { usuario, profesional })
     }
 }
 
