@@ -30,13 +30,6 @@ module.exports = function(sequelize, dataTypes){
             as:"user", 
             foreignKey: "userId"
         });
-        Service.belongsToMany(models.User, {
-            as: "usersRequested",
-            through: "user_service",
-            foreignKey: "serviceId",
-            otherKey: "userId",
-            timestaps: false
-        });
         Service.hasMany(models.Solicitations, {
             as: "solicitations",
             foreignKey: "serviceId"
