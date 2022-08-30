@@ -17,12 +17,9 @@
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Nombre completo:</b></label>
-              <input 
-                type="text" 
-                name="fullname" 
-                class="form-control fullname"
-                value="<%= locals.oldData && oldData.fullname ? oldData.fullname : null %>"
-              ><span class="error text-danger">
+              <input type="text" name="fullname" class="form-control "
+                value="<%= locals.oldData && oldData.fullname ? oldData.fullname : null %>">
+            <span class="error text-danger">
               <% if (locals.errors && errors.fullname) { %>
                  <%= errors.fullname.msg %>
               <% } %>
@@ -48,17 +45,13 @@
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Telefono</b></label>
-              <input 
-                type="text" 
-                name="phone" 
-                class="form-control phone"
-                value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"
-              >
-              <% if (locals.errors && errors.phone) { %>
-                <div class="text-danger phoneError">
-                 <p> <%= errors.phone.msg %> </p>
-                </div>
-              <% } %>
+              <input type="tel" name="phone" class="form-control"
+                value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"> 
+              <span class="error text-danger">
+                <% if (locals.errors && errors.phone) { %>
+                  <%= errors.phone.msg %>
+                    <% } %>
+              </span>
             </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
@@ -104,11 +97,11 @@
                 name="direccion" 
                 class="form-control direccion"
                 value="<%= locals.oldData && oldData.direccion ? oldData.direccion : null %>">
-              <% if (locals.errors && errors.direccion) { %>
-                <div class="text-danger direccionError">
-                 <p> <%= errors.direccion.msg %> </p>
-                </div>
-              <% } %>
+              <span class="error text-danger">
+              <% if (locals.errors && errors.fullname) { %>
+                <%= errors.fullname.msg %>
+                  <% } %>
+                    </span>
             </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">

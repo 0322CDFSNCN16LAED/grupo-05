@@ -8,7 +8,7 @@ window.addEventListener("load", function(){
     e.preventDefault();
 
     const errors = []
-    // input fullname
+    // input Nombre completo
     if(formulario.fullname.value == "") {
       errors.push("Este campo no puede estar vacio")
     formulario.fullname.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
@@ -28,11 +28,13 @@ window.addEventListener("load", function(){
         formulario.email.parentElement.querySelector(".error").innerHTML = ("Debe ser un correo electronico valido")
       }
      
-      // input password 
+      //////////////////////////// FALTA  VERIFICAR QUE EL NO CORREO EXISTA EN DB ////////////////////////////////////////////
+
+      // input Contraceña 
       let passRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/;
       let testpassword = passRegex.test(formulario.password.value)
 
-      console.log(formulario.password.value)
+     
       if(formulario.password.value == ""){
         errors.push("Este campo no puede estar vacio")
         formulario.password.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
@@ -44,13 +46,27 @@ window.addEventListener("load", function(){
         formulario.password.parentElement.querySelector(".error").innerHTML = ("La contraseña debe tener * numeros,caracteres especiales,mayusculas y minusculas")
       }
 
-      // input image
+      // input Imagen
       let extencion = /(.PNG|.JPG|.JPEG|.GIF)/i;
       if(!extencion.exec(formulario.imagen.value)){
         errors.push("Formato de imagen no permitido")
         formulario.imagen.parentElement.querySelector(".error").innerHTML = ("Formato de imagen no permitido")
       }
 
+      // input Telefono
+    if (formulario.phone.value == "") {
+      errors.push("Este campo no puede estar vacio")
+      formulario.phone.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
+    }
+      // input Localidad
+
+      // input Barrio
+
+      // input Direccion
+    if (formulario.direccion.value == "") {
+      errors.push("Este campo no puede estar vacio")
+      formulario.direccion.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
+    }
 
       //
       if(errors.length == 0){
