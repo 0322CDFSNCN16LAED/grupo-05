@@ -10,10 +10,30 @@
     <section class="w-100 p-0 m-0">
       <div class="row ">
         <%- include ("./partials/account-header.ejs") %>
-          <div class="p-0 col-xl-9">
-            <h1> Notificaciones </h1>
-          
+            <div class="m-center col-xl-9 col-xxl-9 mb-4 mt-4 ">
+              <section class="container ">
+                <h3>Notificaciones</h3><hr>
+              </section>
+            </div>
 
+
+          <section class="just d-flex">
+            <div class="card ">
+              <div class="card-header text-white bg-danger mb-1">
+                Selicitud de servicio
+              </div>
+              <div class="card-body">
+                <p>Solicitante:</p>
+                <p>Direccion:</p>
+                <p>Fecha y hora:</p>
+                <p>Estado:</p>
+                <a href="#" class="btn btn-danger">Confirmar visita</a>
+              </div>
+            </div>
+            
+          </section>
+            
+            
           
             <% for (let i = 0; i < servicios.length; i++) { %>
               <% if(servicios[i].solicitations.length > 0) { %> 

@@ -10,8 +10,29 @@
     <section class="w-100 p-0 m-0">
       <div class="row ">
         <%- include ("./partials/account-header.ejs") %>
+        <div class="m-center col-xl-9 col-xxl-9 mb-4 mt-4 ">
+          <section class="container ">
+            <h3>Solicitud de servicios pendientes</h3><hr>
+          </section>
+        </div>
+        <section class="just d-flex">
+          <div class="card ">
+            <div class="card-header text-white bg-danger mb-1">
+              Selicitud de servicio
+            </div>
+            <div class="card-body">
+              <p>Profesional:</p>
+              <p>Rubro:</p>
+              <p>Precio</p>
+              <p>Fecha y hora:</p>
+              <p>Estado:</p>
+              <a href="#" class="btn btn-danger">Confirmar visita</a>
+            </div>
+          </div>
+        
+        </section>
+
           <div class="p-0 col-xl-9">
-            <h1> solicitudes de servicio pendientes</h1>
             <div>
               <% for (let i = 0; i < usuario.solicitations.length; i ++) { %> 
                 <h3> profesional: <%= profesional[i].user.fullName %> </h2>
