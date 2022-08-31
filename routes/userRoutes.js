@@ -22,7 +22,7 @@ routes.post ("/add-service", uploadFile.array("imagen"), userController.storeSer
 routes.get ("/my-service", authMiddleware, userController.myService);
 routes.delete("/my-service/:id", userController.deleteService);
 routes.get("/modify-service/:id", authMiddleware, userController.modifyService)
-routes.put("/modify-service/:id", uploadFile.single("imagen"), userController.processModifyService);
+routes.put("/modify-service/:id", uploadFile.array("imagen"), userController.processModifyService);
 routes.get("/service-detail/:id", userController.serviceDetail)
 
 routes.get("/service-pending", userController.servicePending)
