@@ -16,19 +16,26 @@ const uploadFile = require('../middlewares/multerMiddleware');
 
 routes.get ("/account", authMiddleware, userController.account);
 routes.get ("/modify-account/:id", authMiddleware, userController.modifyAccount);
-routes.post ("/modify-account/:id", uploadFile.single("imagen"), userController.processModifyAccount);
+routes.post ("/modify-account/:id", authMiddleware, uploadFile.single("imagen"), userController.processModifyAccount);
 routes.get ("/add-service", authMiddleware, userController.addService);
-routes.post ("/add-service", uploadFile.array("imagen"), userController.storeService);
+routes.post ("/add-service", authMiddleware, uploadFile.array("imagen"), userController.storeService);
 routes.get ("/my-service", authMiddleware, userController.myService);
-routes.delete("/my-service/:id", userController.deleteService);
+routes.delete("/my-service/:id", authMiddleware, userController.deleteService);
 routes.get("/modify-service/:id", authMiddleware, userController.modifyService)
-routes.put("/modify-service/:id", uploadFile.array("imagen"), userController.processModifyService);
-routes.get("/service-detail/:id", userController.serviceDetail)
+routes.put("/modify-service/:id", authMiddleware, uploadFile.array("imagen"), userController.processModifyService);
+routes.get("/service-detail/:id", authMiddleware, userController.serviceDetail)
 
-routes.get("/service-pending", userController.servicePending)
+routes.get("/service-pending", authMiddleware, userController.servicePending)
 
-routes.post("/service-solicitation/:id", userController.serviceSolicitation)
-routes.get("/notifications", userController.notifications)
+routes.post("/service-solicitation/:id", authMiddleware, userController.serviceSolicitation)
+routes.get("/notifications", authMiddleware, userController.notifications)
+
+// Profesional acepta el servicio
+routes.post("/accept-service/:id", authMiddleware, userController.acceptService)
+// Profesional rechaza servicio
+routes.post("/reject-service/:id", authMiddleware, userController.rejectService)
+// Profesional cambia la fecha
+// routes.post("/reject-service/:id", authMiddleware, userController.rejectService)
 
 
 

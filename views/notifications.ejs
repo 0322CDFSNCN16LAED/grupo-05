@@ -30,7 +30,15 @@
                 <p>Direccion: <%= servicios[i].solicitations[j].user.address[0].direccion %> </p>
                 <p>Fecha y hora: <%= servicios[i].solicitations[j].serviceDate %>  </p>
                 <p>Estado: <%= servicios[i].solicitations[j].solicitationState %> </p>
-                <a href="#" class="btn btn-danger">Confirmar visita</a>
+                <form action="/user/accept-service/<%=servicios[i].solicitations[j].id%>" method="POST">
+                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Aceptar solicitud">
+                </form>
+                <form action="/user/reject-service/<%=servicios[i].solicitations[j].id%>" method="POST">
+                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Rechazar solicitud">
+                </form>
+                <form action="/user/change-service/<%=servicios[i].solicitations[j].id%>" method="POST">
+                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Sugerir otra fecha">
+                </form>
               </div>
             </div>
             <% } %>

@@ -191,6 +191,33 @@ const controlador = {
             })
 
         res.render("service-pending", { usuario })
+    },
+
+    // Profesional-Servicio
+
+    acceptService: async (req, res) => {
+
+        const solicitud = await Solicitations.update({
+            solicitationState: "Aceptada"
+        },{
+           where: {
+            id: req.params.id
+           } 
+        }
+        )
+        res.redirect("/user/notifications")
+
+    },
+    rejectService: async (req, res) => {
+
+        const solicitud = await Solicitations.destroy({
+            where: {
+                id: req.params.id
+            }
+            }
+        )
+        res.redirect("/user/notifications")
+        
     }
 }
 
