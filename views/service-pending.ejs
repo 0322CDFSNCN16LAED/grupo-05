@@ -14,9 +14,9 @@
             <h1> solicitudes de servicio pendientes</h1>
             <div>
               <% for (let i = 0; i < usuario.solicitations.length; i ++) { %> 
-                <h3> profesional: <%= usuario.solicitations[i].service.user.fullName %> </h2>
-                <p> categoria del servicio: <%= usuario.solicitations[i].service.category.name %> </p>
-                <p> precio: <%= usuario.solicitations[i].service.price %> </p>
+                <h3> profesional: <%= profesional[i].user.fullName %> </h2>
+                <p> categoria del servicio: <%= profesional[i].category.name %> </p>
+                <p> precio: <%= profesional[i].price %> </p>
                 <p> fecha solicitada: <%= usuario.solicitations[i].serviceDate %> </p>
                 <p> estado de la solicitud: <%= usuario.solicitations[i].solicitationState %> </p>
 

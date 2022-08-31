@@ -49,21 +49,18 @@ const controlador = {
             ]
         })
 
-        let profesionales = await User.findAll({
+        // Function para buscar por nombre: 
+
+        /*const profesionalBuscado = await User.findAll({
             where: {
                 fullName: {[Op.like]:"%" +req.query.search+ "%"}
-            }, 
-            include: [
-                {association: "services"}
-            ]
+            }
         })
-
-        let serviciosBuscadoPorProfesional = [];
-        for(let i = 0; i < profesionales.length; i ++) {
-            for(let j = 0; j < profesionales[i].services.length; j ++) {
-                let servicio = await Service.findOne({
+         if(profesionalBuscado) {
+            for (let i = 0; i < profesionalBuscado.length; i++) {
+                const servicioBuscadoPorNombre = await Service.findAll({
                     where: {
-                        id: profesionales[i].services[j].id
+                        userId: profesionalBuscado[i].id
                     },
                     include: [
                         {association: "category"},
@@ -71,11 +68,11 @@ const controlador = {
                         {association: "servicePhoto"}
                     ]
                 })
-                serviciosBuscadoPorProfesional.push(servicio)
+                servicios.push(servicioBuscadoPorNombre)
             }
-        }
+        }*/
 
-        res.render("professionals", { servicios, serviciosBuscadoPorProfesional })
+        res.render("professionals", { servicios })
     }
 }
 
