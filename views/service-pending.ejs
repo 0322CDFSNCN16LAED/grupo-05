@@ -26,7 +26,11 @@
               <p>Precio: <%= usuario.solicitations[i].service.price %> </p>
               <p>Fecha y hora: <%= usuario.solicitations[i].serviceDate %> </p>
               <p>Estado: <%= usuario.solicitations[i].solicitationState %> </p>
-              <a href="#" class="btn btn-danger">Confirmar visita</a>
+              <% if(usuario.solicitations[i].solicitationState == "Aceptada") { %>
+                <form action="/user/add-to-cart/<%=usuario.solicitations[i].id%>" method="POST">
+                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Agregar al carrito">
+                </form>
+              <% } %> 
             </div>
           </div>
           <% } %> 
