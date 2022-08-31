@@ -38,42 +38,45 @@ const controlador = {
     },
     searchProfessionals: async (req, res) => {
 
-         let servicios = await Service.findAll({
-            where: {
-                jobDescription: {[Op.like]:"%" +req.query.search+ "%"}
-            },
-            include: [
-                {association: "category"},
-                {association: "user"},
-                {association: "servicePhoto"}
-            ]
-        })
+        let servicios = await Service.findAll({
+           where: {
+               jobDescription: {[Op.like]:"%" +req.query.search+ "%"}
+           },
+           include: [
+               {association: "category"},
+               {association: "user"},
+               {association: "servicePhoto"}
+           ]
+       })
 
-        // Function para buscar por nombre: 
+       let profesionales = await User.findAll({
+           where: {
+               fullName: {[Op.like]:"%" +req.query.search+ "%"}
+           }, 
+           include: [
+               {association: "services"}
+           ]
+       })
 
-        /*const profesionalBuscado = await User.findAll({
-            where: {
-                fullName: {[Op.like]:"%" +req.query.search+ "%"}
-            }
-        })
-         if(profesionalBuscado) {
-            for (let i = 0; i < profesionalBuscado.length; i++) {
-                const servicioBuscadoPorNombre = await Service.findAll({
-                    where: {
-                        userId: profesionalBuscado[i].id
-                    },
-                    include: [
-                        {association: "category"},
-                        {association: "user"},
-                        {association: "servicePhoto"}
-                    ]
-                })
-                servicios.push(servicioBuscadoPorNombre)
-            }
-        }*/
+       let serviciosBuscadoPorProfesional = [];
+       for(let i = 0; i < profesionales.length; i ++) {
+           for(let j = 0; j < profesionales[i].services.length; j ++) {
+               let servicio = await Service.findOne({
+                   where: {
+                       id: profesionales[i].services[j].id
+                   },
+                   include: [
+                       {association: "category"},
+                       {association: "user"},
+                       {association: "servicePhoto"}
+                   ]
+               })
+               serviciosBuscadoPorProfesional.push(servicio)
+           }
+       }
 
-        res.render("professionals", { servicios })
-    }
+       res.render("professionals", { servicios, serviciosBuscadoPorProfesional })
+   }
 }
 
 module.exports = controlador;

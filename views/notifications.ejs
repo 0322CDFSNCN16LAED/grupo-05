@@ -14,40 +14,31 @@
               <section class="container ">
                 <h3>Notificaciones</h3><hr>
               </section>
-            </div>
-
 
           <section class="just d-flex">
-            <div class="card ">
-              <div class="card-header text-white bg-danger mb-1">
-                Selicitud de servicio
-              </div>
-              <div class="card-body">
-                <p>Solicitante:</p>
-                <p>Direccion:</p>
-                <p>Fecha y hora:</p>
-                <p>Estado:</p>
-                <a href="#" class="btn btn-danger">Confirmar visita</a>
-              </div>
-            </div>
-            
-          </section>
-            
-            
-          
+
             <% for (let i = 0; i < servicios.length; i++) { %>
               <% if(servicios[i].solicitations.length > 0) { %> 
                 <% for (let j = 0; j < servicios[i].solicitations.length; j++) { %>
-                  <h3> pide el servicio: <%= cliente[j].fullName %>  </h3>
-                  <p>  direccion del servicio: <%= cliente[j].address[0].direccion %> </p>
-                  <p>  fecha solicitada: <%= servicios[i].solicitations[j].serviceDate %> </p>
-                  <p>  estado del servicio: <%= servicios[i].solicitations[j].solicitationState %> </p>
-                <% } %>
-              <% } %>
+            <div class="card ">
+              <div class="card-header text-white bg-danger mb-1">
+                Solicitud de servicio
+              </div>
+              <div class="card-body">
+                <p>Solicitante: <%= servicios[i].solicitations[j].user.fullName %>  </p>
+                <p>Servicio de: <%= servicios[i].category.name %>  </p>
+                <p>Direccion: <%= servicios[i].solicitations[j].user.address[0].direccion %> </p>
+                <p>Fecha y hora: <%= servicios[i].solicitations[j].serviceDate %>  </p>
+                <p>Estado: <%= servicios[i].solicitations[j].solicitationState %> </p>
+                <a href="#" class="btn btn-danger">Confirmar visita</a>
+              </div>
+            </div>
+            <% } %>
             <% } %> 
+            <% } %> 
+            
+          </section>
           </div>
-
-
       </div>
       </section>
       <footer class="bg-dark text-center text-white">

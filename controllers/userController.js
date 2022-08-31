@@ -142,29 +142,20 @@ const controlador = {
             where: {
                 userId: req.session.userLogged.id
             },
-            include: [
-                {association: "solicitations"},
+            include:[{ //Incluye asociaciones del usuario
+                association:"solicitations",
+                include:[{ //Incluye asociaciones de la solicitation
+                  association:"user",
+                  include: [
+                    {association: "address"}
+                  ]
+                }]
+              },
+              {association:"category"}
             ]
         })
 
-        const cliente = []
-        for (let i = 0; i < servicios.length; i ++) {
-            if(servicios[i].solicitations.length > 0) {
-                for (let j = 0; j < servicios[i].solicitations.length; j ++) {
-                    const clienteBscado = await User.findOne({
-                        where: {
-                            id: servicios[i].solicitations[j].userId
-                        },
-                        include: [
-                            {association: "address"}
-                        ]
-                    })
-                    cliente.push(clienteBscado)
-                }
-            }
-        }
-
-        res.render("notifications", { servicios, cliente })
+        res.render("notifications", { servicios })
     },
 
     // Solicitudes de servicio
@@ -190,27 +181,16 @@ const controlador = {
             where: {
                 id: req.session.userLogged.id
             },
-            include: [
-                {association: "solicitations"},
-            ]
-        })
-
-        const profesional = []
-
-        for (let i = 0; i < usuario.solicitations.length; i ++) {
-            const servicioBuscado = await Service.findOne({
-                where: {
-                    id: usuario.solicitations[i].serviceId
-                },
-                include: [
-                    {association: "user"},
-                    {association: "category"}
-                ]
+            include:[{ //Incluye asociaciones del usuario
+                association:"solicitations",
+                include:[{ //Incluye asociaciones de la solicitation
+                  association:"service",
+                  include:["user","category"] //Incluye asociaciones del servicio
+                }]
+              }]
             })
-            profesional.push(servicioBuscado)
-        }
 
-        res.render("service-pending", { usuario, profesional })
+        res.render("service-pending", { usuario })
     }
 }
 
