@@ -50,6 +50,8 @@
     </div>
     </article> 
     <%  }); %> 
+
+    <% if(serviciosBuscadosPorProfesional.length > 0) { %>
     <% serviciosBuscadosPorProfesional.forEach(servicio => { %>
       <article class="card-p container-fluid d-flex just">
         <div class=" w-100 row">
@@ -84,7 +86,8 @@
         </div>
       </div>
       </article> 
-      <%  }); %> 
+      <%  }) %> 
+      <%  } %> 
 
   </section>
 

@@ -38,7 +38,7 @@ const controlador = {
     },
     searchProfessionals: async (req, res) => {
 
-        let servicios = await Service.findAll({
+        const servicios = await Service.findAll({
            where: {
                jobDescription: {[Op.like]:"%" +req.query.search+ "%"}
            },
@@ -48,8 +48,8 @@ const controlador = {
                {association: "servicePhoto"}
            ]
        })
-
-       let profesionales = await User.findAll({
+     
+       const profesionales = await User.findAll({
            where: {
                fullName: {[Op.like]:"%" +req.query.search+ "%"}
            }, 
@@ -58,24 +58,26 @@ const controlador = {
            ]
        })
 
-       let serviciosBuscadosPorProfesional = [];
-       for(let i = 0; i < profesionales.length; i ++) {
-           for(let j = 0; j < profesionales[i].services.length; j ++) {
-               let servicio = await Service.findOne({
-                   where: {
-                       id: profesionales[i].services[j].id
-                   },
-                   include: [
-                       {association: "category"},
-                       {association: "user"},
-                       {association: "servicePhoto"}
-                   ]
-               })
-               serviciosBuscadosPorProfesional.push(servicio)
-           }
-       }
 
-       res.render("professionals", { servicios, serviciosBuscadosPorProfesional })
+       let serviciosBuscadosPorProfesional = [];
+       if (servicios.length <= 0) {
+        for(let i = 0; i < profesionales.length; i ++) {
+            for(let j = 0; j < profesionales[i].services.length; j ++) {
+                let servicio = await Service.findOne({
+                    where: {
+                        id: profesionales[i].services[j].id
+                    },
+                    include: [
+                        {association: "category"},
+                        {association: "user"},
+                        {association: "servicePhoto"}
+                    ]
+                })
+                serviciosBuscadosPorProfesional.push(servicio)
+            }
+        }}
+
+        res.render("professionals", { servicios, serviciosBuscadosPorProfesional })
    }
 }
 
