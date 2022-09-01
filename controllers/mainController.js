@@ -58,7 +58,7 @@ const controlador = {
            ]
        })
 
-       let serviciosBuscadoPorProfesional = [];
+       let serviciosBuscadosPorProfesional = [];
        for(let i = 0; i < profesionales.length; i ++) {
            for(let j = 0; j < profesionales[i].services.length; j ++) {
                let servicio = await Service.findOne({
@@ -71,11 +71,11 @@ const controlador = {
                        {association: "servicePhoto"}
                    ]
                })
-               serviciosBuscadoPorProfesional.push(servicio)
+               serviciosBuscadosPorProfesional.push(servicio)
            }
        }
 
-       res.render("professionals", { servicios, serviciosBuscadoPorProfesional })
+       res.render("professionals", { servicios, serviciosBuscadosPorProfesional })
    }
 }
 
