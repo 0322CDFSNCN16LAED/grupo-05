@@ -226,6 +226,15 @@ const controlador = {
         })
 
         res.redirect("/user/notifications")
+    },
+    cancelService: async (req, res) => {
+
+        const solicitud = await Solicitations.findByPk(req.params.id)
+
+        solicitud.update({
+            solicitationState: "Cancelada"
+        })
+
     }
 }
 

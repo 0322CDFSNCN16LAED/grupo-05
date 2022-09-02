@@ -36,6 +36,8 @@ routes.post("/accept-service/:id", authMiddleware, userController.acceptService)
 routes.post("/reject-service/:id", authMiddleware, userController.rejectService)
 // Profesional cambia la fecha
 routes.post("/change-date/:id", authMiddleware, userController.changeDate)
+// Profesional cancela la fecha previamente confirmada
+routes.post("/cancel-service/:id", authMiddleware, userController.cancelService)
 
 
 
