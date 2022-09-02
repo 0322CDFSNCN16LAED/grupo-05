@@ -51,6 +51,44 @@
     </article> 
     <%  }); %> 
 
+    <% if(serviciosBuscadosPorProfesional.length > 0) { %>
+    <% serviciosBuscadosPorProfesional.forEach(servicio => { %>
+      <article class="card-p container-fluid d-flex just">
+        <div class=" w-100 row">
+          <div class="card mb-3 col">
+            <div class="row">
+              <div class="p-0 col-md-3 w">
+  
+                
+                  <img src="/images/avatars/<%= servicio.user.profilePicture %> " class="img-fluid rounded-start h-100" alt="...">
+                
+  
+                
+                </div>
+                
+              <div class="col-md-9">
+              <div class="card-body p-1 m-0 jus">
+                <h5 class="card-title d-flex just border-b"><%= servicio.user.fullName %> </h5>
+              
+                <div class="pofessions d-flex wrap border-b">
+                  <ul></ul>
+                    <li class=" list-style mr-10"><span class="m-0" ><%= servicio.category.name %> </span></li>
+                  </ul>
+                </div>
+                <p class="card-text "><%= servicio.jobDescription %> </p>
+                <p class="fst-italic gray-light border-b border-t"> Precios de visita: <%= servicio.price %> </p>
+                <div class="d-flex just">
+                  <a href="/user/service-detail/<%=servicio.id%> "> <input type="submit" class="btn btn-danger mb-2 text-center" value="Ver perfil"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </article> 
+      <%  }) %> 
+      <%  } %> 
+
   </section>
 
 

@@ -28,7 +28,8 @@
                 <p>Solicitante: <%= servicios[i].solicitations[j].user.fullName %>  </p>
                 <p>Servicio de: <%= servicios[i].category.name %>  </p>
                 <p>Direccion: <%= servicios[i].solicitations[j].user.address[0].direccion %> </p>
-                <p>Fecha y hora: <%= servicios[i].solicitations[j].serviceDate %>  </p>
+                <p>Fecha: <%= servicios[i].solicitations[j].serviceDate %>  </p>
+                <p>Hora: <%= servicios[i].solicitations[j].serviceTime %>  </p>
                 <p>Estado: <%= servicios[i].solicitations[j].solicitationState %> </p>
                 <form action="/user/accept-service/<%=servicios[i].solicitations[j].id%>" method="POST">
                   <input type="submit" class="btn btn-danger mb-2 text-center" value="Aceptar solicitud">
@@ -36,9 +37,37 @@
                 <form action="/user/reject-service/<%=servicios[i].solicitations[j].id%>" method="POST">
                   <input type="submit" class="btn btn-danger mb-2 text-center" value="Rechazar solicitud">
                 </form>
-                <form action="/user/change-service/<%=servicios[i].solicitations[j].id%>" method="POST">
-                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Sugerir otra fecha">
-                </form>
+
+                <button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop-<%=servicios[i].solicitations[j].id  %> ">
+                  Sugerir otra fecha
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop-<%=servicios[i].solicitations[j].id%>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Selecciona una fecha</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="p-15 form-outline" method="POST" action="/user/change-date/<%=servicios[i].solicitations[j].id%>">
+                          <div class="p-2">
+                            <label> Dia: </label>
+                            <input type="date" name="date" >
+                          </div>
+                          <div class="p-2">
+                            <label> Horario: </label>
+                            <input type="time" name="time" >
+                          </div>
+                          <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger">Seleccionar</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <% } %>

@@ -17,7 +17,7 @@
         <h1 > <%= servicio.user.fullName %> </h1>
         
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<button type="button" class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop-">
   Solicitar servicio
 </button>
 
@@ -32,9 +32,16 @@
       <div class="modal-body">
         <h3>Selecciona una fecha</h3>
         <form class="p-15 form-outline" method="POST" action="/user/service-solicitation/<%=servicio.id%>">
-          <input type="datetime-local" name="date" >
+          <div class="p-2">
+            <label> Dia: </label>
+            <input type="date" name="date" >
+          </div>
+          <div class="p-2">
+            <label> Horario: </label>
+            <input type="time" name="time" >
+          </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Seleccionar</button>
+            <button type="submit" class="btn btn-danger">Seleccionar</button>
           </div>
         </form>
       </div>

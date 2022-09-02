@@ -162,14 +162,11 @@ const controlador = {
 
     serviceSolicitation: async (req, res) => {
 
-        await UserService.create({
-            userId: req.session.userLogged.id,
-            serviceId: req.params.id
-        })
         await Solicitations.create({
             userId: req.session.userLogged.id,
             serviceId: req.params.id,
             serviceDate: req.body.date,
+            serviceTime: req.body.time,
             solicitationState: "Pendiente"
         })
 
@@ -218,6 +215,17 @@ const controlador = {
         )
         res.redirect("/user/notifications")
         
+    },
+    changeDate: async (req, res) => {
+
+        const solicitud = await Solicitations.findByPk(req.params.id)
+        
+        solicitud.update({
+            serviceDate: req.body.date,
+            serviceTime: req.body.time
+        })
+
+        res.redirect("/user/notifications")
     }
 }
 
