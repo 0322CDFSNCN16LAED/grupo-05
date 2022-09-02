@@ -9,7 +9,10 @@ const authRoutes = require("./authRoutes")
 routes.get ("/", mainController.index);
 routes.get ("/shop", mainController.shop);
 
+routes.get ("/professionals", mainController.searchProfessionals);
+
 routes.get ("/:id?", mainController.professionals);
+
 
 // User Route
 routes.use('/user', userRoutes);

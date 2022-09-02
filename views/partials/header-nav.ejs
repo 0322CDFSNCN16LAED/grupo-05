@@ -12,9 +12,6 @@
           <li class="nav-item fw-bold ">
             <a class="nav-link fs-6 text-white" aria-current="page" href="/">Inicio</a>
           </li>
-          <li class="nav-item fw-bold ">
-            <a class="nav-link fs-6 text-white" aria-current="page" href="#contact">Contacto</a>
-          </li>
           <% if(locals.isLogged) {%>
             <li class="nav-item fw-bold ">
               <a class="nav-link fs-6 text-white " aria-current="page" href="/user/account">Cuenta</a>
@@ -33,9 +30,9 @@
           <%}%>  
         </ul>
         
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button type="button" class=" btn btn-danger">Buscar</button>
+        <form class="d-flex" method="GET" action="/professionals">
+          <input class="form-control me-2" type="text" placeholder="Search by description" aria-label="Search" name="search">
+          <button type="submit" class=" btn btn-danger">Buscar</button>
         </form>
         <% if(locals.isLogged) {%>
         <div class="dropdown">

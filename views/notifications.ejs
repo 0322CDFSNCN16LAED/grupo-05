@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("./partials/head.ejs")  %>
+</head>
+<body>
+    <header>
+        <%- include ("./partials/header-nav.ejs") %>
+    </header>
+    <section class="w-100 p-0 m-0">
+      <div class="row ">
+        <%- include ("./partials/account-header.ejs") %>
+            <div class="m-center col-xl-9 col-xxl-9 mb-4 mt-4 ">
+              <section class="container ">
+                <h3>Notificaciones</h3><hr>
+              </section>
+
+          <section class="just d-flex">
+
+            <% for (let i = 0; i < servicios.length; i++) { %>
+              <% if(servicios[i].solicitations.length > 0) { %> 
+                <% for (let j = 0; j < servicios[i].solicitations.length; j++) { %>
+            <div class="card ">
+              <div class="card-header text-white bg-danger mb-1">
+                Solicitud de servicio
+              </div>
+              <div class="card-body">
+                <p>Solicitante: <%= servicios[i].solicitations[j].user.fullName %>  </p>
+                <p>Servicio de: <%= servicios[i].category.name %>  </p>
+                <p>Direccion: <%= servicios[i].solicitations[j].user.address[0].direccion %> </p>
+                <p>Fecha y hora: <%= servicios[i].solicitations[j].serviceDate %>  </p>
+                <p>Estado: <%= servicios[i].solicitations[j].solicitationState %> </p>
+                <form action="/user/accept-service/<%=servicios[i].solicitations[j].id%>" method="POST">
+                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Aceptar solicitud">
+                </form>
+                <form action="/user/reject-service/<%=servicios[i].solicitations[j].id%>" method="POST">
+                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Rechazar solicitud">
+                </form>
+                <form action="/user/change-service/<%=servicios[i].solicitations[j].id%>" method="POST">
+                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Sugerir otra fecha">
+                </form>
+              </div>
+            </div>
+            <% } %>
+            <% } %> 
+            <% } %> 
+            
+          </section>
+          </div>
+      </div>
+      </section>
+      <footer class="bg-dark text-center text-white">
+        <%- include ("./partials/footer.ejs")  %>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+          </body>
+        </html>

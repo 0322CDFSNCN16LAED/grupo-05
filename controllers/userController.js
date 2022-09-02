@@ -6,6 +6,8 @@ const { Category } = require("../database/models");
 const { Service } = require("../database/models");
 const { ServicePhoto } = require("../database/models");
 const { Address } = require("../database/models");
+const { Solicitations } = require("../database/models");
+const { UserService } = require("../database/models");
 
 
 const dbProfessionals = require("../models/Professionals");
@@ -57,14 +59,19 @@ const controlador = {
             price: newService.precio,
             userId: req.session.userLogged.id
         })
-        let maxCount = req.files.length ? req.files.length : 1;
-        for (let i = 0; i < maxCount ; i ++) {
+        if (req.file) {
             const ServicePhotoToCreate = await ServicePhoto.create({
-                photo: req.files.length ? req.files[i].filename : "default.jpg",
+                photo: req.files? req.file.filename : "default.jpg",
                 serviceId: ServiceToCreate.id
             })
+        } else if (req.files) {
+            for (let i = 0; i < req.files.length; i ++) {
+                const ServicePhotoToCreate = await ServicePhoto.create({
+                    photo: req.files? req.files[i].filename : "default.jpg",
+                    serviceId: ServiceToCreate.id
+                })
+            }
         }
-    
         res.redirect("/user/my-service");
     },
     myService: async (req,res) => {
@@ -112,14 +119,7 @@ const controlador = {
                     {association: "servicePhoto"}
             ]
         })
-        const photos = await ServicePhoto.findAll({
-            where: {
-                serviceId : req.params.id
-            },
-            include: [{association: "service"}]
-        })
-
-        res.render("service-detail", { servicio:servicio, photos: JSON.stringify(photos)  })
+        res.render("service-detail", { servicio })
 
     },
     processModifyService:(req,res)=>{
@@ -136,9 +136,88 @@ const controlador = {
         res.redirect("/user/my-service");
 
     },
-    logout: (req, res) => {
-		req.session.destroy();
-		return res.redirect('/');
+    notifications: async (req, res) => {
+
+        const servicios = await Service.findAll({
+            where: {
+                userId: req.session.userLogged.id
+            },
+            include:[{ //Incluye asociaciones del usuario
+                association:"solicitations",
+                include:[{ //Incluye asociaciones de la solicitation
+                  association:"user",
+                  include: [
+                    {association: "address"}
+                  ]
+                }]
+              },
+              {association:"category"}
+            ]
+        })
+
+        res.render("notifications", { servicios })
+    },
+
+    // Solicitudes de servicio
+
+    serviceSolicitation: async (req, res) => {
+
+        await UserService.create({
+            userId: req.session.userLogged.id,
+            serviceId: req.params.id
+        })
+        await Solicitations.create({
+            userId: req.session.userLogged.id,
+            serviceId: req.params.id,
+            serviceDate: req.body.date,
+            solicitationState: "Pendiente"
+        })
+
+        res.redirect("/")
+    },
+    servicePending: async (req,res)=>{
+
+        const usuario = await User.findOne({
+            where: {
+                id: req.session.userLogged.id
+            },
+            include:[{ //Incluye asociaciones del usuario
+                association:"solicitations",
+                include:[{ //Incluye asociaciones de la solicitation
+                  association:"service",
+                  include:["user","category"] //Incluye asociaciones del servicio
+                }]
+              }]
+            })
+
+        res.render("service-pending", { usuario })
+    },
+
+    // Profesional-Servicio
+
+    acceptService: async (req, res) => {
+
+        const solicitud = await Solicitations.update({
+            solicitationState: "Aceptada"
+        },{
+           where: {
+            id: req.params.id
+           } 
+        }
+        )
+        res.redirect("/user/notifications")
+
+    },
+    rejectService: async (req, res) => {
+
+        const solicitud = await Solicitations.destroy({
+            where: {
+                id: req.params.id
+            }
+            }
+        )
+        res.redirect("/user/notifications")
+        
     }
 }
 

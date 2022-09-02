@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("./partials/head.ejs")  %>
+</head>
+<body>
+    <header>
+        <%- include ("./partials/header-nav.ejs") %>
+    </header>
+    <section class="w-100 p-0 m-0">
+      <div class="row ">
+        <%- include ("./partials/account-header.ejs") %>
+        <div class="m-center col-xl-9 col-xxl-9 mb-4 mt-4 ">
+          <section class="container ">
+            <h3>Solicitud de servicios pendientes</h3><hr>
+          </section>
+        <section class="just d-flex">
+          <% for (let i = 0; i < usuario.solicitations.length; i ++) { %> 
+          <div class="card ">
+            <div class="card-header text-white bg-danger mb-1">
+              Servicio solicitado
+            </div> 
+            <div class="card-body">
+              <p>Profesional: <%= usuario.solicitations[i].service.user.fullName %> </p>
+              <p>Rubro: <%= usuario.solicitations[i].service.category.name %></p>
+              <p>Precio: <%= usuario.solicitations[i].service.price %> </p>
+              <p>Fecha y hora: <%= usuario.solicitations[i].serviceDate %> </p>
+              <p>Estado: <%= usuario.solicitations[i].solicitationState %> </p>
+              <% if(usuario.solicitations[i].solicitationState == "Aceptada") { %>
+                <form action="/user/add-to-cart/<%=usuario.solicitations[i].id%>" method="POST">
+                  <input type="submit" class="btn btn-danger mb-2 text-center" value="Agregar al carrito">
+                </form>
+              <% } %> 
+            </div>
+          </div>
+          <% } %> 
+        
+        </section>
+
+      </div>
+
+      </div>
+      </section>
+      <footer class="bg-dark text-center text-white">
+        <%- include ("./partials/footer.ejs")  %>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+          </body>
+        </html>
