@@ -10,6 +10,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const uploadFile = require('../middlewares/multerMiddleware');
 
+
 routes.get ('/register', guestMiddleware, authController.register );
 routes.post('/register', uploadFile.single("imagen"), registerValidation, authController.processRegister);
 
