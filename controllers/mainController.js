@@ -77,7 +77,7 @@ const controlador = {
             }
         }}
 
-        res.render("professionals", { servicios, serviciosBuscadosPorProfesional })
+        res.render("professionalsQuery", { servicios, serviciosBuscadosPorProfesional })
    }
 }
 

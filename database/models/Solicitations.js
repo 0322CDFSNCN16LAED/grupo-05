@@ -7,6 +7,7 @@ module.exports = function(sequelize, dataTypes){
 			autoIncrement: true
 		},
         serviceDate:{ type: dataTypes.DATE},
+        serviceTime: { type: dataTypes.TIME},
         solicitationState: {type: dataTypes.STRING},
         userId:  {type:dataTypes.INTEGER},
         serviceId: {type:dataTypes.INTEGER}
