@@ -161,7 +161,7 @@ const controlador = {
     // Solicitudes de servicio
 
     serviceSolicitation: async (req, res) => {
-
+        
         await Solicitations.create({
             userId: req.session.userLogged.id,
             serviceId: req.params.id,
@@ -169,6 +169,7 @@ const controlador = {
             serviceTime: req.body.time,
             solicitationState: "Pendiente"
         })
+        
 
         res.redirect("/")
     },

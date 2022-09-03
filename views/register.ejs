@@ -17,7 +17,7 @@
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Nombre completo:</b></label>
-              <input type="text" name="fullname" class="form-control "
+              <input type="text" name="fullname" class="form-control fullname" 
                 value="<%= locals.oldData && oldData.fullname ? oldData.fullname : null %>">
             <span class="error text-danger">
               <% if (locals.errors && errors.fullname) { %>
@@ -45,7 +45,7 @@
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Telefono</b></label>
-              <input type="tel" name="phone" class="form-control"
+              <input type="tel" name="phone" class="form-control phone"
                 value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"> 
               <span class="error text-danger">
                 <% if (locals.errors && errors.phone) { %>
@@ -125,7 +125,7 @@
             </div>
           </div>
           <div class="input-group mt-4 mb-4">
-            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="imagen">
+            <input type="file" class="form-control imagen" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="imagen">
             <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
             <span class="error text-danger col-12"></span>
           </div> 
@@ -136,14 +136,14 @@
               <input 
                 type="password" 
                 name="password" 
-                class="form-control password  ">
-                 <span class="error text-danger"></span>
+                class="form-control password">
+                 <span class="error text-danger">
               <% if (locals.errors && errors.password) { %>
                 
                  <%= errors.password.msg %>
               
               <% } %>   
-            </span>
+                </span>
             </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
@@ -153,12 +153,15 @@
                 type="password" 
                 name="passwordConfirmation" 
                 class="form-control passwordConfirmation"
+                
               >
+              <span class="error text-danger">
                <% if (locals.errors && errors.passwordConfirmation) { %>
                 <div class="text-danger passwordConfirmationError">
                  <p> <%= errors.passwordConfirmation.msg %> </p>
                 </div>
               <% } %>
+            </span>
             </div>
           </div>        
       
