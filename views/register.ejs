@@ -127,7 +127,11 @@
           <div class="input-group mt-4 mb-4">
             <input type="file" class="form-control imagen" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="imagen">
             <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
-            <span class="error text-danger col-12"></span>
+            <span class="error text-danger col-12">
+              <% if (locals.errors && errors.imagen) { %>
+                <%= errors.imagen.msg %>
+                  <% } %>
+            </span>
           </div> 
           
           <div class="col-12 col-xl-6 mt-4">

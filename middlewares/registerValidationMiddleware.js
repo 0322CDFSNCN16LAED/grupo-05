@@ -11,6 +11,15 @@ const registerValidation = [
     .isLength({min: 5},{max: 10}).withMessage('Escribi un numero de telefono valido'),
     body('password').notEmpty().withMessage('Escribi una contraseña').bail()
     .isLength({min: 8}).withMessage('La contraseña debe contener al menos ocho caracteres'),
+    body("imagen").custom((value, {req})=>{
+        let file = req.file;
+        let  acceptedExtension = [".png", ".jpg", "jpeg", "gif"];
+        let fileExtension = path.extname(file.originalname)
+        if(!acceptedExtension.includes(fileExtension)){
+            throw new Error ("Las extensiones permitidas son JPG,PNG,JPEG,GIF")
+        }
+        return true
+    })
 ]
 
 module.exports = registerValidation
