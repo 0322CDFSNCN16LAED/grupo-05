@@ -1,36 +1,50 @@
 
-window.addEventListener("load", function () {
+// window.addEventListener("load", function () {
 
 
-    let formulario = document.querySelector("#formCreate")
+//     let formulario = document.querySelector("#formCreate")
+    
+// const errors = []
 
-    formulario.addEventListener("submit", function (e) {
-        e.preventDefault();
+//     // input Nombre completoprecio
+//     formulario.precio.addEventListener('blur', function () {
+//         if (formulario.precio.value == "") {
+//             errors.push("Este campo no puede estar vacio")
+//             formulario.precio.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
+//         }else {
+//             formulario.precio.parentElement.querySelector(".error").innerHTML = ("")
+//         }
 
-        const errors = []
-        
-        // input Precio
-        if (formulario.precio.value == "") {
-            errors.push("Este campo no puede estar vacio")
-            formulario.precio.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
+//     })
 
 
-            // input Imagen
-            let extencion = /(.PNG|.JPG|.JPEG|.GIF)/i;
-            if (!extencion.exec(formulario.imagen.value)) {
-                errors.push("Formato de imagen no permitido")
-                formulario.imagen.parentElement.querySelector(".error").innerHTML = ("Formato de imagen no permitido")
-            }
+//     formulario.imagen.addEventListener('blur', function () {
+//         // input Imagen
+//         let extencion = /(.PNG|.JPG|.JPEG|.GIF)/i;
+//         if (!extencion.exec(formulario.imagen.value) && formulario.imagen.value) {
+//             errors.push("Formato de imagen no permitido")
+//             formulario.imagen.parentElement.querySelector(".error").innerHTML = ("Formato de imagen no permitido")
+//         } else {
+//             formulario.imagen.parentElement.querySelector(".error").innerHTML = ("")
+//         }
+//     })
 
-            // input Descripcion
-            
-            if (formulario.descripcion.value < 20) {
-                errors.push("Debe tener al menos 20 caracteres")
-                formulario.descripcion.parentElement.querySelector(".error").innerHTML = ("Debe tener al menos 20 caracteres")
-            }
-        }
-        if (errors.length == 0) {
-            formulario.submit();
-        }
-    })
-})
+//     formulario.descripcion.addEventListener('blur', function () {
+//         // input Telefono
+//         if (formulario.descripcion.value == "") {
+//             errors.push("Este campo no puede estar vacio")
+//             formulario.descripcion.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
+//         } else if (formulario.descripcion.value.length < 20) {
+//             errors.push("Debe tener al menos 20 caracteres")
+//             formulario.descripcion.parentElement.querySelector(".error").innerHTML = ("Debe tener al menos 20 caracteres")
+//         }
+//         else {
+//             formulario.descripcion.parentElement.querySelector(".error").innerHTML = ("")
+//         }
+//     })
+
+
+
+   
+
+// })

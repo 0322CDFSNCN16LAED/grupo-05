@@ -52,6 +52,7 @@ const controlador = {
             res.render("add-service", { categorias : result })})
     },
     storeService: async (req,res) => {
+      
         const newService = await req.body;
         const ServiceToCreate = await Service.create ({
             categoryId: newService.profesion,
