@@ -52,6 +52,16 @@ const controlador = {
             res.render("add-service", { categorias : result })})
     },
     storeService: async (req,res) => {
+
+        const resultValidation = await validationResult(req);
+        if (resultValidation.errors.length > 0) {
+           const categorias = await Category.findAll()
+            return res.render('add-service', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                categorias
+            });
+        }
       
         const newService = await req.body;
         const ServiceToCreate = await Service.create ({

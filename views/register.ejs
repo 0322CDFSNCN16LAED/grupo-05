@@ -17,7 +17,7 @@
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Nombre completo:</b></label>
-              <input type="text" name="fullname" class="form-control fullname" 
+              <input type="text" name="fullname" class="form-control fullname <%= locals.errors && errors.fullname ? "is-invalid" : null %>" 
                 value="<%= locals.oldData && oldData.fullname ? oldData.fullname : null %>">
             <span class="error text-danger">
               <% if (locals.errors && errors.fullname) { %>
@@ -32,7 +32,7 @@
               <input 
                 type="text" 
                 name="email" 
-                class="form-control email"
+                class="form-control email <%= locals.errors && errors.email ? "is-invalid" : null %>"
                 value="<%= locals.oldData && oldData.email ? oldData.email : null %>">  
                   <span class="error text-danger">    
                        <% if (locals.errors && errors.email) { %>
@@ -45,7 +45,7 @@
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Telefono</b></label>
-              <input type="tel" name="phone" class="form-control phone"
+              <input type="tel" name="phone" class="form-control phone <%= locals.errors && errors.phone ? "is-invalid" : null %>"
                 value="<%= locals.oldData && oldData.phone ? oldData.phone : null %>"> 
               <span class="error text-danger">
                 <% if (locals.errors && errors.phone) { %>
@@ -95,11 +95,11 @@
               <input 
                 type="text" 
                 name="direccion" 
-                class="form-control direccion"
+                class="form-control direccion <%= locals.errors && errors.direccion ? "is-invalid" : null %>"
                 value="<%= locals.oldData && oldData.direccion ? oldData.direccion : null %>">
               <span class="error text-danger">
-              <% if (locals.errors && errors.fullname) { %>
-                <%= errors.fullname.msg %>
+              <% if (locals.errors && errors.direccion) { %>
+                <%= errors.direccion.msg %>
                   <% } %>
                     </span>
             </div>
@@ -108,6 +108,7 @@
             <div class="form-group">
               <label><b>Piso:</b></label>
               <input 
+              placeholder="opcional"
               type="text" 
               name="piso" 
               class="form-control piso"
@@ -118,6 +119,7 @@
             <div class="form-group">
               <label><b>Departamento:</b></label>
               <input 
+                placeholder="opcional"
                 type="text" 
                 name="departamento" 
                 class="form-control departamento"

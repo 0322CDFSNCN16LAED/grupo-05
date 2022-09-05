@@ -11,7 +11,7 @@ const userController = require("../controllers/userController")
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const uploadFile = require('../middlewares/multerMiddleware');
-const serviceCreateValidation = require("../middlewares/serviceCreatValidationMiddleware")
+const serviceCreateValidation = require("../middlewares/serviceCreateValidationMiddleware")
 const serviceModifyValidation = require("../middlewares/serviceModifyValidationMiddleware");
 
 
