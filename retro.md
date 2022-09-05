@@ -37,8 +37,24 @@ Para el segundo sprint, comenzamos por proponernos ciertas caracteristicas por c
 
 # Sprint 6
 
-1. Comenzar a hacer: 
-2. Hacer más: 
-3. Continuar haciendo:
-4. Hacer menos: 
-5. Dejar de hacer:
+1. Comenzar a hacer: organizarse y comprometerse con el proyecto.
+2. Hacer más: divirnos tareas.
+3. Continuar haciendo: ...
+4. Hacer menos: dejar todo para ultimo momento.
+5. Dejar de hacer: ... 
+
+# Sprint 7
+
+1. Comenzar a hacer: organizarse y comprometerse con el proyecto.
+2. Hacer más: divirnos tareas.
+3. Continuar haciendo: ...
+4. Hacer menos: dejar todo para ultimo momento.
+5. Dejar de hacer: ... 
+
+# Sprint 8
+
+1. Comenzar a hacer: organizarse y comprometerse con el proyecto.
+2. Hacer más: divirnos tareas.
+3. Continuar haciendo: ...
+4. Hacer menos: dejar todo para ultimo momento.
+5. Dejar de hacer: ... 
