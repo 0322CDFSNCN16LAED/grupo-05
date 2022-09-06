@@ -31,6 +31,8 @@ routes.get("/service-pending", authMiddleware, userController.servicePending)
 routes.post("/service-solicitation/:id", authMiddleware, userController.serviceSolicitation)
 routes.get("/notifications", authMiddleware, userController.notifications)
 
+routes.get("filtered-by-location-professionals/:id", authMiddleware, userController.filerByLocation)
+
 // Profesional acepta el servicio
 routes.post("/accept-service/:id", authMiddleware, userController.acceptService)
 // Profesional rechaza servicio

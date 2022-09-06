@@ -47,7 +47,7 @@ const controlador = {
             req.session.userLogged = await User.findByPk(userBuscado.id, {
                 include: [{association: "address"}]
             })
-            
+
             res.redirect("/user/account");
     },
     addService: (req,res) => {
@@ -253,6 +253,9 @@ const controlador = {
         solicitud.update({
             solicitationState: "Cancelada"
         })
+
+    },
+    filerByLocation: async (req,res) => {
 
     }
 }

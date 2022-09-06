@@ -18,6 +18,9 @@ const controlador = {
         // res.render ("index",{allService:allService})
     },
     professionals: (req,res) => {
+
+        const profesion = req.params.id
+
         Service.findAll({
             where: {
                 categoryId: req.params.id
@@ -30,7 +33,7 @@ const controlador = {
         })
         .then(function(servicios){
             
-            res.render("professionals", { servicios })
+            res.render("professionals", { servicios, profesion})
         })
     },
      shop:(req,res)=>{

@@ -13,6 +13,9 @@
         <h1 class="text-white">Encontra los mejores profesionales en <%=servicios.profesion%></h1>
        </div>
 
+<div class="d-flex just ">
+  <a href="/user/filtered-by-location-professionals/<%=profesion%>"> <input type="submit" class="btn btn-danger mb-2 text-center" value="filtra por tu ubicacion"></a>
+</div>
 
 <section class="d-flex wrap just">
   <% servicios.forEach(servicio => {%>
