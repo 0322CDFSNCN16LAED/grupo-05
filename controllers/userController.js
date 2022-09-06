@@ -126,7 +126,10 @@ const controlador = {
             },
             include: [
                     {association: "category"},
-                    {association: "user"},
+                    {association: "user",
+                include: [
+                    {association: "address"}
+                ]},
                     {association: "servicePhoto"}
             ]
         })

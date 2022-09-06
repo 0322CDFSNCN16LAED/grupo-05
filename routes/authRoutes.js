@@ -15,7 +15,7 @@ routes.get ('/register', guestMiddleware, authController.register );
 routes.post('/register', uploadFile.single("imagen"), registerValidation, authController.processRegister);
 
 // user Login
-routes.get ('/login', guestMiddleware,authController.login);
+routes.get ('/login', guestMiddleware, authController.login);
 routes.post ('/login', authController.processLogin);
 
 // user Logout

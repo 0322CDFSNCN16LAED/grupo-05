@@ -75,6 +75,7 @@ const controlador = {
         res.render ("login")
     },
     processLogin: async (req, res) => {
+        
         let userToLogin = await User.findOne(
             {     
                 where: {
