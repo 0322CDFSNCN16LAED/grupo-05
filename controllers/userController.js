@@ -43,7 +43,11 @@ const controlador = {
                 piso: req.body.piso,
                 departamento: req.body.departamento,
             })
-        
+
+            req.session.userLogged = await User.findByPk(userBuscado.id, {
+                include: [{association: "address"}]
+            })
+            
             res.redirect("/user/account");
     },
     addService: (req,res) => {
