@@ -12,12 +12,9 @@ module.exports = {
                         status: 200,
                         url: req.originalUrl,
                         total: count,
-                        
-                        
                     },
                     data: rows,
                     })
-
             })
         },
         

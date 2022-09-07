@@ -1,0 +1,10 @@
+
+
+function CategoriesList() {
+    return (
+        <>
+
+        
+        </>
+    );
+}

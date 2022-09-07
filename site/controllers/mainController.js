@@ -13,9 +13,8 @@ const controlador = {
     index: (req,res) => {
         db.Category.findAll()
         .then(function(categoria){
-            return res.render("index",{categoria})
+            return res.render("index", {categoria})
         })
-        // res.render ("index",{allService:allService})
     },
     professionals: (req,res) => {
 

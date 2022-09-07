@@ -6,7 +6,9 @@ const session = require("express-session");
 const coockieParser = require("cookie-parser")
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const apiRoutes = require("./routes/api/apiRoutes")
+const cors = require("cors");
 
+app.use(cors(["localhost:3000"]));
 app.use(session({secret:"Secreto", resave:false, saveUninitialized:false,}));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
@@ -25,4 +27,6 @@ app.set("view engine","ejs");
 const mainRouters= require ("./routes/mainRoutes");
 
 app.use("/", mainRouters);
-app.use("/api",apiRoutes)
+app.use("/api", apiRoutes)
+
+
