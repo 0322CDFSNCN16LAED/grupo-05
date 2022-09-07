@@ -1,35 +1,34 @@
+import React from "react";
 import { useState, useEffect } from "react"
 
 function UsersList() {
 
     const [users, setUsers] = useState([])
 
-    useEffect(() => {
-        fetch("http://localhost:3030/api/user")
-        .then(response => {
-        console.log(response)
-        response.json()})
-        .then(data => {
-            setUsers(data.result)
-        })
-        .catch(error => console.error(error))
-    },[])
+    async function fetchData() {
+        const result = await fetch("http://localhost:3030/api/user");
+        const jsonResult = await result.json();
+        const data = await jsonResult.data;
+        setUsers(data.rows)
+    }
 
-    useEffect(() => {
-        console.log("actualizado")
-    }, [users])
+    useEffect(() =>  {
+        fetchData();
+    },[])
 
     return(
         <>
         <h2> Usuarios: </h2>
 
         <ul>
-        {users.map((user, i) => {
+         {users.map((user, i) => {
             return(
                 <li key={i}>
-                    <h3> {user.fullName} </h3>
+                   <h3> Nombre Completo: {user.fullName} </h3>
+                   <p> Email: {user.email} </p>
+                   <p> ID:{user.id} </p>
                 </li>
-            )
+           )
         })
         }
         </ul>

@@ -1,17 +1,21 @@
-const { User } = require("../../database/models")
+const { Service } = require("../../database/models")
+
 
 
 module.exports = {
     list: async (req, res) => {
-        const users = await User.findAndCountAll({
-            attributes: ["id", "fullName", "email"]
+        const services = await Service.findAndCountAll({
+            attributes: ["id", "jobDescription", "price"],
+            include: [
+                {association: "category"}
+            ]
         })
         const respuesta = {
             meta: {
                 status: 200,
                 url: "api/user"
             },
-            data: users
+            data: services
         };
         res.json(respuesta)
         },
