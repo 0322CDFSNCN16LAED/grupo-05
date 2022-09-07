@@ -31,8 +31,7 @@ const controlador = {
             ]
         })
         .then(function(servicios){
-            
-            res.render("professionals", { servicios, profesion})
+            res.render("professionals", { servicios, profesion })
         })
     },
      shop:(req,res)=>{

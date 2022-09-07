@@ -257,6 +257,31 @@ const controlador = {
     },
     filerByLocation: async (req,res) => {
 
+        const servicios = await Service.findAll({
+            where: {
+                categoryId: req.params.id
+            },
+            include: [
+                {association: "category"},
+                {association: "servicePhoto"},
+                {association:"user",
+            include: [
+                {association:"address"}
+            ]}
+            ]
+        })
+
+        const usuario =  req.session.userLogged
+        const serviciosFiltrados = []
+
+        for (let i = 0; i < servicios.length; i ++) {
+            if(servicios[i].user.address[0].barrio = usuario.address[0].barrio) {
+
+                serviciosFiltrados.push(servicios[i])
+            }
+        }
+
+        res.render("filteredByLocationProfessionals", { serviciosFiltrados })
     }
 }
 
