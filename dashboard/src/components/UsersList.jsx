@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react"
+import {Link} from "react-router-dom"
 
 function UsersList() {
 
@@ -27,6 +28,9 @@ function UsersList() {
                    <h3> Nombre Completo: {user.fullName} </h3>
                    <p> Email: {user.email} </p>
                    <p> ID:{user.id} </p>
+                   <Link to={`/user/${user.id}`}>
+                        Detalle del usuario
+                    </Link>
                 </li>
            )
         })

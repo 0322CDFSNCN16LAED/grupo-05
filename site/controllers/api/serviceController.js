@@ -13,27 +13,30 @@ module.exports = {
         const respuesta = {
             meta: {
                 status: 200,
-                url: "api/user"
+                url: "api/service"
             },
             data: services
         };
         res.json(respuesta)
         },
         
-    detail: (req, res) => {
-        db.User.findByPk(req.params.id,{
-            attributes: ["id", "fullname", "profilePicture", "email", "phoneNumber"]
+    detail: async (req, res) => {
+        const service = await Service.findByPk(req.params.id,{
+            attributes: ["id", "jobDescription", "price"], 
+            include:[
+                {association: "category"},
+                {association: "servicePhoto"}
+            ]
         })
-            .then(user => {
-                let respuesta = {
-                    meta: {
-                        status: 200,
-                        url: req.originalUrl,
-                        url: '/api/user/:id'
-                    },
-                    data: user
-                }
-                res.json(respuesta);
-            });
+
+        const respuesta = await  {
+            meta: {
+                status: 200,
+                url: req.originalUrl,
+                url: '/api/service/:id'
+            },
+            data: service
+        };
+        res.json(respuesta);
     },
 }

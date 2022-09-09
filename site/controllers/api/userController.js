@@ -17,8 +17,8 @@ module.exports = {
         },
         
     detail: (req, res) => {
-        db.User.findByPk(req.params.id,{
-            attributes: ["id", "fullname", "profilePicture", "email", "phoneNumber"]
+        User.findByPk(req.params.id,{
+            attributes: ["id", "fullName", "profilePicture", "email", "phoneNumber"]
         })
             .then(user => {
                 let respuesta = {

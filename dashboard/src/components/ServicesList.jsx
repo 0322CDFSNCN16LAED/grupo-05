@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react"
-
+import {Link} from "react-router-dom"
 
 
 function ServiceList() {
@@ -18,7 +18,7 @@ function ServiceList() {
         fetchData();
     },[])
 
-
+    
 
     return (
         <>
@@ -32,6 +32,9 @@ function ServiceList() {
                    <p> Precio: ${service.price} </p>
                    <p> Descripcion del trabajo: {service.jobDescription} </p>
                    <p> Categoria: {service.category.name} </p>
+                   <Link to={`/service/${service.id}`}>
+                        Detalle del servicio
+                    </Link>
                 </li>
            )
         })
