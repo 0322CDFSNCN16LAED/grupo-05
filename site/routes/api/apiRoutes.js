@@ -4,7 +4,7 @@ const routes = express.Router();
 
 const userRoutes = require("./userRoutes")
 const serviceRoutes = require("./serviceRoutes")
-const mainRoutes = require("./mainRoutes")
+const categoryRoutes = require("./categoryRoutes")
 
 
 
@@ -13,6 +13,6 @@ routes.use("/user", userRoutes)
 
 routes.use("/service", serviceRoutes)
 
-routes.use("/category", mainRoutes)
+routes.use("/category", categoryRoutes)
 
 module.exports = routes;

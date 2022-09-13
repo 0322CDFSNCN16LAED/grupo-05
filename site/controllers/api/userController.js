@@ -9,7 +9,7 @@ module.exports = {
         const respuesta = {
             meta: {
                 status: 200,
-                url: "api/user"
+                url: "api/user",
             },
             data: users
         };
