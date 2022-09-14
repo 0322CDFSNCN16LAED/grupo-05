@@ -13,22 +13,23 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const uploadFile = require('../middlewares/multerMiddleware');
 const serviceCreateValidation = require("../middlewares/serviceCreateValidationMiddleware")
 const serviceModifyValidation = require("../middlewares/serviceModifyValidationMiddleware");
+const solicitationValidation = require("../middlewares/solicitationValidationMiddleware");
 
 
 routes.get ("/account", authMiddleware, userController.account);
 routes.get ("/modify-account/:id", authMiddleware, userController.modifyAccount);
 routes.post ("/modify-account/:id", authMiddleware, uploadFile.single("imagen"), userController.processModifyAccount);
 routes.get ("/add-service", authMiddleware, userController.addService);
-routes.post("/add-service",  authMiddleware, uploadFile.array("imagen"),serviceCreateValidation, userController.storeService);
+routes.post("/add-service",  authMiddleware, uploadFile.array("imagen"), serviceCreateValidation, userController.storeService);
 routes.get ("/my-service", authMiddleware, userController.myService);
 routes.delete("/my-service/:id", authMiddleware, userController.deleteService);
 routes.get("/modify-service/:id", authMiddleware, userController.modifyService)
-routes.put("/modify-service/:id",serviceModifyValidation,authMiddleware, uploadFile.array("imagen"), userController.processModifyService);
+routes.put("/modify-service/:id", authMiddleware, uploadFile.array("imagen"), serviceModifyValidation, userController.processModifyService);
 routes.get("/service-detail/:id", authMiddleware, userController.serviceDetail)
 
 routes.get("/service-pending", authMiddleware, userController.servicePending)
 
-routes.post("/service-solicitation/:id", authMiddleware, userController.serviceSolicitation)
+routes.post("/service-solicitation/:id", solicitationValidation, authMiddleware, userController.serviceSolicitation)
 routes.get("/notifications", authMiddleware, userController.notifications)
 
 

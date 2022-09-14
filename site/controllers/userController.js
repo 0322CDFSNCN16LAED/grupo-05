@@ -113,17 +113,16 @@ const controlador = {
     
      
     },
-    modifyService:(req,res)=>{
-        let pedidoService = Service.findByPk(req.params.id , {
+    modifyService: async (req,res)=>{
+
+        const servicio = await Service.findByPk(req.params.id , {
             include: [
                 {association: "servicePhoto"}
             ]
         })
-        let pedidoCategory = Category.findAll();
-        Promise.all([pedidoService,pedidoCategory])
-        .then(function([servicio,categoria]){
-            res.render("modify-service", { servicio, categoria })
-        })
+        const categoria = await Category.findAll();
+
+        res.render("modify-service", { servicio, categoria })
        
     }, 
     serviceDetail: async (req,res)=>{
@@ -144,7 +143,26 @@ const controlador = {
         res.render("service-detail", { servicio })
 
     },
-    processModifyService:(req,res)=>{
+    processModifyService: async (req,res)=>{
+
+        const resultValidation = await validationResult(req);
+        if (resultValidation.errors.length > 0) {
+
+            const servicio = await Service.findByPk(req.params.id , {
+                include: [
+                    {association: "servicePhoto"}
+                ]
+            })
+            const categoria = await Category.findAll();
+          
+            return res.render('modify-service', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                categoria,
+                servicio
+            });
+        }
+
         Service.update ({
             categoryId: req.body.profesion,
             jobDescription: req.body.descripcion,
@@ -183,7 +201,30 @@ const controlador = {
     // Solicitudes de servicio
 
     serviceSolicitation: async (req, res) => {
-        
+
+        const resultValidation = await validationResult(req);
+        if (resultValidation.errors.length > 0) {
+
+            const servicio = await Service.findOne({
+                where: {
+                    id : req.params.id
+                },
+                include: [
+                        {association: "category"},
+                        {association: "user",
+                    include: [
+                        {association: "address"}
+                    ]},
+                        {association: "servicePhoto"}
+                ]
+            })
+            return res.render("service-detail", { 
+                errors: resultValidation.mapped(),
+                servicio })
+        }
+
+
+
         await Solicitations.create({
             userId: req.session.userLogged.id,
             serviceId: req.params.id,

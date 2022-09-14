@@ -27,14 +27,22 @@
             </select>
           </div>
           <div>
-            <input type="precio" class="form-control" id="precio" placeholder="Precio de visita" name="precio" value="<%= servicio.price  %>">
-              <span class="error text-danger"></span>
+            <input type="precio" class="form-control precio <%= locals.errors && errors.precio ? "is-invalid" : null %>" id="precio" placeholder="Precio de visita" name="precio" value="<%= servicio.price  %>">
+              <span class="error text-danger">
+                <% if (locals.errors && errors.precio) { %>
+                  <%= errors.precio.msg %>
+                <% } %>
+              </span>
           </div>
           <div class="input-group mt-4 mb-4">
             <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
               aria-label="Upload" name="imagen" multiple>
             <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
-            <span class="error text-danger col-12"></span>
+            <span class="error text-danger col-12">
+              <% if (locals.errors && errors.imagen) { %>
+                <%= errors.imagen.msg %>
+              <% } %>
+            </span>
           </div>
           <div>
 
@@ -48,9 +56,15 @@
 
           </div>
           <div class="form-floating justify-content-center ">
-            <textarea class="form-control mb-4" id="floatingTextarea" name="descripcion"></textarea>
+            <textarea class="form-control mb-4 <%= locals.errors && errors.descripcion ? "is-invalid" : null %>" id="floatingTextarea" name="descripcion"></textarea>
             <label for="floatingTextarea">Escribe una breve descripcion...</label>
-            <span class="error text-danger col-xxl-12"></span>
+            <span class="error text-danger col-xxl-12">
+              <% if (locals.errors && errors.descripcion) { %>
+                
+                <%= errors.descripcion.msg %>
+             
+             <% } %> 
+            </span>
           </div>
           <div class="text-center p-15 ">
                 <button type="submit" value="Modificar" class="btn btn-danger mt-4 mb-4">Modificar</button>
