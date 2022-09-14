@@ -21,9 +21,9 @@
               Servicio solicitado
             </div> 
             <div class="card-body">
-              <% if (usuario.solicitations[i].notifications) { %> 
+              <% if (usuario.solicitations[i].notification.length > 0) { %> 
                 <div>
-                  <h3> <%= usuario.solicitations[i].notifications[0].text %> </h3>
+                  <h3> <%= usuario.solicitations[i].notification[0].text %> </h3>
                 </div>
               <% } %> 
               <p>Profesional: <%= usuario.solicitations[i].service.user.fullName %> </p>

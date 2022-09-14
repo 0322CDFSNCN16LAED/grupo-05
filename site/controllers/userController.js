@@ -237,10 +237,21 @@ const controlador = {
         }
         )
 
-        const notificacion = await Notifications.create({
-            solicitationId: req.params.id,
-            text: "Tu solicitud fue aceptada!"
-         })
+        const notificacionExistente = await Notifications.findOne({
+            where: {
+                solicitationId: req.params.id
+            }
+        })
+        if (notificacionExistente) {
+            notificacionExistente.update({
+                text: "Tu solicitud fue aceptada!"
+            })
+        }else {
+            const notificacion = await Notifications.create({
+                solicitationId: req.params.id,
+                text: "Tu solicitud fue aceptada!"
+             })
+        }
 
         res.redirect("/user/notifications")
 
@@ -262,6 +273,7 @@ const controlador = {
         const solicitud = await Solicitations.findByPk(req.params.id)
         
         solicitud.update({
+            solicitationState: "Aceptada",
             serviceDate: req.body.date,
             serviceTime: req.body.time
         })
@@ -281,10 +293,23 @@ const controlador = {
             solicitationState: "Cancelada"
         })
 
-        const notificacion = await Notifications.create({
-            solicitationId: req.params.id,
-            text: "El profesional cancelo la fecha confirmada"
-         })
+        const notificacionExistente = await Notifications.findOne({
+            where: {
+                solicitationId: req.params.id
+            }
+        })
+        if (notificacionExistente) {
+            notificacionExistente.update({
+                text: "El profesional cancelo la fecha confirmada"
+            })
+        }else {
+            const notificacion = await Notifications.create({
+                solicitationId: req.params.id,
+                text: "El profesional cancelo la fecha confirmada"
+             })
+        }
+
+        res.redirect("/user/notifications")
 
     },
     filerByLocation: async (req,res) => {
