@@ -7,7 +7,7 @@ const { Service } = require("../database/models");
 const { ServicePhoto } = require("../database/models");
 const { Address } = require("../database/models");
 const { Solicitations } = require("../database/models");
-const { UserService } = require("../database/models");
+const { Notifications } = require("../database/models");
 
 
 const dbProfessionals = require("../models/Professionals");
@@ -206,9 +206,19 @@ const controlador = {
                 include:[{ //Incluye asociaciones de la solicitation
                   association:"service",
                   include:["user","category"] //Incluye asociaciones del servicio
-                }]
+                },
+                {association: "notification"}            
+            ]
               }]
             })
+
+        for(let i = 0; i < usuario.solicitations.length; i ++) {
+            let notificacionBorrada = await Notifications.destroy({
+                where: {
+                    solicitationId: usuario.solicitations[i].id
+                }
+            })
+        }
 
         res.render("service-pending", { usuario })
     },
@@ -216,6 +226,7 @@ const controlador = {
     // Profesional-Servicio
 
     acceptService: async (req, res) => {
+
 
         const solicitud = await Solicitations.update({
             solicitationState: "Aceptada"
@@ -225,6 +236,12 @@ const controlador = {
            } 
         }
         )
+
+        const notificacion = await Notifications.create({
+            solicitationId: req.params.id,
+            text: "Tu solicitud fue aceptada!"
+         })
+
         res.redirect("/user/notifications")
 
     },
@@ -236,6 +253,7 @@ const controlador = {
             }
             }
         )
+
         res.redirect("/user/notifications")
         
     },
@@ -248,6 +266,11 @@ const controlador = {
             serviceTime: req.body.time
         })
 
+        const notificacion = await Notifications.create({
+            solicitationId: req.params.id,
+            text: "El profesional te sugirio otra fecha"
+         })
+
         res.redirect("/user/notifications")
     },
     cancelService: async (req, res) => {
@@ -257,6 +280,11 @@ const controlador = {
         solicitud.update({
             solicitationState: "Cancelada"
         })
+
+        const notificacion = await Notifications.create({
+            solicitationId: req.params.id,
+            text: "El profesional cancelo la fecha confirmada"
+         })
 
     },
     filerByLocation: async (req,res) => {

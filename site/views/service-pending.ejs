@@ -20,10 +20,12 @@
             <div class="card-header text-white bg-danger mb-1">
               Servicio solicitado
             </div> 
-            <div>
-              <% console.log(locals.old) %>
-            </div>
             <div class="card-body">
+              <% if (usuario.solicitations[i].notifications) { %> 
+                <div>
+                  <h3> <%= usuario.solicitations[i].notifications[0].text %> </h3>
+                </div>
+              <% } %> 
               <p>Profesional: <%= usuario.solicitations[i].service.user.fullName %> </p>
               <p>Rubro: <%= usuario.solicitations[i].service.category.name %></p>
               <p>Precio: $ <%= usuario.solicitations[i].service.price %> </p>
