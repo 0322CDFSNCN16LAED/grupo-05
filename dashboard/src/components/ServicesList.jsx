@@ -27,20 +27,40 @@ function ServiceList() {
         <ul>
          {services.map((service, i) => {
             return(
-                <li key={i}>
-                   <h3>ID: {service.id} </h3>
-                   <p> Precio: ${service.price} </p>
-                   <p> Descripcion del trabajo: {service.jobDescription} </p>
-                   <p> Categoria: {service.category.name} </p>
-                   <Link to={`/service/${service.id}`}>
-                        Detalle del servicio
-                    </Link>
-                </li>
+                < div className="d-flex mb-4" >
+                    <div className={`card border-left-success shadow py-2`}>
+                        <div className="card-body">
+                            <div className="row no-gutters align-items-center">
+                                <div className="col mr-2">
+
+                                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+
+                                        <li key={i}>
+                                            <h3>ID: {service.id} </h3>
+                                            <p> Precio: ${service.price} </p>
+                                            <p> Descripcion del trabajo: {service.jobDescription} </p>
+                                            <p> Categoria: {service.category.name} </p>
+                                            <Link type="button" className="btn btn-success" to={`/service/${service.id}`}>
+                                                Detalle del servicio
+                                            </Link>
+                                        </li>
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <i
+                                        className={` fa-2x text-gray-300`}
+                                    ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
            )
         })
+
         }
         </ul>
-
+            
         </>
     );
 }
