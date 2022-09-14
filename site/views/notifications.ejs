@@ -33,7 +33,7 @@
                 <p>Estado: <%= servicios[i].solicitations[j].solicitationState %> </p>
 
 
-                <% if(servicios[i].solicitations[j].solicitationState != "Aceptada")  { %> 
+                <% if(servicios[i].solicitations[j].solicitationState != "Aceptada" && servicios[i].solicitations[j].solicitationState != "Cancelada" )  { %> 
 
                   <form action="/user/accept-service/<%=servicios[i].solicitations[j].id%>" method="POST">
                     <input type="submit" class="btn btn-danger mb-2 text-center" value="Aceptar solicitud">
@@ -81,6 +81,7 @@
                   </form>
 
                 <% } %> 
+
               </div>
             </div>
             <% } %>

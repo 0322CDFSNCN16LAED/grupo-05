@@ -20,6 +20,9 @@
             <div class="card-header text-white bg-danger mb-1">
               Servicio solicitado
             </div> 
+            <div>
+              <% console.log(locals.old) %>
+            </div>
             <div class="card-body">
               <p>Profesional: <%= usuario.solicitations[i].service.user.fullName %> </p>
               <p>Rubro: <%= usuario.solicitations[i].service.category.name %></p>

@@ -27,7 +27,7 @@
             </select>
           </div>
           <div>
-            <input type="precio" class="form-control" id="precio" placeholder="Precio de visita" name="precio">
+            <input type="precio" class="form-control" id="precio" placeholder="Precio de visita" name="precio" value="<%= servicio.price  %>">
               <span class="error text-danger"></span>
           </div>
           <div class="input-group mt-4 mb-4">
@@ -35,6 +35,17 @@
               aria-label="Upload" name="imagen" multiple>
             <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
             <span class="error text-danger col-12"></span>
+          </div>
+          <div>
+
+            <% for (let i = 0; i < servicio.servicePhoto.length; i++) { %> 
+
+              <div class="card">
+                <img src="/images/avatars/<%=servicio.servicePhoto[i].photo%>" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+              </div>
+              
+              <% } %> 
+
           </div>
           <div class="form-floating justify-content-center ">
             <textarea class="form-control mb-4" id="floatingTextarea" name="descripcion"></textarea>

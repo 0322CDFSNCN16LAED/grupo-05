@@ -114,11 +114,15 @@ const controlador = {
      
     },
     modifyService:(req,res)=>{
-        let pedidoService = Service.findByPk(req.params.id)
+        let pedidoService = Service.findByPk(req.params.id , {
+            include: [
+                {association: "servicePhoto"}
+            ]
+        })
         let pedidoCategory = Category.findAll();
         Promise.all([pedidoService,pedidoCategory])
         .then(function([servicio,categoria]){
-            res.render("modify-service", {servicio, categoria})
+            res.render("modify-service", { servicio, categoria })
         })
        
     }, 
