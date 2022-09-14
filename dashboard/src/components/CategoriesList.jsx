@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react"
 import {Link} from "react-router-dom"
 
+
 function CategoriesList() {
 
     const [categories, setCategories] = useState([])
@@ -24,15 +25,34 @@ function CategoriesList() {
         <ul>
          {categories.map((category, i) => {
             return(
-                <li key={i}>
-                   <h3> Categoria: {category.name} </h3>
-                   <p> Cantidad de servicios registrados: {category.service.length} </p>
-                </li>
+                <div className="d-flex mb-4">
+                    <div className={`card border-left-danger shadow py-2`}>
+                        <div className="card-body">
+                            <div className="row no-gutters align-items-center">
+                                <div className="col mr-2">
+
+                                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                                        <li key={i}>
+                                            <h3> {category.name} </h3>
+                                            <p> Cantidad de servicios registrados: {category.service.length} </p>
+                                        </li>
+                                    </div>
+                                </div>
+                                <div className="col-auto">
+                                    <i
+                                        className={` fa-2x text-gray-300`}
+                                    ></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
            )
         })
         }
         </ul>
 
+            
         </>
     )
 }
