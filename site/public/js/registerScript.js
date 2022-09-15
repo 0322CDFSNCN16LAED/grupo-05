@@ -1,4 +1,5 @@
 
+
 window.addEventListener("load", function(){
   
   
@@ -9,6 +10,8 @@ window.addEventListener("load", function(){
   let passwordConfirmation = document.querySelector(".passwordConfirmation")
   let imagen = document.querySelector(".imagen")
   let phone = document.querySelector(".phone")
+  let localidad = document.querySelector(".localidad")
+  let barrio = document.querySelector(".barrio")
   let direccion = document.querySelector(".direccion")
   
     const errors = []
@@ -98,7 +101,33 @@ window.addEventListener("load", function(){
             }
       })
     
-      // input Localidad
+      // input localidad y barrio
+
+      localidad.addEventListener("change", async function() {
+        const localidadId = localidad.value
+
+        const barriosFetch = await fetch(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${localidadId}&campos=id,nombre&max=100`)
+        const barriosJSON = await barriosFetch.json()
+        const barrios = await barriosJSON.municipios
+
+        for (let i = 0; i < barrios.length; i ++) {
+          barrio.innerHTML +=  `<option value=${barrios[i].nombre}>` + barrios[i].nombre + "</option>"
+        }
+
+        const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
+        const provinciasJSON = await provinciasFetch.json()
+        const provincias = provinciasJSON.provincias
+
+        let provinciaSeleccionada = ""
+        for (let i = 0; i < provincias.length; i ++) {
+          if (provincias[i].id == localidadId) {
+            provinciaSeleccionada = provincias[i].nombre
+          }
+        }
+        localidad.value = provinciaSeleccionada
+        localidad.innerHTML += "<option selected>" + provinciaSeleccionada + "</option>"
+        
+      })
 
       // input Barrio
 

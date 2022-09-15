@@ -1,4 +1,6 @@
 const bcrypt = require('bcryptjs');
+const fetch = require('node-fetch');
+
 const { validationResult } = require('express-validator');
 const { User } = require("../database/models");
 const { Address } = require("../database/models");
@@ -9,16 +11,28 @@ const db = require("../database/models")
 
 const controlador = {
 
-    register: (req,res) => {
-        res.render ("register")
+    register: async (req,res) => {
+
+        const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
+        const provinciasJSON = await provinciasFetch.json()
+        const provincias = provinciasJSON.provincias
+
+        res.render("register", { provincias})
     },
     processRegister: async (req, res) => {
 
          const resultValidation = await validationResult(req);
          if (resultValidation.errors.length > 0) {
+
+            const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
+            const provinciasJSON = await provinciasFetch.json()
+            const provincias = provinciasJSON.provincias
+
+
              return res.render('register', {
                  errors: resultValidation.mapped(),
-                 oldData: req.body
+                 oldData: req.body,
+                 provincias: provincias
              });
          }
 
@@ -59,7 +73,7 @@ const controlador = {
             profilePicture: req.file? req.file.filename : "defaultProfilePicture.png" 
         })
         const addressToCreate = await Address.create({
-            localidad:req.body.localidad,
+            localidad: localidadSeleccionada,
             barrio: req.body.barrio,
             direccion:req.body.direccion,
             piso:req.body.piso,

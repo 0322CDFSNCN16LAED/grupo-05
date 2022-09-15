@@ -14,11 +14,12 @@ const uploadFile = require('../middlewares/multerMiddleware');
 const serviceCreateValidation = require("../middlewares/serviceCreateValidationMiddleware")
 const serviceModifyValidation = require("../middlewares/serviceModifyValidationMiddleware");
 const solicitationValidation = require("../middlewares/solicitationValidationMiddleware");
+const accountModifyValidationMiddleware = require("../middlewares/accountModifyValidationMiddleware");
 
 
 routes.get ("/account", authMiddleware, userController.account);
 routes.get ("/modify-account/:id", authMiddleware, userController.modifyAccount);
-routes.post ("/modify-account/:id", authMiddleware, uploadFile.single("imagen"), userController.processModifyAccount);
+routes.post ("/modify-account/:id", authMiddleware, uploadFile.single("imagen"), accountModifyValidationMiddleware, userController.processModifyAccount);
 routes.get ("/add-service", authMiddleware, userController.addService);
 routes.post("/add-service",  authMiddleware, uploadFile.array("imagen"), serviceCreateValidation, userController.storeService);
 routes.get ("/my-service", authMiddleware, userController.myService);

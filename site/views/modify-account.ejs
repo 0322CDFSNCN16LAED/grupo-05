@@ -23,15 +23,15 @@
                       <label><b>Nombre completo:</b></label>
                       <input 
                         type="text" 
-                        name="fullName" 
-                        class="form-control"
+                        name="fullname" 
+                        class="form-control fullname <%= locals.fullname && errors.fullname ? "is-invalid" : null %>"
                         value="<%= locals.userLogged.fullName %>"
                       >
-                      <% if (locals.errors && errors.fullname) { %>
-                        <div class="text-danger">
-                         <p> <%= errors.fullname.msg %> </p>
-                        </div>
-                      <% } %>
+                      <span class="error text-danger">
+                        <% if (locals.errors && errors.fullname) { %>
+                           <%= errors.fullname.msg %>
+                        <% } %>
+                      </span>
                     </div>
                   </div>
                   <div class="col-12 col-xl-6 mt-4">
@@ -40,15 +40,11 @@
                       <input 
                         type="text" 
                         name="email" 
-                        class="form-control"
+                        class="form-control email"
                         readonly="readonly"
                         value="<%= locals.userLogged.email %>"
                       >
-                      <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger">
-                         <p></p> <%= errors.email.msg %> </p>
-                        </div>
-                      <% } %>
+
                     </div>
                   </div>
                   <div class="col-12 col-xl-6 mt-4">
@@ -56,49 +52,33 @@
                       <label><b>Telefono</b></label>
                       <input 
                         type="text" 
-                        name="phoneNumber" 
-                        class="form-control"
+                        name="phone" 
+                        class="form-control phone <%= locals.phone && errors.phone ? "is-invalid" : null %>"
                         value="<%= locals.userLogged.phoneNumber %>"
                       >
-                      <% if (locals.errors && errors.phone) { %>
-                        <div class="text-danger">
-                         <p> <%= errors.phone.msg %> </p>
-                        </div>
-                      <% } %>
+                      <span class="error text-danger">
+                        <% if (locals.errors && errors.phone) { %>
+                          <%= errors.phone.msg %>
+                            <% } %>
+                      </span>
                     </div>
                   </div>
                   <div class="col-12 col-xl-6 mt-4">
                     <div class="form-group">
-                      <label><b>Localidad:</b></label>
-                      <select class="form-select" aria-label="Default select example" name="localidad">
+                      <label><b>Provincia:</b></label>
+                      <select class="form-select localidad" aria-label="Default select example" name="localidad">
                         <option selected><%= locals.userLogged.address[0].localidad %></option>
-                        <option value="Capital Federal">Capital Federal</option>
+                        <% provincias.forEach( provincia => { %>  
+                          <option value="<%= provincia.id %>"><%= provincia.nombre %></option>
+                        <% }) %> 
                       </select>
                     </div>
                   </div>
                   <div class="col-12 col-xl-6 mt-4">
                     <div class="form-group">
-                      <label><b>Barrio:</b></label>
-                      <select class="form-select" aria-label="Default select example" name="barrio">
-                        <option selected> <%= locals.userLogged.address[0].barrio %> </option>
-                        <option value="Boedo">Boedo</option>
-                        <option value="Caballido">Caballido</option>
-                        <option value="Almagro">Almagro</option>
-                        <option value="Palermo">Palermo</option>
-                        <option value="Puerto Madero">Puerto Madero</option>
-                        <option value="Retiro">Retiro</option>
-                        <option value="Pompeya">Pompeya</option>
-                        <option value="Parque Chacabuco">Parque Chacabuco</option>
-                        <option value="Parque Patricios">Parque Patricios</option>
-                        <option value="Flores">Flores</option>
-                        <option value="Floresta">Floresta</option>
-                        <option value="Mataderos">Mataderos</option>
-                        <option value="Nuñez">Nuñez</option>
-                        <option value="Agronomía">Agronomía</option>
-                        <option value="Barracas">Barracas</option>
-                        <option value="Belgrano">Belgrano</option>
-                        <option value="Barracas">Barracas</option>
-                        <option value="Chacarita">Chacarita</option>
+                      <label><b>Localidad:</b></label>
+                      <select class="form-select barrio" aria-label="Default select example" name="barrio">
+                        <option selected><%= locals.userLogged.address[0].barrio %></option>
                       </select>
                     </div>
                   </div>
@@ -108,14 +88,14 @@
                       <input 
                         type="text" 
                         name="direccion" 
-                        class="form-control"
+                        class="form-control direccion <%= locals.direccion && errors.direccion ? "is-invalid" : null %>"
                         value="<%= locals.userLogged.address[0].direccion %>"
                       >
-                      <% if (locals.errors && errors.direccion) { %>
-                        <div class="text-danger">
-                         <p> <%= errors.direccion.msg %> </p>
-                        </div>
-                      <% } %>
+                      <span class="error text-danger">
+                        <% if (locals.errors && errors.direccion) { %>
+                          <%= errors.direccion.msg %>
+                            <% } %>
+                      </span>
                     </div>
                   </div>
                   <div class="col-12 col-xl-6 mt-4">
@@ -124,7 +104,7 @@
                       <input 
                       type="text" 
                       name="piso" 
-                      class="form-control"
+                      class="form-control piso"
                       value= "<%= locals.userLogged.address[0].piso %> "
                       >
                     </div>
@@ -135,7 +115,7 @@
                       <input 
                         type="text" 
                         name="departamento" 
-                        class="form-control"
+                        class="form-control departamento"
                         value="<%= locals.userLogged.address[0].departamento %> ">
                     </div>
                   </div>
@@ -143,8 +123,13 @@
                   <div class="form-group mt-4">
                     <label><b>Cambia tu foto de perfil:</b></label>
                     <div class="input-group  mb-4">
-                      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="imagen">
+                      <input type="file" class="form-control imagen" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="imagen">
                       <button class="btn btn-danger" type="button" id="inputGroupFileAddon04">Agregar</button>
+                      <span class="error text-danger col-12">
+                        <% if (locals.errors && errors.imagen) { %>
+                          <%= errors.imagen.msg %>
+                            <% } %>
+                      </span>
                     </div>   
                   </div>
                          
@@ -161,6 +146,7 @@
       <footer class="bg-dark text-center text-white">
         <%- include ("./partials/footer.ejs")  %>
       </footer>
+      <script src="/js/modifyAccountScript.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
           </body>
         </html>

@@ -1,4 +1,5 @@
 const bcryptjs = require('bcryptjs');
+const fetch = require('node-fetch');
 const { validationResult } = require('express-validator');
 const fs = require('fs')
 
@@ -21,10 +22,30 @@ const controlador = {
     account: (req,res) => {
         res.render ("account")
     },
-    modifyAccount: (req,res) => {
-        res.render ("modify-account")
+    modifyAccount: async (req,res) => {
+
+        const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
+        const provinciasJSON = await provinciasFetch.json()
+        const provincias = provinciasJSON.provincias
+
+
+        res.render ("modify-account", { provincias })
     },
     processModifyAccount: async (req,res) => {
+
+        const resultValidation = validationResult(req);
+         if (resultValidation.errors.length > 0) {
+
+            const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
+            const provinciasJSON = await provinciasFetch.json()
+            const provincias = provinciasJSON.provincias
+
+             return res.render('modify-account', {
+                 errors: resultValidation.mapped(),
+                 provincias: provincias
+             });
+         }
+
         const userBuscado = await User.findByPk(req.params.id)
         const addressBuscada = await Address.findOne({
             where: {
@@ -32,7 +53,7 @@ const controlador = {
             }
         })
             await userBuscado.update({
-                fullName: req.body.fullName,
+                fullName: req.body.fullname,
                 profilePicture: req.body.profilePicture,
                 phoneNumber: req.body.phoneNumber,
                 email: req.body.email,
