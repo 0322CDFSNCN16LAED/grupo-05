@@ -22,148 +22,154 @@ const controlador = {
     account: (req,res) => {
         res.render ("account")
     },
-    frequentQuestions:(req,res) => {
-        res.render("frequentQuestions")
-    },
     modifyAccount: async (req,res) => {
-
+        
         const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
         const provinciasJSON = await provinciasFetch.json()
         const provincias = provinciasJSON.provincias
-
-
+        
+        
         res.render ("modify-account", { provincias })
     },
     processModifyAccount: async (req,res) => {
-
+        
         const resultValidation = validationResult(req);
          if (resultValidation.errors.length > 0) {
+<<<<<<< HEAD
+             
+             const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
+             const provinciasJSON = await provinciasFetch.json()
+             const provincias = provinciasJSON.provincias
+             
+=======
 
             const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
             const provinciasJSON = await provinciasFetch.json()
             const provincias = await provinciasJSON.provincias
 
+>>>>>>> 79f3ab0ab0c1860e49efe5260f7b7308bddf9966
              return res.render('modify-account', {
                  errors: resultValidation.mapped(),
                  provincias: provincias
-             });
-         }
-
-        const userBuscado = await User.findByPk(req.params.id)
-        const addressBuscada = await Address.findOne({
-            where: {
-                userId: req.params.id
+                });
             }
+            
+            const userBuscado = await User.findByPk(req.params.id)
+            const addressBuscada = await Address.findOne({
+                where: {
+                    userId: req.params.id
+                }
         })
-            await userBuscado.update({
-                fullName: req.body.fullname,
-                profilePicture: req.body.profilePicture,
-                phoneNumber: req.body.phoneNumber,
-                email: req.body.email,
-                profilePicture: req.file? req.file.filename : userBuscado.profilePicture
-            })
-            await addressBuscada.update({
-                localidad: req.body.localidad,
-                barrio: req.body.barrio,
-                direccion: req.body.direccion,
-                piso: req.body.piso,
-                departamento: req.body.departamento,
-            })
-
-            req.session.userLogged = await User.findByPk(userBuscado.id, {
-                include: [{association: "address"}]
-            })
-
-            res.redirect("/user/account");
+        await userBuscado.update({
+            fullName: req.body.fullname,
+            profilePicture: req.body.profilePicture,
+            phoneNumber: req.body.phoneNumber,
+            email: req.body.email,
+            profilePicture: req.file? req.file.filename : userBuscado.profilePicture
+        })
+        await addressBuscada.update({
+            localidad: req.body.localidad,
+            barrio: req.body.barrio,
+            direccion: req.body.direccion,
+            piso: req.body.piso,
+            departamento: req.body.departamento,
+        })
+        
+        req.session.userLogged = await User.findByPk(userBuscado.id, {
+            include: [{association: "address"}]
+        })
+        
+        res.redirect("/user/account");
     },
     addService: (req,res) => {
         Category.findAll()
         .then(function(result) {
             res.render("add-service", { categorias : result })})
-    },
-    storeService: async (req,res) => {
-
-        const resultValidation = await validationResult(req);
-        if (resultValidation.errors.length > 0) {
-
-            if(req.files) {
-                console.log(req.files[0]);
-                for (let i = 0; i < req.files.length; i ++) {
-                    fs.unlink(`public/images/avatars/${req.files[i].filename}`, (err => {
-                        if(err) {
-                            console.log(err)
-                        }else{
-                            console.log(`archivo: ${req.files[i].filename} borrado con exito`)
-                        }
-                    }))
+        },
+        storeService: async (req,res) => {
+            
+            const resultValidation = await validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                
+                if(req.files) {
+                    console.log(req.files[0]);
+                    for (let i = 0; i < req.files.length; i ++) {
+                        fs.unlink(`public/images/avatars/${req.files[i].filename}`, (err => {
+                            if(err) {
+                                console.log(err)
+                            }else{
+                                console.log(`archivo: ${req.files[i].filename} borrado con exito`)
+                            }
+                        }))
+                    }
                 }
+                
+                const categorias = await Category.findAll()
+                return res.render('add-service', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    categorias
+                });
             }
-
-           const categorias = await Category.findAll()
-            return res.render('add-service', {
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-                categorias
-            });
-        }
-      
-        const newService = await req.body;
-        const ServiceToCreate = await Service.create ({
-            categoryId: newService.profesion,
-            jobDescription: newService.descripcion,
-            price: newService.precio,
-            userId: req.session.userLogged.id
-        })
-        if (req.file) {
-            const ServicePhotoToCreate = await ServicePhoto.create({
-                photo: req.files? req.file.filename : "default.jpg",
-                serviceId: ServiceToCreate.id
+            
+            const newService = await req.body;
+            const ServiceToCreate = await Service.create ({
+                categoryId: newService.profesion,
+                jobDescription: newService.descripcion,
+                price: newService.precio,
+                userId: req.session.userLogged.id
             })
-        } else if (req.files) {
-            for (let i = 0; i < req.files.length; i ++) {
+            if (req.file) {
                 const ServicePhotoToCreate = await ServicePhoto.create({
-                    photo: req.files? req.files[i].filename : "default.jpg",
+                    photo: req.files? req.file.filename : "default.jpg",
                     serviceId: ServiceToCreate.id
                 })
+            } else if (req.files) {
+                for (let i = 0; i < req.files.length; i ++) {
+                    const ServicePhotoToCreate = await ServicePhoto.create({
+                        photo: req.files? req.files[i].filename : "default.jpg",
+                        serviceId: ServiceToCreate.id
+                    })
+                }
             }
-        }
-        res.redirect("/user/my-service");
-    },
-    myService: async (req,res) => {
-       const services = await Service.findAll({
-            where: {
-                userId: req.session.userLogged.id
-            },
-            include: [
-                {association: "category"},
-                {association: "user"},
-                {association: "servicePhoto"}
-            ]
-        })
-        res.render ("my-service", { services })
-    },
-     deleteService:(req,res)=>{
-      Service.findByPk(req.params.id).then((service)=>{
-        service.setServicePhoto([]).then(()=>{
-            service.destroy().then(()=>{
-                res.redirect("/user/my-service");
+            res.redirect("/user/my-service");
+        },
+        myService: async (req,res) => {
+            const services = await Service.findAll({
+                where: {
+                    userId: req.session.userLogged.id
+                },
+                include: [
+                    {association: "category"},
+                    {association: "user"},
+                    {association: "servicePhoto"}
+                ]
             })
-        })
-      })
-    
-     
-    },
-    modifyService: async (req,res)=>{
-
+            res.render ("my-service", { services })
+        },
+        deleteService:(req,res)=>{
+            Service.findByPk(req.params.id).then((service)=>{
+                service.setServicePhoto([]).then(()=>{
+                    service.destroy().then(()=>{
+                        res.redirect("/user/my-service");
+                    })
+                })
+            })
+        },
+        frequentQuestions:(req,res) => {
+            res.render("frequentQuestions")
+        },
+        modifyService: async (req,res)=>{
+            
         const servicio = await Service.findByPk(req.params.id , {
             include: [
                 {association: "servicePhoto"}
             ]
         })
         const categoria = await Category.findAll();
-
+        
         res.render("modify-service", { servicio, categoria })
-       
+        
     }, 
     serviceDetail: async (req,res)=>{
         

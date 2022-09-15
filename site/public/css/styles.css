@@ -40,7 +40,13 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+.nh-100{
+    
+}
 main{
+    flex-grow: 1;
+}
+.fg{
     flex-grow: 1;
 }
 .m-width {
