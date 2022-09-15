@@ -20,23 +20,11 @@
                   <article class="card-p container-fluid d-flex just">
                     <div class="  row">
                       <div class="card mb-3 col">
-                        <div class="row">
-                          <div class="p-0 col-md-3 w">
-              
-                            
-                             <img src="/images/avatars/<%= services[i].user.profilePicture %> " class="img-fluid rounded-start h-100" alt="foto de servicio">
-                            
-              
-                            
-                            </div>
+                        <div class="row"></div>
                             
                           <div class="col-md-9">
-                          <div class="card-body p-1 m-0 jus">
-                            <h5 class="card-title d-flex just border-b"><%= services[i].user.fullName %> </h5>
-                          
-                            <div class="pofessions d-flex wrap border-b">
                               <ul>
-                                <li class=" list-style mr-10"><span class="m-0" ><%= services[i].category.name %> </span></li>
+                                <li class=" list-style mr-10"><span class="m-0" >Servicio de: <%= services[i].category.name %> </span></li>
                               </ul>
                             </div>
                             <p class="card-text "><%= services[i].jobDescription %> </p>
