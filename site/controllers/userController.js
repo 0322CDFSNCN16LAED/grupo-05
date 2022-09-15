@@ -83,18 +83,18 @@ const controlador = {
             const resultValidation = await validationResult(req);
             if (resultValidation.errors.length > 0) {
                 
-                if(req.files) {
-                    console.log(req.files[0]);
-                    for (let i = 0; i < req.files.length; i ++) {
-                        fs.unlink(`public/images/avatars/${req.files[i].filename}`, (err => {
-                            if(err) {
-                                console.log(err)
-                            }else{
-                                console.log(`archivo: ${req.files[i].filename} borrado con exito`)
-                            }
-                        }))
-                    }
+            if(req.files) {
+                console.log(req.files[0]);
+                for (let i = 0; i < req.files.length; i ++) {
+                    fs.unlink(`public/images/avatars/${req.files[i].filename}`, (err => {
+                        if(err) {
+                          console.log(err)
+                        }else{
+                         console.log(`archivo: ${req.files[i].filename} borrado con exito`)
+                        }
+                    }))
                 }
+            }
                 
                 const categorias = await Category.findAll()
                 return res.render('add-service', {

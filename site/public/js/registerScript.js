@@ -124,6 +124,7 @@ window.addEventListener("load", function(){
             provinciaSeleccionada = provincias[i].nombre
           }
         }
+
         localidad.value = provinciaSeleccionada
         localidad.innerHTML += "<option selected>" + provinciaSeleccionada + "</option>"
         

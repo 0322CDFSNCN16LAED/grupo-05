@@ -60,9 +60,11 @@
               <select class="form-select localidad" aria-label="Default select example" name="localidad">
                 <option selected>Seleccione una opcion</option>
                 
+                <% if (provincias != undefined) { %> 
                   <% provincias.forEach( provincia => { %>  
                     <option value="<%= provincia.id %>"><%= provincia.nombre %></option>
                   <% }) %> 
+                  <% } %> 
                    
               </select>
             </div>
