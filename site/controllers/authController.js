@@ -17,18 +17,18 @@ const controlador = {
         const provinciasJSON = await provinciasFetch.json()
         const provincias = provinciasJSON.provincias
 
-        res.render("register", { provincias})
+        res.render("register", { provincias })
     },
     processRegister: async (req, res) => {
 
-         const resultValidation = await validationResult(req);
+         const resultValidation = validationResult(req);
          if (resultValidation.errors.length > 0) {
 
             const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
             const provinciasJSON = await provinciasFetch.json()
-            const provincias = provinciasJSON.provincias
+            const provincias = await provinciasJSON.provincias
 
-
+             console.log(resultValidation.mapped())
              return res.render('register', {
                  errors: resultValidation.mapped(),
                  oldData: req.body,
@@ -73,7 +73,7 @@ const controlador = {
             profilePicture: req.file? req.file.filename : "defaultProfilePicture.png" 
         })
         const addressToCreate = await Address.create({
-            localidad: localidadSeleccionada,
+            localidad: req.body.localidad,
             barrio: req.body.barrio,
             direccion:req.body.direccion,
             piso:req.body.piso,
@@ -82,7 +82,6 @@ const controlador = {
         })
 
         res.redirect('/auth/login');
-        
     },
     
     login: (req,res) => {
