@@ -7,6 +7,24 @@
     box-sizing: border-box;
     font-family: Montserrat;
 }
+.accepted {
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    padding: 5px;
+}
+.cancelled {
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px;
+}
+.changed {
+    color: white;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 5px;
+}
 .images {
     height: 100px;
     width: 100px;

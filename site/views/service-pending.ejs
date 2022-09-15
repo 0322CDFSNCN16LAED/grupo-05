@@ -23,15 +23,15 @@
             <div class="card-body">
               <% if (usuario.solicitations[i].notification.length > 0) { %> 
                 <div>
-                  <h3
+                  <p
                   <% if(usuario.solicitations[i].notification[0].text == "Tu solicitud fue aceptada!") {%> 
-                    class=""
+                    class="accepted"
                   <% } else if (usuario.solicitations[i].notification[0].text == "El profesional cancelo la fecha confirmada") {%> 
-                    class=""
-                  <% } else if (usuario.solicitations[i].notification[0].text == " El profesional te sugirio otra fecha") {%> 
-                    class=""
+                    class="cancelled"
+                  <% } else if (usuario.solicitations[i].notification[0].text == "El profesional te sugirio otra fecha") {%> 
+                    class="changed"
                   <% } %> 
-                  > <%= usuario.solicitations[i].notification[0].text %> </h3>
+                  > <%= usuario.solicitations[i].notification[0].text %> </p>
                 </div>
               <% } %> 
               <p>Profesional: <%= usuario.solicitations[i].service.user.fullName %> </p>
