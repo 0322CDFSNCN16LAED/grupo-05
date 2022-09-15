@@ -22,6 +22,7 @@ const controlador = {
     account: (req,res) => {
         res.render ("account")
     },
+<<<<<<< HEAD
     modifyAccount: async (req,res) => {
 
         const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
@@ -30,6 +31,13 @@ const controlador = {
 
 
         res.render ("modify-account", { provincias })
+=======
+    frequentQuestions:(req,res) => {
+        res.render("frequentQuestions")
+    },
+    modifyAccount: (req,res) => {
+        res.render ("modify-account")
+>>>>>>> 1843f7c923d03f827f04516b51dd4c62905aa411
     },
     processModifyAccount: async (req,res) => {
 

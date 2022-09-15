@@ -18,6 +18,7 @@ const accountModifyValidationMiddleware = require("../middlewares/accountModifyV
 
 
 routes.get ("/account", authMiddleware, userController.account);
+routes.get("/frequent-questions", authMiddleware, userController.frequentQuestions);
 routes.get ("/modify-account/:id", authMiddleware, userController.modifyAccount);
 routes.post ("/modify-account/:id", authMiddleware, uploadFile.single("imagen"), accountModifyValidationMiddleware, userController.processModifyAccount);
 routes.get ("/add-service", authMiddleware, userController.addService);
