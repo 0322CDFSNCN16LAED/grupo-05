@@ -59,7 +59,7 @@ window.addEventListener("load", function(){
           const barrios = await barriosJSON.municipios
   
           for (let i = 0; i < barrios.length; i ++) {
-            barrio.innerHTML +=  `<option value=${barrios[i].id}>` + barrios[i].nombre + "</option>"
+            barrio.innerHTML +=  `<option value="${barrios[i].nombre}">` + barrios[i].nombre + "</option>"
           }
 
 
@@ -74,11 +74,17 @@ window.addEventListener("load", function(){
             }
           }
           localidad.value = provinciaSeleccionada
-          localidad.innerHTML = "<option selected>" + provinciaSeleccionada + "</option>"
+          localidad.innerHTML += "<option selected>" + provinciaSeleccionada + "</option>"
 
         })
   
         // input Barrio
+
+        barrio.addEventListener("change", async function() {
+
+          console.log(barrio.value)
+
+        })
   
         direccion.addEventListener('blur', function(){
               // input Direccion

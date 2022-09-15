@@ -111,7 +111,7 @@ window.addEventListener("load", function(){
         const barrios = await barriosJSON.municipios
 
         for (let i = 0; i < barrios.length; i ++) {
-          barrio.innerHTML +=  `<option value=${barrios[i].nombre}>` + barrios[i].nombre + "</option>"
+          barrio.innerHTML +=  `<option value="${barrios[i].nombre}">` + barrios[i].nombre + "</option>"
         }
 
         const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")

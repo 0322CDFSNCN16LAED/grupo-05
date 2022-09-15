@@ -18,6 +18,9 @@
     margin-top: 10px;
 }
 
+.fg {
+    flex-grow: 1;
+}
 .prueba{
     display: flex;
     flex-direction: column;

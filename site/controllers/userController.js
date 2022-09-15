@@ -41,7 +41,7 @@ const controlador = {
 
             const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
             const provinciasJSON = await provinciasFetch.json()
-            const provincias = provinciasJSON.provincias
+            const provincias = await provinciasJSON.provincias
 
              return res.render('modify-account', {
                  errors: resultValidation.mapped(),
