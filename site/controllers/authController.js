@@ -90,10 +90,11 @@ const controlador = {
                 req.session.userLogged = await User.findByPk(userToLogin.id, {
                     include: [{association: "address"}]
                 })
-    
-                //if(req.body.remember_user) {
-                //	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-                //}
+
+                if(req.body.remember_user) {
+					res.cookie('userId', userToLogin.id, { maxAge: (1000 * 60) * 60 })
+				}
+
                 return res.redirect('/');
             }
             else {
@@ -119,6 +120,7 @@ const controlador = {
     
     },
     logout: (req, res) => {
+        res.clearCookie('userId');
 		req.session.destroy();
 		return res.redirect('/');
     }

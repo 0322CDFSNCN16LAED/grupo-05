@@ -14,8 +14,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 app.use(methodOverride("_method"));
-app.use(userLoggedMiddleware)
 app.use(coockieParser())
+app.use(userLoggedMiddleware)
 const PORT= 3030;
 app.listen (PORT,()=>{
     console.log("Corriendo en servidor")
