@@ -29,15 +29,18 @@ function ServiceDetail(props) {
     }
     return(
         <>
-            {
-                service.servicePhoto.map((servicePhoto, i) => {
-                    return <div key={i}><img src={`http://localhost:3030/images/avatars/${servicePhoto.photo}`} /></div>
-                })
-            }
             <h3>ID: {service.id} </h3>
             <p> Precio: ${service.price} </p>
             <p> Descripcion del trabajo: {service.jobDescription} </p>
             <p> Categoria: {service.category.name} </p>
+            <div className="flex">
+                {
+                service.servicePhoto.map((servicePhoto, i) => {
+                    return <div key={i}><img className="img" src={`http://localhost:3030/images/avatars/${servicePhoto.photo}`} /></div>
+                })
+            }
+            </div>
+            
         </>
     )
 }
