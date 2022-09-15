@@ -21,6 +21,9 @@ const controlador = {
     account: (req,res) => {
         res.render ("account")
     },
+    frequentQuestions:(req,res) => {
+        res.render("frequentQuestions")
+    },
     modifyAccount: (req,res) => {
         res.render ("modify-account")
     },
