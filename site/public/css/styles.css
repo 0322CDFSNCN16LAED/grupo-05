@@ -7,6 +7,10 @@
     box-sizing: border-box;
     font-family: Montserrat;
 }
+.btn-close{
+    background-color: #dc3545;
+}
+
 .images {
     height: 100px;
     width: 100px;
@@ -36,6 +40,9 @@ body {
 }
 .m-width {
     max-width:100% ;
+}
+.m-width50{
+    max-width: 200px;
 }
 #floatingTextarea{
     overflow: scroll;
