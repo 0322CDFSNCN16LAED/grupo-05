@@ -441,7 +441,7 @@ const controlador = {
         const serviciosFiltrados = []
 
         for (let i = 0; i < servicios.length; i ++) {
-            if(servicios[i].user.address[0].barrio = usuario.address[0].barrio) {
+            if(servicios[i].user.address[0].barrio == usuario.address[0].barrio) {
 
                 serviciosFiltrados.push(servicios[i])
             }
