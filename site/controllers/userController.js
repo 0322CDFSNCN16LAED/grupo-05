@@ -148,12 +148,12 @@ const controlador = {
         const resultValidation = await validationResult(req);
         if (resultValidation.errors.length > 0) {
 
-            const servicio = await Service.findByPk(req.params.id , {
+        const servicio = await Service.findByPk(req.params.id , {
                 include: [
                     {association: "servicePhoto"}
                 ]
             })
-            const categoria = await Category.findAll();
+        const categoria = await Category.findAll();
           
             return res.render('modify-service', {
                 errors: resultValidation.mapped(),
@@ -163,7 +163,9 @@ const controlador = {
             });
         }
 
-        Service.update ({
+        const service = await Service.findByPk(req.params.id)
+
+        const serviceToUpdate = await Service.update ({
             categoryId: req.body.profesion,
             jobDescription: req.body.descripcion,
             price: req.body.precio,
@@ -173,6 +175,19 @@ const controlador = {
                 id: req.params.id,
             }
         })
+        if (req.file) {
+            const ServicePhotoToCreate = await ServicePhoto.create({
+                photo: req.files? req.file.filename : "default.jpg",
+                serviceId: service.id
+            })
+        } else if (req.files) {
+            for (let i = 0; i < req.files.length; i ++) {
+                const ServicePhotoToCreate = await ServicePhoto.create({
+                    photo: req.files? req.files[i].filename : "default.jpg",
+                    serviceId: service.id
+                })
+            }
+        }
         res.redirect("/user/my-service");
 
     },
@@ -380,6 +395,32 @@ const controlador = {
         }
 
         res.render("filteredByLocationProfessionals", { serviciosFiltrados })
+    },
+    removeServiceImage: async (req, res) => {
+
+        const imagenBuscada = await ServicePhoto.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [
+                {association: "service"}
+            ]
+        })
+
+        const ServicioBuscado = await Service.findOne({
+            where: {
+                id: imagenBuscada.service.id
+            }
+        })
+
+        const imagenBorrada = await ServicePhoto.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        res.redirect(`/user/modify-service/${ServicioBuscado.id}`)
+
     }
 }
 

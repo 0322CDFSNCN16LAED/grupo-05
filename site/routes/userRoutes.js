@@ -32,6 +32,8 @@ routes.get("/service-pending", authMiddleware, userController.servicePending)
 routes.post("/service-solicitation/:id", solicitationValidation, authMiddleware, userController.serviceSolicitation)
 routes.get("/notifications", authMiddleware, userController.notifications)
 
+routes.get("/remove-image/:id", userController.removeServiceImage)
+
 
 // filtrar profesionales por ubicacion una vez filtrados por categoria
 routes.get("/filtered-by-location-professionals/:id", authMiddleware, userController.filerByLocation)
