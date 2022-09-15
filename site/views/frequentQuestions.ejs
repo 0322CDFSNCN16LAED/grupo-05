@@ -1,87 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include ("./partials/head.ejs")  %>
+    <%- include ("./partials/head.ejs") %>
 </head>
+
 <body>
     <header>
-    <%- include ("./partials/header-nav.ejs") %>
+        <%- include ("./partials/header-nav.ejs") %>
     </header>
-    <section>
-        <div class=" mt-4 d-flex justify-content-center just">
-            <h3 class="mr-10">Preguntas frecuentes</h3>
-        </div><hr>
-        <div class="accordion container mb-4 " id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button success bg-danger text-white" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne">
-                        <strong>¿Que es EASY FIX?</strong> 
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                    aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                        <strong>EASY FIX.</strong> Es un sitio en donde vas a poder encontrar a todos los profesionales del mercado en un mismo lugar.
+    <section class="w-100 p-0 m-0 fg">
+        <div class="row ">
+            <%- include ("./partials/account-header.ejs") %>
+                <div class="p-0 col-xl-9 co">
+                    <div class=" mt-4 d-flex ">
+                        <h3 class="mr-10">Preguntas frecuentes</h3>
+                    </div>
+                    <hr>
+                    <div class="accordion container mb-4 " id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button success bg-danger text-white" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    <strong>¿Que es EASY FIX?</strong>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <strong>EASY FIX.</strong> Es un sitio en donde vas a poder encontrar a todos los profesionales del
+                                    mercado en un mismo lugar.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                    <strong>¿Como funciona EASY FIX?</strong>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <p>Es muy fácil, solo tienes que registrarte y comenzar a utilizar la plataforma.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                    <strong>¿Puedo vender mis servicios?</strong>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <p>Una vez registrado, vas a poder ser tanto un consumidor de servicios como así también poder ofrecer
+                                        tus propios
+                                        servicios a la comunidad!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFor">
+                                <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapsefor" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                    <strong>¿Como me contacto con EASY FIX?</strong>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapsefor" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingFor">
+                                <div class="accordion-body">
+                                    <p>Podes comucarte con nostros por los siguientes medios.</p>
+                                    <ul>
+                                        <li>
+                                            <p><strong>Whatsapp</strong> : +54 11 4068 7717</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Correo</strong>: info-easyfix@gmail.com</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Direccion</strong>: Av. Independencia CP 4141C1226 CABA, ARGENTINA</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                    <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTwo">
-                       <strong>¿Como funciona EASY FIX?</strong> 
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingTwo">
-                    <div class="accordion-body">
-                       <p>Es muy fácil, solo tienes que registrarte y comenzar a utilizar la plataforma.</p> 
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                    <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree">
-                        <strong>¿Puedo vender mis servicios?</strong> 
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingThree">
-                    <div class="accordion-body">
-                       <p>Una vez registrado, vas a poder ser tanto un consumidor de servicios como así también poder ofrecer tus propios
-                        servicios a la comunidad!</p> 
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingFor">
-                    <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapsefor" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree">
-                       <strong>¿Como me contacto con EASY FIX?</strong> 
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapsefor" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingFor">
-                    <div class="accordion-body">
-                        <p>Podes comucarte con nostros por los siguientes medios.</p>
-                        <ul>
-                            <li><p><strong>Whatsapp</strong> : +54 11 4068 7717</p></li>
-                            <li><p><strong>Correo</strong>: info-easyfix@gmail.com</p></li>
-                            <li><p><strong>Direccion</strong>: Av. Independencia CP 4141C1226 CABA, ARGENTINA</p></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
-  
     </section>
-
     <footer class="bg-dark text-center text-white">
         <%- include ("./partials/footer.ejs") %>
     </footer>
@@ -91,3 +105,86 @@
 </body>
 
 </html>
+
+
+
+<!-- <div class=" mt-4 d-flex ">
+    <h3 class="mr-10">Preguntas frecuentes</h3>
+</div>
+<hr>
+<div class="accordion mb-4 " id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button success bg-danger text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne">
+                <strong>¿Que es EASY FIX?</strong>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                <strong>EASY FIX.</strong> Es un sitio en donde vas a poder encontrar a todos los profesionales del
+                mercado en un mismo lugar.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo">
+                <strong>¿Como funciona EASY FIX?</strong>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+                <p>Es muy fácil, solo tienes que registrarte y comenzar a utilizar la plataforma.</p>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree">
+                <strong>¿Puedo vender mis servicios?</strong>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+                <p>Una vez registrado, vas a poder ser tanto un consumidor de servicios como así también poder ofrecer
+                    tus propios
+                    servicios a la comunidad!</p>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingFor">
+            <button class="accordion-button collapsed bg-danger text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapsefor" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree">
+                <strong>¿Como me contacto con EASY FIX?</strong>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapsefor" class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingFor">
+            <div class="accordion-body">
+                <p>Podes comucarte con nostros por los siguientes medios.</p>
+                <ul>
+                    <li>
+                        <p><strong>Whatsapp</strong> : +54 11 4068 7717</p>
+                    </li>
+                    <li>
+                        <p><strong>Correo</strong>: info-easyfix@gmail.com</p>
+                    </li>
+                    <li>
+                        <p><strong>Direccion</strong>: Av. Independencia CP 4141C1226 CABA, ARGENTINA</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> -->
