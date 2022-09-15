@@ -1,5 +1,7 @@
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const fs = require('fs')
+
 const db = require('../database/models');
 const { User } = require("../database/models");
 const { Category } = require("../database/models");
@@ -59,6 +61,20 @@ const controlador = {
 
         const resultValidation = await validationResult(req);
         if (resultValidation.errors.length > 0) {
+
+            if(req.files) {
+                console.log(req.files[0]);
+                for (let i = 0; i < req.files.length; i ++) {
+                    fs.unlink(`public/images/avatars/${req.files[i].filename}`, (err => {
+                        if(err) {
+                            console.log(err)
+                        }else{
+                            console.log(`archivo: ${req.files[i].filename} borrado con exito`)
+                        }
+                    }))
+                }
+            }
+
            const categorias = await Category.findAll()
             return res.render('add-service', {
                 errors: resultValidation.mapped(),
@@ -147,6 +163,19 @@ const controlador = {
 
         const resultValidation = await validationResult(req);
         if (resultValidation.errors.length > 0) {
+
+            if(req.files) {
+                console.log(req.files[0]);
+                for (let i = 0; i < req.files.length; i ++) {
+                    fs.unlink(`public/images/avatars/${req.files[i].filename}`, (err => {
+                        if(err) {
+                            console.log(err)
+                        }else{
+                            console.log(`archivo: ${req.files[i].filename} borrado con exito`)
+                        }
+                    }))
+                }
+            }
 
         const servicio = await Service.findByPk(req.params.id , {
                 include: [
