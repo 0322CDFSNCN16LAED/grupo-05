@@ -80,7 +80,7 @@ const controlador = {
         },
         storeService: async (req,res) => {
             
-            const resultValidation = await validationResult(req);
+            const resultValidation = validationResult(req);
             if (resultValidation.errors.length > 0) {
                 
             if(req.files) {
@@ -111,12 +111,8 @@ const controlador = {
                 price: newService.precio,
                 userId: req.session.userLogged.id
             })
-            if (req.file) {
-                const ServicePhotoToCreate = await ServicePhoto.create({
-                    photo: req.files? req.file.filename : "default.jpg",
-                    serviceId: ServiceToCreate.id
-                })
-            } else if (req.files) {
+            if (req.files) {
+                console.log(req.files)
                 for (let i = 0; i < req.files.length; i ++) {
                     const ServicePhotoToCreate = await ServicePhoto.create({
                         photo: req.files? req.files[i].filename : "default.jpg",
