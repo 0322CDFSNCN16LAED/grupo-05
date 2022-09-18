@@ -8,6 +8,7 @@ const authRoutes = require("./authRoutes")
 // main controllers
 routes.get ("/", mainController.index);
 routes.get ("/shop", mainController.shop);
+routes.post("/add-to-cart/:id", mainController.shopService)
 
 routes.get ("/professionals", mainController.searchProfessionals);
 

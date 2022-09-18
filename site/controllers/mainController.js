@@ -3,6 +3,7 @@
 const { User } = require("../database/models");
 const { Category } = require("../database/models");
 const { Service } = require("../database/models");
+const { Solicitations } = require("../database/models");
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
 
@@ -34,8 +35,40 @@ const controlador = {
             res.render("professionals", { servicios, profesion })
         })
     },
-     shop:(req,res)=>{
-        res.render("shop")
+     shop: async (req,res)=>{
+     
+        const serviciosCarrito = await User.findByPk(req.session.userLogged.id, {
+            include: [
+                {association: "solicitations", 
+            where: {
+                solicitationState: "Agregado al carrito"
+            },
+            include: [
+                {association: "service",
+            include: [
+                {association: "category"},
+                {association: "user"}
+            ]}
+            ]}
+            ]
+        })
+
+        let precioTotal =  0
+        for (let i = 0; i < serviciosCarrito.solicitations.length; i ++) {
+             precioTotal =  precioTotal + serviciosCarrito.solicitations[i].service.price
+        }
+
+        res.render("shop", { serviciosCarrito, precioTotal })
+    },
+    shopService: async (req, res) => {
+
+        const solicitud = await Solicitations.findByPk(req.params.id)
+        await solicitud.update({
+            solicitationState: "Agregado al carrito"
+        })
+
+        res.redirect("/user/service-pending")
+
     },
     searchProfessionals: async (req, res) => {
 

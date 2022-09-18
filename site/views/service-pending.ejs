@@ -16,6 +16,8 @@
           </section>
         <section class="just d-flex">
           <% for (let i = 0; i < usuario.solicitations.length; i ++) { %> 
+
+          <% if(usuario.solicitations[i].solicitationState != "Agregado al carrito") {%> 
           <div class="card ">
             <div class="card-header text-white bg-danger mb-1">
               Servicio solicitado
@@ -41,12 +43,13 @@
               <p>Hora: <%= usuario.solicitations[i].serviceTime %> </p>
               <p>Estado: <%= usuario.solicitations[i].solicitationState %> </p>
               <% if(usuario.solicitations[i].solicitationState == "Aceptada") { %>
-                <form action="/user/add-to-cart/<%=usuario.solicitations[i].id%>" method="POST">
+                <form action="/add-to-cart/<%=usuario.solicitations[i].id%>" method="POST">
                   <input type="submit" class="btn btn-danger mb-2 text-center" value="Agregar al carrito">
                 </form>
               <% } %> 
             </div>
           </div>
+          <% } %> 
           <% } %> 
         
         </section>
