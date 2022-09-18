@@ -104,29 +104,30 @@ window.addEventListener("load", function(){
       // input localidad y barrio
 
       localidad.addEventListener("change", async function() {
-        const localidadId = localidad.value
+        const nombreLocalidad= localidad.value
 
-        const barriosFetch = await fetch(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${localidadId}&campos=id,nombre&max=100`)
-        const barriosJSON = await barriosFetch.json()
-        const barrios = await barriosJSON.municipios
+          console.log(nombreLocalidad)
+  
+          const barriosFetch = await fetch(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${nombreLocalidad}&campos=id,nombre&max=100`)
+          const barriosJSON = await barriosFetch.json()
+          const barrios = await barriosJSON.municipios
 
-        for (let i = 0; i < barrios.length; i ++) {
-          barrio.innerHTML +=  `<option value="${barrios[i].nombre}">` + barrios[i].nombre + "</option>"
-        }
+          barrio.innerHTML = ""
 
-        const provinciasFetch = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
-        const provinciasJSON = await provinciasFetch.json()
-        const provincias = provinciasJSON.provincias
+          if (barrios.length > 0) {
+            for (let i = 0; i < barrios.length; i ++) {
+              barrio.innerHTML +=  `<option value="${barrios[i].nombre}">` + barrios[i].nombre + "</option>"
+            }
+          } else {
+            console.log("llego aca")
+            const barriosFetch = await fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${nombreLocalidad}&campos=nombre&max=100`)
+            const barriosJSON = await barriosFetch.json()
+            const barrios = await barriosJSON.localidades
 
-        let provinciaSeleccionada = ""
-        for (let i = 0; i < provincias.length; i ++) {
-          if (provincias[i].id == localidadId) {
-            provinciaSeleccionada = provincias[i].nombre
+            for (let i = 0; i < barrios.length; i ++) {
+              barrio.innerHTML +=  `<option value="${barrios[i].nombre}">` + barrios[i].nombre + "</option>"
+            }
           }
-        }
-
-        localidad.value = provinciaSeleccionada
-        localidad.innerHTML += "<option selected>" + provinciaSeleccionada + "</option>"
         
       })
 

@@ -69,7 +69,7 @@
                       <select class="form-select localidad" aria-label="Default select example" name="localidad">
                         <option selected><%= locals.userLogged.address[0].localidad %></option>
                         <% provincias.forEach( provincia => { %>  
-                          <option value="<%= provincia.id %>"><%= provincia.nombre %></option>
+                          <option value="<%= provincia.nombre %>"><%= provincia.nombre %></option>
                         <% }) %> 
                       </select>
                     </div>
