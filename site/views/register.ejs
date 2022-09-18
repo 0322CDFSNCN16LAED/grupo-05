@@ -59,9 +59,16 @@
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Provincia:</b></label>
-              <select class="form-select localidad" aria-label="Default select example" name="localidad">
+              <select 
+              class="form-select localidad <%= locals.errors && errors.localidad ? "is-invalid" : null %>"
+              aria-label="Default select example" 
+              name="localidad">
                 <option selected>Seleccione una opcion</option>
-                
+
+                <% if (locals.oldData && oldData.localidad) { %> 
+                  <option selected> <%= oldData.localidad %>  </option>
+                <% } %> 
+
                 <% if (provincias != undefined) { %> 
                   <% provincias.forEach( provincia => { %>  
                     <option value="<%= provincia.nombre %>"><%= provincia.nombre %></option>
@@ -69,6 +76,11 @@
                   <% } %> 
                    
               </select>
+              <span class="error text-danger">
+              <% if (locals.errors && errors.localidad) { %>
+                <%= errors.localidad.msg %>
+                  <% } %>
+                </span>    
             </div>
           </div>
            </div>
@@ -77,9 +89,22 @@
           <div class="col-12 col-xl-6 mt-4">
             <div class="form-group">
               <label><b>Localidad:</b></label>
-              <select class="form-select barrio" aria-label="Default select example" name="barrio">
+              <select 
+              class="form-select barrio <%= locals.errors && errors.barrio ? "is-invalid" : null %>"
+              aria-label="Default select example" 
+              name="barrio">
                 <option selected>Seleccione una opcion</option>
+
+                <% if (locals.oldData && oldData.barrio) { %> 
+                  <option selected> <%= oldData.barrio %>  </option>
+                <% } %> 
+
               </select>
+              <span class="error text-danger">
+                <% if (locals.errors && errors.barrio) { %>
+                  <%= errors.barrio.msg %>
+                    <% } %>
+              </span>  
             </div>
           </div>
           <div class="col-12 col-xl-6 mt-4">
@@ -141,9 +166,9 @@
               <input 
                 type="password" 
                 name="password" 
-                class="form-control password">
+                class="form-control password <%= locals.errors && errors.password ? "is-invalid" : null %> ">
                  <span class="error text-danger">
-              <% if (locals.errors && errors.password) { %>
+                <% if (locals.errors && errors.password) { %>
                 
                  <%= errors.password.msg %>
               
@@ -157,7 +182,7 @@
               <input 
                 type="password" 
                 name="passwordConfirmation" 
-                class="form-control passwordConfirmation"
+                class="form-control passwordConfirmation <%= locals.errors && errors.passwordConfirmation ? "is-invalid" : null %> "
                 
               >
               <span class="error text-danger">

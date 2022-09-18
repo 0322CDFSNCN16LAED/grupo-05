@@ -8,6 +8,18 @@ const registerValidation = [
     .isEmail().withMessage('Tenes que escribir un correo electronico valido'),
     body('phone').notEmpty().withMessage('Ecribi tu numero de telefono').bail()
     .isLength({min: 5},{max: 10}).withMessage('Escribi un numero de telefono valido'),
+    body("localidad").custom((value, {req}) => {
+        if(req.body.localidad == "Seleccione una opcion") {
+            throw new Error ("Tenes que elegir una provicnia")
+        }
+        return true
+    }),
+    body("barrio").custom((value, {req}) => {
+        if(req.body.barrio == "Seleccione una opcion") {
+            throw new Error ("Tenes que elegir una localidad")
+        }
+        return true
+    }),
     body('password').notEmpty().withMessage('Escribi una contraseña').bail()
     .isLength({min: 8}).withMessage('La contraseña debe contener al menos ocho caracteres'),
     body("imagen").custom((value, {req})=>{

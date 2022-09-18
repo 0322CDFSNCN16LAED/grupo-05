@@ -60,7 +60,7 @@ window.addEventListener("load", function(){
           const barriosJSON = await barriosFetch.json()
           const barrios = await barriosJSON.municipios
 
-          barrio.innerHTML = ""
+          barrio.innerHTML = "<option selected>Seleccione una opcion</option>"
 
           if (barrios.length > 0) {
             for (let i = 0; i < barrios.length; i ++) {

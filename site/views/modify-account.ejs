@@ -66,20 +66,37 @@
                   <div class="col-12 col-xl-6 mt-4">
                     <div class="form-group">
                       <label><b>Provincia:</b></label>
-                      <select class="form-select localidad" aria-label="Default select example" name="localidad">
+                      <select 
+                      class="form-select localidad <%= locals.errors && errors.localidad ? "is-invalid" : null %>" 
+                      aria-label="Default select example" 
+                      name="localidad">
                         <option selected><%= locals.userLogged.address[0].localidad %></option>
                         <% provincias.forEach( provincia => { %>  
                           <option value="<%= provincia.nombre %>"><%= provincia.nombre %></option>
                         <% }) %> 
                       </select>
+                    </select>
+                    <span class="error text-danger">
+                      <% if (locals.errors && errors.localidad) { %>
+                        <%= errors.localidad.msg %>
+                          <% } %>
+                    </span> 
                     </div>
                   </div>
                   <div class="col-12 col-xl-6 mt-4">
                     <div class="form-group">
                       <label><b>Localidad:</b></label>
-                      <select class="form-select barrio" aria-label="Default select example" name="barrio">
-                        <option selected><%= locals.userLogged.address[0].barrio %></option>
+                      <select 
+                      class="form-select barrio <%= locals.errors && errors.barrio ? "is-invalid" : null %>" 
+                      aria-label="Default select example" 
+                      name="barrio">
+                      <option selected><%= locals.userLogged.address[0].barrio %></option>
                       </select>
+                      <span class="error text-danger">
+                        <% if (locals.errors && errors.barrio) { %>
+                          <%= errors.barrio.msg %>
+                            <% } %>
+                      </span> 
                     </div>
                   </div>
                   <div class="col-12 col-xl-6 mt-4">
