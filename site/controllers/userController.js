@@ -11,6 +11,7 @@ const { ServicePhoto } = require("../database/models");
 const { Address } = require("../database/models");
 const { Solicitations } = require("../database/models");
 const { Notifications } = require("../database/models");
+const { Reviews } = require("../database/models");
 
 
 const dbProfessionals = require("../models/Professionals");
@@ -167,6 +168,7 @@ const controlador = {
             },
             include: [
                     {association: "category"},
+                    {association: "reviews"},
                     {association: "user",
                 include: [
                     {association: "address"}
@@ -467,6 +469,36 @@ const controlador = {
         })
 
         res.redirect(`/user/modify-service/${ServicioBuscado.id}`)
+
+    },
+    hiredServices: async (req, res) => {
+
+        const solicitudesConfirmadas = await Solicitations.findAll({
+            where: {
+                userId: req.session.userLogged.id,
+                solicitationState: "Agregado al carrito"
+            },
+            include: [
+                {association: "service",
+                   include: [
+                      {association: "category"},
+                      {association: "user"}
+                   ]}
+            ]
+        })
+
+        res.render("hired-services", { solicitudesConfirmadas })
+    },
+    processReviewService: async (req, res) => {
+    
+        const nuevaReseña = await Reviews.create({
+            serviceId: req.params.id,
+            userId: req.session.userLogged.id,
+            satisfactionReview: req.body.satisfactionReview,
+            commentReview: req.body.commentReview
+        })
+
+        res.redirect("/user/hired-services")
 
     }
 }

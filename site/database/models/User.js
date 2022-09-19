@@ -33,6 +33,10 @@ module.exports = function(sequelize, dataTypes){
             as: "solicitations",
             foreignKey: "userId"
         });
+        User.hasMany(models.Reviews, {
+            as: "reviews",
+            foreignKey: "userId"
+        });
     }
     return User;
 }

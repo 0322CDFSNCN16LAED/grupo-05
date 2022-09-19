@@ -36,6 +36,10 @@ routes.get("/notifications", authMiddleware, userController.notifications)
 
 routes.get("/remove-image/:id", userController.removeServiceImage)
 
+// Datos de servicios ya contratados
+routes.get("/hired-services", authMiddleware, userController.hiredServices)
+// Dejar reseña del servicio
+routes.post("/review-service/:id", authMiddleware, userController.processReviewService)
 
 // filtrar profesionales por ubicacion una vez filtrados por categoria
 routes.get("/filtered-by-location-professionals/:id", authMiddleware, userController.filerByLocation)
