@@ -32,15 +32,23 @@
     margin-left: 5px;
     margin-right: 10px;
 }
-.bigImage {
-    
+.bigImage:hover {
+    transform: scale(1.15);
 }
-
+.m-width50{
+    transition: all 3s;
+}
+.m-width50:hover{
+transform: scale(1.050);
+}
 .remove-buttom {
     margin-right: 10px;
     margin-top: 10px;
 }
-
+.h-100px
+{
+    height: 400px;
+}
 .fg {
     flex-grow: 1;
 }
