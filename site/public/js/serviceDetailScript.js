@@ -1,12 +1,27 @@
 
-window.addEventListener("load", function(){
+window.addEventListener("load", function(){ 
 
-    let serviceImage = document.querySelector(".serviceImage");
+    let date = document.querySelector(".date")
+    let time = document.querySelector(".time")
 
-    serviceImage.addEventListener("mouseover", function() {
 
-        serviceImage.classList.add("bigImage")
+    const errors = []
 
+    date.addEventListener('blur', function(){
+        if(date.value == "") {
+          errors.push("Este campo no puede estar vacio")
+          date.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
+          console.log(errors);
+        }
+    
+    })
+
+    time.addEventListener('blur', function(){
+        if(time.value == "") {
+            errors.push("Este campo no puede estar vacio")
+            time.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
+            console.log(errors);
+        }
     })
 
 })

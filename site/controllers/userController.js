@@ -493,6 +493,31 @@ const controlador = {
         res.render("hired-services", { solicitudesConfirmadas })
     },
     processReviewService: async (req, res) => {
+
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+
+           console.log("entre aca")
+
+           const solicitudesConfirmadas = await Solicitations.findAll({
+               where: {
+                   userId: req.session.userLogged.id,
+                   solicitationState: "Agregado al carrito"
+               },
+               include: [
+                   {association: "service",
+                      include: [
+                         {association: "category"},
+                         {association: "user"}
+                      ]}
+               ]
+           })
+            
+            return res.render("hired-services", {
+                errors: resultValidation.mapped(),
+                solicitudesConfirmadas
+               });
+           }
     
         const nuevaReseña = await Reviews.create({
             serviceId: req.params.id,
