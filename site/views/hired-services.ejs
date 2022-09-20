@@ -56,11 +56,21 @@
                                           <form class="p-15 form-outline" method="POST" action="/user/review-service/<%=solicitudesConfirmadas[i].service.id%>">
                                             <div class="p-2">
                                               <label> Satisfaccion del 1 al 10: </label>
-                                              <input type="number" min="0" max="10" name="satisfactionReview" >
+                                              <input type="number" min="0" max="10" name="satisfactionReview" class="satisfactionReview" >
+                                              <span class="error text-danger">
+                                                <% if (locals.errors && errors.satisfactionReview) { %>
+                                                  <%= errors.satisfactionReview.msg %>
+                                                <% } %>
+                                              </span>
                                             </div>
                                             <div class="p-2">
                                                 <label for="floatingTextarea">Escriba un breve comentario...</label>
-                                                <textarea class="form-control descripcion" id="floatingTextarea" name="commentReview"></textarea>
+                                                <textarea class="form-control commentReview" id="floatingTextarea" name="commentReview"></textarea>
+                                                <span class="error text-danger">
+                                                  <% if (locals.errors && errors.commentReview) { %>
+                                                    <%= errors.commentReview.msg %>
+                                                  <% } %>
+                                                </span>
                                             </div>
                                             <div class="modal-footer">
                                               <button type="submit" class="btn btn-danger">Enviar</button>
@@ -89,6 +99,7 @@
     <footer class="bg-dark text-center text-white">
       <%- include ("./partials/footer.ejs")  %>
     </footer>
+    <script src="/js/reviewServiceScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         </body>
       </html>

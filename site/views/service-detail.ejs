@@ -34,7 +34,7 @@
         <form class="p-15 form-outline" method="POST" action="/user/service-solicitation/<%=servicio.id%>">
           <div class="p-2">
             <label> Dia: </label>
-            <input type="date" name="date" >
+            <input type="date" name="date" class="date" >
             <span class="error text-danger">
               <% if (locals.errors && errors.date) { %>
                 <%= errors.date.msg %>
@@ -43,7 +43,7 @@
           </div>
           <div class="p-2">
             <label> Horario: </label>
-            <input type="time" name="time" >
+            <input type="time" name="time" class="time">
             <span class="error text-danger">
               <% if (locals.errors && errors.time) { %>
                 <%= errors.time.msg %>

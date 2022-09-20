@@ -15,6 +15,7 @@ const serviceCreateValidation = require("../middlewares/serviceCreateValidationM
 const serviceModifyValidation = require("../middlewares/serviceModifyValidationMiddleware");
 const solicitationValidation = require("../middlewares/solicitationValidationMiddleware");
 const accountModifyValidationMiddleware = require("../middlewares/accountModifyValidationMiddleware");
+const reviewValidationMiddleware = require("../middlewares/reviewValidationMiddleware");
 
 
 routes.get ("/account", authMiddleware, userController.account);
@@ -39,7 +40,7 @@ routes.get("/remove-image/:id", userController.removeServiceImage)
 // Datos de servicios ya contratados
 routes.get("/hired-services", authMiddleware, userController.hiredServices)
 // Dejar reseña del servicio
-routes.post("/review-service/:id", authMiddleware, userController.processReviewService)
+routes.post("/review-service/:id", authMiddleware, reviewValidationMiddleware, userController.processReviewService)
 
 // filtrar profesionales por ubicacion una vez filtrados por categoria
 routes.get("/filtered-by-location-professionals/:id", authMiddleware, userController.filerByLocation)
