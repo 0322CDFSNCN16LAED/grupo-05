@@ -38,6 +38,9 @@
 .m-width50{
     transition: all 3s;
 }
+.star{
+    color: goldenrod
+}
 .m-width50:hover{
 transform: scale(1.050);
 }
