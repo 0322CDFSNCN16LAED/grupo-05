@@ -102,15 +102,15 @@
                 <% for (let i = 0; i < servicio.reviews.length; i ++) {%> 
 
                   <form>
-                    <div class="mb-3">
-                      <label for="recipient-name" class="col-form-label"> Usuario: <%= servicio.reviews[i].user.fullName %>  </label>
-                    </div>
-                    <div class="mb-3">
-                      <label for="recipient-name" class="col-form-label"> Nivel de satisfaccion: <%= servicio.reviews[i].satisfactionReview %>  </label>
-                    </div>
-                    <div class="mb-3">
-                      <label for="recipient-name" class="col-form-label"> Comentario: <%= servicio.reviews[i].commentReview %>  </label>
-                    </div>
+                      <div class="card border-danger mb-3" style="width: 90% ;">
+  <div class="card-header border-danger bg-danger  text-white"> <strong>Usuario: <%= servicio.reviews[i].user.fullName %></strong> </div>
+  <div class="card-body ">
+   
+    <p class="card-text">Comentario: <%= servicio.reviews[i].commentReview %></p>
+  </div>
+  <div class="card-footer bg-danger border-danger text-white"><strong>Nivel de satisfaccion: <%= servicio.reviews[i].satisfactionReview %> </strong > <i class="start fas fa-star "></i> </div>
+</div>
+
                   </form>
 
                   <% } %> 
