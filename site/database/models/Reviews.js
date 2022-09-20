@@ -24,7 +24,7 @@ module.exports = function(sequelize, dataTypes){
             foreignKey: "ServiceId"
         });
 		Reviews.belongsTo(models.User, { 
-            as:"User", 
+            as:"user", 
             foreignKey: "userId"
         });
     }

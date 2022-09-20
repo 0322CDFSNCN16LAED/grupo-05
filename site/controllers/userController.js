@@ -168,7 +168,10 @@ const controlador = {
             },
             include: [
                     {association: "category"},
-                    {association: "reviews"},
+                    {association: "reviews",
+                include: [
+                    {association: "user"}
+                ]},
                     {association: "user",
                 include: [
                     {association: "address"}
