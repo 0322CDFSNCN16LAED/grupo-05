@@ -12,7 +12,9 @@ window.addEventListener("load", function(){
           errors.push("Este campo no puede estar vacio")
           date.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
           console.log(errors);
-        }
+        }else {
+            date.parentElement.querySelector(".error").innerHTML = ("")
+          }
     
     })
 
@@ -21,7 +23,9 @@ window.addEventListener("load", function(){
             errors.push("Este campo no puede estar vacio")
             time.parentElement.querySelector(".error").innerHTML = ("Este campo no puede estar vacio")
             console.log(errors);
-        }
+        }else {
+            time.parentElement.querySelector(".error").innerHTML = ("")
+          }
     })
 
 })
