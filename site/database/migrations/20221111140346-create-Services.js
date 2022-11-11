@@ -12,6 +12,12 @@ module.exports = {
       categoryId: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: "categories",
+          },
+          key: "id",
+        },
       },
       jobDescription: {
         allowNull: false,
@@ -24,6 +30,12 @@ module.exports = {
       userId: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: "users",
+          },
+          key: "id",
+        },
       }
     })
   },

@@ -12,6 +12,12 @@ module.exports = {
       solicitationId: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: "services_solicitations",
+          },
+          key: "id",
+        },
       },
       text: {
         allowNull: false,

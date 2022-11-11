@@ -24,10 +24,22 @@ module.exports = {
       userId: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: "users",
+          },
+          key: "id",
+        },
       },
       serviceId: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: "services",
+          },
+          key: "id",
+        },
       }
 
     })

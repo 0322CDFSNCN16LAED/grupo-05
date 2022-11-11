@@ -16,6 +16,12 @@ module.exports = {
       serviceId: {
         allowNull: false,
         type: DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: "services",
+          },
+          key: "id",
+        },
       }
     })
   },
