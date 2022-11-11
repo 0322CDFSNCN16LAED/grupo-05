@@ -1,3 +1,5 @@
+require("dotenv").config({path:"./.env"});
+
 const express = require ("express");
 const path = require("path");
 const app = express();
@@ -16,7 +18,7 @@ app.use(express.json())
 app.use(methodOverride("_method"));
 app.use(coockieParser())
 app.use(userLoggedMiddleware)
-const PORT= 3030;
+const PORT= process.env.PORT;
 app.listen (PORT,()=>{
     console.log("Corriendo en servidor")
 });
